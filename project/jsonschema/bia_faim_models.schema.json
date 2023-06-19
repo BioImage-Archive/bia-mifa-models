@@ -1,0 +1,512 @@
+{
+    "$defs": {
+        "AnnotationType": {
+            "description": "",
+            "enum": [
+                "class_labels",
+                "bounding_boxes",
+                "counts",
+                "segmentation_mask"
+            ],
+            "title": "AnnotationType",
+            "type": "string"
+        },
+        "Annotations": {
+            "additionalProperties": false,
+            "description": "A set of annotations for an AI-ready dataset",
+            "properties": {
+                "annotation_confidence_level": {
+                    "description": "Confidence on annotation accuracy",
+                    "type": "string"
+                },
+                "annotation_coverage": {
+                    "description": "Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available",
+                    "type": "string"
+                },
+                "annotation_criteria": {
+                    "description": "Rules used to generate annotations",
+                    "type": "string"
+                },
+                "annotation_method": {
+                    "description": "Description of how the annotations where created. For example, software used",
+                    "type": "string"
+                },
+                "annotation_overview": {
+                    "description": "Short descriptive summary indicating the type of annotation and how it was generated",
+                    "type": "string"
+                },
+                "annotation_type": {
+                    "$ref": "#/$defs/AnnotationType",
+                    "description": "Annotation type, for example class labels, segmentation masks, counts..."
+                },
+                "authors": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/Author__identifier_optional"
+                    },
+                    "description": "a collection of the authors of a study",
+                    "type": "object"
+                },
+                "source_image": {
+                    "description": "Association between annotations and the source images from which they originated",
+                    "type": "string"
+                },
+                "spatial_information": {
+                    "description": "Spatial information for non-pixel annotations",
+                    "type": "string"
+                },
+                "transformatons": {
+                    "description": "Any transformations required to link the images to the annotations",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "annotation_overview",
+                "annotation_type",
+                "annotation_method"
+            ],
+            "title": "Annotations",
+            "type": "object"
+        },
+        "Author": {
+            "additionalProperties": false,
+            "description": "Information about the authors",
+            "properties": {
+                "affiliation": {
+                    "description": "An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID.",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganisationInfoCollection"
+                            }
+                        ],
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "author_first_name": {
+                    "description": "First name for an author",
+                    "type": "string"
+                },
+                "author_last_name": {
+                    "description": "Last name for an author",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Email address of a person",
+                    "pattern": "^\\S+@[\\S+\\.]+\\S+",
+                    "type": "string"
+                },
+                "orcid_id": {
+                    "description": "A unique identifier for an author",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "Role of the author when creating the dataset",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "author_first_name",
+                "author_last_name",
+                "orcid_id",
+                "affiliation",
+                "role"
+            ],
+            "title": "Author",
+            "type": "object"
+        },
+        "Author__identifier_optional": {
+            "additionalProperties": false,
+            "description": "Information about the authors",
+            "properties": {
+                "affiliation": {
+                    "description": "An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID.",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "$ref": "#/$defs/OrganisationInfoCollection"
+                            }
+                        ],
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "author_first_name": {
+                    "description": "First name for an author",
+                    "type": "string"
+                },
+                "author_last_name": {
+                    "description": "Last name for an author",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Email address of a person",
+                    "pattern": "^\\S+@[\\S+\\.]+\\S+",
+                    "type": "string"
+                },
+                "orcid_id": {
+                    "description": "A unique identifier for an author",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "Role of the author when creating the dataset",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "author_first_name",
+                "author_last_name",
+                "affiliation",
+                "role"
+            ],
+            "title": "Author",
+            "type": "object"
+        },
+        "FundingStatement": {
+            "additionalProperties": false,
+            "description": "Description of how the study was funded",
+            "properties": {
+                "funding_statement": {
+                    "description": "Description of how the study was funded",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "funding_statement"
+            ],
+            "title": "FundingStatement",
+            "type": "object"
+        },
+        "GrantReference": {
+            "additionalProperties": false,
+            "description": "Information about grant ID and funding body that funded the study",
+            "properties": {
+                "funder": {
+                    "description": "The funding body provididing support",
+                    "type": "string"
+                },
+                "grant_id": {
+                    "description": "The identifier for the grant",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "grant_id",
+                "funder"
+            ],
+            "title": "GrantReference",
+            "type": "object"
+        },
+        "GrantReferenceCollection": {
+            "additionalProperties": false,
+            "description": "A holder for GrantReference objects",
+            "properties": {
+                "grants": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/GrantReference__identifier_optional"
+                            },
+                            {
+                                "description": "The funding body provididing support",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "description": "a collection of grant ids and funder names associated with the study",
+                    "type": "object"
+                }
+            },
+            "title": "GrantReferenceCollection",
+            "type": "object"
+        },
+        "GrantReference__identifier_optional": {
+            "additionalProperties": false,
+            "description": "Information about grant ID and funding body that funded the study",
+            "properties": {
+                "funder": {
+                    "description": "The funding body provididing support",
+                    "type": "string"
+                },
+                "grant_id": {
+                    "description": "The identifier for the grant",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "funder"
+            ],
+            "title": "GrantReference",
+            "type": "object"
+        },
+        "LicenseType": {
+            "description": "",
+            "enum": [
+                "CC0",
+                "CC_BY"
+            ],
+            "title": "LicenseType",
+            "type": "string"
+        },
+        "OrganisationInfo": {
+            "additionalProperties": false,
+            "description": "Information about the organisation the author is affiliated with",
+            "properties": {
+                "address": {
+                    "description": "Organisation address",
+                    "type": "string"
+                },
+                "organisation_name": {
+                    "description": "Organisation name",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "organisation_name"
+            ],
+            "title": "OrganisationInfo",
+            "type": "object"
+        },
+        "OrganisationInfoCollection": {
+            "additionalProperties": false,
+            "description": "A holder for OrganisationInfo objects",
+            "properties": {
+                "organisation": {
+                    "description": "a collection of the name and address of organisations authors are affiliated with",
+                    "items": {
+                        "$ref": "#/$defs/OrganisationInfo"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "OrganisationInfoCollection",
+            "type": "object"
+        },
+        "OrganisationURL": {
+            "additionalProperties": false,
+            "description": "Research Organization Registry ID",
+            "properties": {
+                "ror_id": {
+                    "description": "Identifier for the Research Organization Registry",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "ror_id"
+            ],
+            "title": "OrganisationURL",
+            "type": "object"
+        },
+        "Publications": {
+            "additionalProperties": false,
+            "description": "Information about any publications associated with the dataset",
+            "properties": {
+                "publication_authors": {
+                    "description": "Authors of associated publication",
+                    "type": "string"
+                },
+                "publication_doi": {
+                    "description": "Digital Object Identifier (DOI)",
+                    "type": "string"
+                },
+                "publication_title": {
+                    "description": "The title for a publication associated to the dataset",
+                    "type": "string"
+                },
+                "publication_year": {
+                    "description": "Year of publication",
+                    "type": "string"
+                },
+                "pubmed_id": {
+                    "description": "Identifier for journal articles/abstracts in PubMed",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "publication_title",
+                "publication_authors",
+                "publication_doi"
+            ],
+            "title": "Publications",
+            "type": "object"
+        },
+        "Publications__identifier_optional": {
+            "additionalProperties": false,
+            "description": "Information about any publications associated with the dataset",
+            "properties": {
+                "publication_authors": {
+                    "description": "Authors of associated publication",
+                    "type": "string"
+                },
+                "publication_doi": {
+                    "description": "Digital Object Identifier (DOI)",
+                    "type": "string"
+                },
+                "publication_title": {
+                    "description": "The title for a publication associated to the dataset",
+                    "type": "string"
+                },
+                "publication_year": {
+                    "description": "Year of publication",
+                    "type": "string"
+                },
+                "pubmed_id": {
+                    "description": "Identifier for journal articles/abstracts in PubMed",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "publication_title",
+                "publication_authors"
+            ],
+            "title": "Publications",
+            "type": "object"
+        },
+        "Study": {
+            "additionalProperties": false,
+            "description": "General information about the study",
+            "properties": {
+                "acknowledgements": {
+                    "description": "Any people or groups that should be acknowledged as part of the dataset",
+                    "type": "string"
+                },
+                "ai_models_trained": {
+                    "description": "Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo.",
+                    "type": "string"
+                },
+                "authors": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/Author__identifier_optional"
+                    },
+                    "description": "a collection of the authors of a study",
+                    "type": "object"
+                },
+                "description": {
+                    "description": "Brief description of the detaset. Must contain the biological application of the dataset",
+                    "type": "string"
+                },
+                "funding": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FundingStatement"
+                        },
+                        {
+                            "$ref": "#/$defs/GrantReferenceCollection"
+                        }
+                    ],
+                    "description": "A description of how the data generation was funded. It can be a funding statement (free text) like the ones that appear in a publication,  a class GrantReferenceCollection which includes the grants IDs and funder names or both.",
+                    "type": "string"
+                },
+                "keywords": {
+                    "description": "Keywords or tags used to describe the dataset",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "license": {
+                    "$ref": "#/$defs/LicenseType",
+                    "description": "The license under which the data are available"
+                },
+                "link_description": {
+                    "description": "The description of the linked content",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "link_url": {
+                    "description": "URL of relevant link",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "publications": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/Publications__identifier_optional"
+                    },
+                    "description": "a collection of publications associated with a study",
+                    "type": "object"
+                },
+                "title": {
+                    "description": "The title for your dataset. This will be displayed when search results including your data are shown. Often this will be the same as an associated publication.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title",
+                "description",
+                "keywords",
+                "license",
+                "funding",
+                "link_url"
+            ],
+            "title": "Study",
+            "type": "object"
+        },
+        "Version": {
+            "additionalProperties": false,
+            "description": "Information about the dataset version",
+            "properties": {
+                "changes": {
+                    "description": "Textual description of changes compared to previous version",
+                    "type": "string"
+                },
+                "previous_version": {
+                    "description": "Pointer to previous version",
+                    "type": "string"
+                },
+                "timestamp": {
+                    "description": "Date and time when the version was created",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "Unique version number",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "version",
+                "timestamp",
+                "changes",
+                "previous_version"
+            ],
+            "title": "Version",
+            "type": "object"
+        }
+    },
+    "$id": "https://w3id.org/BioImage-Archive/bia-faim-models",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "description": "A holder for OrganisationInfo objects",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "organisation": {
+            "description": "a collection of the name and address of organisations authors are affiliated with",
+            "items": {
+                "$ref": "#/$defs/OrganisationInfo"
+            },
+            "type": "array"
+        }
+    },
+    "title": "bia-faim-models",
+    "type": "object",
+    "version": null
+}

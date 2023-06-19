@@ -1,0 +1,88 @@
+// A set of annotations for an AI-ready dataset
+message Annotations
+ {
+  string annotationOverview = 0
+  annotationType annotationType = 0
+  string annotationMethod = 0
+  string annotationCriteria = 0
+  string annotationCoverage = 0
+  string sourceImage = 0
+  string annotationConfidenceLevel = 0
+  string spatialInformation = 0
+  string transformatons = 0
+ repeated  author authors = 0
+ }
+// Information about the authors
+message Author
+ {
+  string authorFirstName = 0
+  string authorLastName = 0
+  string email = 0
+  uriorcurie orcidId = 0
+ repeated  string affiliation = 0
+ repeated  string role = 0
+ }
+// Description of how the study was funded
+message FundingStatement
+ {
+  string fundingStatement = 0
+ }
+// Information about grant ID and funding body that funded the study
+message GrantReference
+ {
+  string grantId = 0
+  string funder = 0
+ }
+// A holder for GrantReference objects
+message GrantReferenceCollection
+ {
+ repeated  grantReference grants = 0
+ }
+// Information about the organisation the author is affiliated with
+message OrganisationInfo
+ {
+  string organisationName = 0
+  string address = 0
+ }
+// A holder for OrganisationInfo objects
+message OrganisationInfoCollection
+ {
+ repeated  organisationInfo organisation = 0
+ }
+// Research Organization Registry ID
+message OrganisationURL
+ {
+ repeated  string rorId = 0
+ }
+// Information about any publications associated with the dataset
+message Publications
+ {
+  string publicationTitle = 0
+  string publicationAuthors = 0
+  uriorcurie publicationDoi = 0
+  string publicationYear = 0
+  uriorcurie pubmedId = 0
+ }
+// General information about the study
+message Study
+ {
+  string title = 0
+  string description = 0
+ repeated  string keywords = 0
+  licenseType license = 0
+  uriorcurie aiModelsTrained = 0
+  string acknowledgements = 0
+  string funding = 0
+ repeated  publications publications = 0
+ repeated  author authors = 0
+ repeated  uriorcurie linkUrl = 0
+ repeated  string linkDescription = 0
+ }
+// Information about the dataset version
+message Version
+ {
+  float version = 0
+  datetime timestamp = 0
+  string changes = 0
+  uriorcurie previousVersion = 0
+ }

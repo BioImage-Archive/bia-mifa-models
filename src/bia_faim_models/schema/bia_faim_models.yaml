@@ -1,0 +1,511 @@
+---
+id: https://w3id.org/BioImage-Archive/bia-faim-models
+name: bia-faim-models
+title: bia-faim-models
+description: |-
+  Schemas and models for working with the BioImage Archive's FAIM (Formats, Accessibility, Incentives and Metadata) metadata implementation
+license: CC0
+see_also:
+  - https://BioImage-Archive.github.io/bia-faim-models
+
+prefixes:
+  bia_faim_models: https://w3id.org/BioImage-Archive/bia-faim-models/
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  ORCID: https://orcid.org/
+  ROR: https://ror.org/
+  DOI: https://doi.org/
+  PMID: https://pubmed.ncbi.nlm.nih.gov/
+  WIKIDATA_PROPERTY: https://www.wikidata.org/prop/
+  pav: http://purl.org/pav/
+  example: https://example.org/
+default_prefix: bia_faim_models
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+
+  Study:
+    description: >-
+      General information about the study
+    mixins:
+      - PublicationsCollection
+      - AuthorCollection
+      - Links
+    slots:
+      - title
+      - description
+      - keywords
+      - license
+      - ai_models_trained
+      - acknowledgements
+      - funding
+
+  Publications:
+    description: >-
+      Information about any publications associated with the dataset
+    slots:
+      - publication_title
+      - publication_authors
+      - publication_doi
+      - publication_year
+      - pubmed_id
+    id_prefixes:
+      - DOI
+  
+  PublicationsCollection:
+    tree_root: true
+    mixin: true
+    description: >-
+      A holder for Publications objects
+    attributes:
+      publications:
+        description: a collection of publications associated with a study
+        range: Publications
+        multivalued: true
+        inlined: true
+  
+  Author:
+    description: >-
+      Information about the authors
+    slots:
+      - author_first_name
+      - author_last_name
+      - email
+      - orcid_id
+      - affiliation
+      - role
+    id_prefixes:
+      - ORCID
+
+  AuthorCollection:
+    tree_root: true
+    mixin: true
+    description: >-
+      A holder for Author objects
+    attributes:
+      authors:
+        description: a collection of the authors of a study
+        range: Author
+        multivalued: true
+        inlined: true
+  
+  OrganisationInfo: 
+    description: Information about the organisation the author is affiliated with
+    slots:
+      - organisation_name
+      - address
+
+  OrganisationInfoCollection:
+    tree_root: true
+    description: >-
+      A holder for OrganisationInfo objects
+    attributes:
+      organisation:
+        description: a collection of the name and address of organisations authors are affiliated with
+        range: OrganisationInfo
+        multivalued: true
+        inlined: true
+  
+  OrganisationURL: 
+    description: Research Organization Registry ID
+    slots:
+      - ror_id
+    id_prefixes:
+      - ROR
+
+  FundingStatement:
+    description: Description of how the study was funded
+    slots:
+      - funding_statement
+
+  GrantReference:
+    description: Information about grant ID and funding body that funded the study
+    slots:
+      - grant_id
+      - funder
+
+  GrantReferenceCollection:
+    tree_root: true
+    description: >-
+      A holder for GrantReference objects
+    attributes:
+      grants:
+        description: a collection of grant ids and funder names associated with the study
+        range: GrantReference
+        multivalued: true
+        inlined: true
+  
+  Links:
+    description: Links related to the study
+    mixin: true
+    slots:
+      - link_url
+      - link_description
+
+  Annotations:
+    description: >-
+      A set of annotations for an AI-ready dataset
+    mixins:
+      - AuthorCollection
+    slots:
+      - annotation_overview
+      - annotation_type
+      - annotation_method
+      - annotation_criteria
+      - annotation_coverage
+      - source_image
+      - annotation_confidence_level
+      - spatial_information
+      - transformatons
+  
+  Version:
+    description: >-
+      Information about the dataset version
+    slots:
+      - version
+      - timestamp
+      - changes
+      - previous_version
+
+slots:
+  title:
+    slot_uri: schema:title
+    description: The title for your dataset. This will be displayed when search results including your data are shown. Often this will be the same as an associated publication.
+    required: true
+    examples:
+      - value: An annotated fluorescence image dataset for training nuclear segmentation methods
+  
+  description:
+    slot_uri: schema:description
+    description: Brief description of the detaset. Must contain the biological application of the dataset 
+    required: true
+    examples:
+      - value: >-
+          Accurate quantification of nuclear features is critical for the characterization of tumours. 
+          This dataset contains annotated fluorescent images of cell nuclei from a normal human skin cell line, and from different tumour samples from cancer patients. 
+          This dataset can be used to train nuclear image segmentation algorithms.
+  
+  keywords:
+    slot_uri: schema:keywords
+    description: Keywords or tags used to describe the dataset
+    required: true
+    multivalued: true
+    examples:
+      - value:
+        - segmentation
+        - nuclei
+        - cancer
+  
+  license:
+    slot_uri: schema:license
+    description: The license under which the data are available
+    required: true
+    range: LicenseType
+    examples:
+      - value: CC0
+ 
+  ai_models_trained:
+    description: Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo.
+    range: uriorcurie
+    examples:
+      - value: https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097
+  
+  funding_statement:
+    description: Description of how the study was funded
+    required: true
+    examples:
+      - value: >-
+          T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme 
+          under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.
+
+  grant_id:
+    description: The identifier for the grant
+    identifier: true
+    required: true
+    slot_uri: schema:identifier
+    examples: 
+      - value: ALTF 1234-567
+
+  funder:
+    slot_uri: schema:funder
+    description: The funding body provididing support
+    required: true
+    examples:
+      - value: EMBO Long-Term Fellowship
+  
+  funding:
+    required: true
+    description: >-
+      A description of how the data generation was funded. It can be a funding statement (free text) like the ones that appear in a publication, 
+      a class GrantReferenceCollection which includes the grants IDs and funder names or both.
+    any_of:
+      - range: FundingStatement
+      - range: GrantReferenceCollection
+    examples:
+      - value: 
+        - funding_statement: >-
+            T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme 
+            under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.
+      - value: 
+        - grant_id: ALTF 123
+          funder: EMBO Long-Term Fellowship
+        - grant_id: "1234"
+          funder: Marie Sklodowska-Curie Indiviadual Fellowship
+
+  publication_title:
+    slot_uri: schema:title
+    description: The title for a publication associated to the dataset
+    required: true
+    examples:
+      - value: An annotated fluorescence image dataset for training nuclear segmentation methods
+
+  publication_authors:
+    slot_uri: schema:author
+    description: Authors of associated publication
+    required: true
+    examples:
+      - value: Truman Grayson, Josiah Carberry
+
+  publication_doi:
+    identifier: true
+    slot_uri: WIKIDATA_PROPERTY:P356
+    range: uriorcurie
+    description: Digital Object Identifier (DOI)
+    examples: 
+      - value: DOI:10.1242/jcs.033340
+
+  publication_year:
+    description: Year of publication
+    examples:
+      - value: "2023"
+  
+  pubmed_id:
+    slot_uri: WIKIDATA_PROPERTY:P698
+    range: uriorcurie
+    description: Identifier for journal articles/abstracts in PubMed
+    examples: 
+      - value: PMID:18492790
+  
+  link_url:
+    description: URL of relevant link
+    range: uriorcurie
+    multivalued: true
+    required: true
+    examples:
+      - value:
+        - https://github.com/BioImage-Archive
+        - https://www.ebi.ac.uk/empiar/EMPIAR-10459/
+  
+  link_description:
+    description: The description of the linked content
+    multivalued: true
+    examples:
+      - value:
+        - Image analysis code
+        - FIB SEM dataset matching the light microscopy data 
+  
+  acknowledgements:
+    description: Any people or groups that should be acknowledged as part of the dataset
+    examples:
+      - value: We thank the Institute microscopy facility for support with image acquisition
+  
+  orcid_id:
+    identifier: true
+    slot_uri:  WIKIDATA_PROPERTY:P496
+    range: uriorcurie
+    description: A unique identifier for an author
+    examples: 
+      - value: ORCID:0000-0002-1825-0097
+  
+  author_first_name:
+    slot_uri: schema:name
+    description: First name for an author
+    required: true
+    examples:
+      - value: Josiah
+  
+  author_last_name:
+    slot_uri: schema:name
+    description: Last name for an author
+    required: true
+    examples:
+      - value: Carberry
+  
+  email:
+    slot_uri: schema:email
+    description: Email address of a person
+    pattern: "^\\S+@[\\S+\\.]+\\S+"
+    examples: 
+      - value: jcarberry@example.com
+  
+  organisation_name:
+    slot_uri: schema:name
+    description: Organisation name
+    required: true
+    examples:
+      - value: EMBL-EBI
+
+  ror_id:
+    identifier: true
+    slot_uri:  WIKIDATA_PROPERTY:P6782
+    range: string
+    multivalued: true
+    required: true
+    description: Identifier for the Research Organization Registry
+    examples: 
+      - value: 
+        - ROR:02catss52
+        - ROR:03dbr7087
+
+  address:
+    slot_uri: schema:name
+    description: Organisation address
+    examples:
+      - value: Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.
+
+  affiliation:
+    slot_uri: schema:affiliation
+    description: An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID.
+    required: true
+    multivalued: true
+    exactly_one_of:
+      - range: OrganisationURL
+      - range: OrganisationInfoCollection
+    examples:
+      - value: 
+        - ror_id: ROR:02catss52
+        - ror_id: ROR:03dbr7087
+      - value: 
+        - organisation_name: EMBL-EBI
+          address: Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.
+        - organisation_name: University of Toronto
+          address: 27 King's College Cir, Toronto, ON M5S, Canada.
+
+  role:
+    slot_uri: schema:roleName
+    description: Role of the author when creating the dataset
+    multivalued: true
+    required: true
+    examples: 
+      - value: annotator
+  
+  annotation_overview:
+    description: Short descriptive summary indicating the type of annotation and how it was generated
+    required: true
+    examples: 
+      - value: Segmentations masks of human cell nuclei curated by experts from a model prediction 
+  
+  annotation_type:
+    required: true
+    range: AnnotationType
+    description: Annotation type, for example class labels, segmentation masks, counts...
+    examples: 
+      - value: Segmentations mask  
+  
+  annotation_method:
+    required: true
+    description: Description of how the annotations where created. For example, software used
+    examples: 
+      - value: >-
+          A machine learning-based framework was utilized to produce a first coarse annotation of nuclear contours. 
+          Then, a disease expert curated all annotations by editing, adding, or removing polygons. 
+          Finally, an expert pathologist revised all image annotations and a final version of the annotations was curated.
+  
+  annotation_criteria:
+    description: Rules used to generate annotations
+    examples:
+      - value: Only nuclei in focus were annotated, if parts of a nucleus were out of focus, only the part of the nucleus being in focus was annotated
+  
+  annotation_coverage:
+    description: Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available
+    examples:
+      - value: All images were annotated
+  
+  source_image:
+    description: Association between annotations and the source images from which they originated
+    examples:
+      - value: The path and file name of the source image for each mask is provided in a tsv file that contains the file level metadata
+  
+  annotation_confidence_level:
+    description: Confidence on annotation accuracy
+    examples: 
+      - value: Curators had 15 and 20 years of experience working in cancer pathology
+  
+  spatial_information:
+    description: Spatial information for non-pixel annotations
+    examples:
+     - value: The pixels belonging to the mouse embryo are provided in a binary mask for each source image
+  
+  transformatons:
+    description: Any transformations required to link the images to the annotations
+    examples:
+      - value: The rotation angle for each image is provided in a tsv file that contains the file level metadata
+  
+  version:
+    required: true
+    range: float
+    slot_uri: pav:version
+    description: Unique version number
+    examples:
+      - value: 1.1
+  
+  timestamp:
+    required: true
+    range: datetime
+    slot_uri: pav:authoredOn
+    description: Date and time when the version was created
+    examples:
+      - value: 2023-12-10T12:20:00-05:00
+  
+  changes:
+    required: true
+    description: Textual description of changes compared to previous version
+    examples:
+      - value: The segmentation mask for image 10 (segmentation_10.tif) has been updated with the annotation of two nuclei that were missing in the previous version
+ 
+  previous_version:
+    required: true
+    range: uriorcurie
+    slot_uri: pav:previousVersion
+    description: Pointer to previous version
+    examples:
+      - value: example:version1.0
+
+enums:
+  AnnotationType:
+    permissible_values:
+      class_labels:
+        description: tags that identify specific features, patterns or classes in images
+        todos:
+          - map this to an ontology
+      bounding_boxes:
+        description: rectangles completely enclosing a structure of interest within an image
+        todos:
+          - map this to an ontology
+      counts:
+        description: number of objects, such as cells, found in an image
+        todos:
+          - map this to an ontology
+      segmentation_mask:
+        description: an image, the same size as the source image, with the value of each pixel representing some biological identity or background region
+        todos:
+          - map this to an ontology
+
+  LicenseType:
+    permissible_values:
+      CC0:
+        description: No Copyright. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+        meaning: https://creativecommons.org/publicdomain/zero/1.0/
+      CC_BY:
+        description: >-
+         You are free to: Share — copy and redistribute the material in any medium or format. Adapt — remix, transform, and build upon the material 
+         for any purpose, even commercially. You must give appropriate credit, provide a link to the license, and indicate if changes were made. 
+         You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+        meaning: https://creativecommons.org/licenses/by/4.0/
+
+  
+
+

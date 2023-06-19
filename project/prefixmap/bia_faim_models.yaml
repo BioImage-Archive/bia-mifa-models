@@ -1,0 +1,12 @@
+{
+   "DOI": "https://doi.org/",
+   "ORCID": "https://orcid.org/",
+   "PMID": "https://pubmed.ncbi.nlm.nih.gov/",
+   "ROR": "https://ror.org/",
+   "WIKIDATA_PROPERTY": "https://www.wikidata.org/prop/",
+   "bia_faim_models": "https://w3id.org/BioImage-Archive/bia-faim-models/",
+   "example": "https://example.org/",
+   "linkml": "https://w3id.org/linkml/",
+   "pav": "http://purl.org/pav/",
+   "schema": "http://schema.org/"
+}

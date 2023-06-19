@@ -1,0 +1,104 @@
+type Annotations implements AuthorCollection
+  {
+    annotationOverview: String!
+    annotationType: AnnotationType!
+    annotationMethod: String!
+    annotationCriteria: String
+    annotationCoverage: String
+    sourceImage: String
+    annotationConfidenceLevel: String
+    spatialInformation: String
+    transformatons: String
+    authors: [Author]
+  }
+
+type Author
+  {
+    authorFirstName: String!
+    authorLastName: String!
+    email: String
+    orcidId: Uriorcurie!
+    affiliation: [String]!
+    role: [String]!
+  }
+
+interface AuthorCollection
+  {
+    authors: [Author]
+  }
+
+type FundingStatement
+  {
+    fundingStatement: String!
+  }
+
+type GrantReference
+  {
+    grantId: String!
+    funder: String!
+  }
+
+type GrantReferenceCollection
+  {
+    grants: [GrantReference]
+  }
+
+interface Links
+  {
+    linkUrl: [Uriorcurie]!
+    linkDescription: [String]
+  }
+
+type OrganisationInfo
+  {
+    organisationName: String!
+    address: String
+  }
+
+type OrganisationInfoCollection
+  {
+    organisation: [OrganisationInfo]
+  }
+
+type OrganisationURL
+  {
+    rorId: [String]!
+  }
+
+type Publications
+  {
+    publicationTitle: String!
+    publicationAuthors: String!
+    publicationDoi: Uriorcurie!
+    publicationYear: String
+    pubmedId: Uriorcurie
+  }
+
+interface PublicationsCollection
+  {
+    publications: [Publications]
+  }
+
+type Study implements PublicationsCollection, AuthorCollection, Links
+  {
+    title: String!
+    description: String!
+    keywords: [String]!
+    license: LicenseType!
+    aiModelsTrained: Uriorcurie
+    acknowledgements: String
+    funding: String!
+    publications: [Publications]
+    authors: [Author]
+    linkUrl: [Uriorcurie]!
+    linkDescription: [String]
+  }
+
+type Version
+  {
+    version: Float!
+    timestamp: Datetime!
+    changes: String!
+    previousVersion: Uriorcurie!
+  }
+

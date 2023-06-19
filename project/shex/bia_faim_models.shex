@@ -1,0 +1,178 @@
+BASE <https://w3id.org/BioImage-Archive/bia-faim-models/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX schema1: <http://schema.org/>
+PREFIX WIKIDATA_PROPERTY: <https://www.wikidata.org/prop/>
+PREFIX pav: <http://purl.org/pav/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+<Annotations> CLOSED {
+    (  $<Annotations_tes> (  &<AuthorCollection_tes> ;
+          rdf:type [ <AuthorCollection> ] ? ;
+          <annotation_overview> @linkml:String ;
+          <annotation_type> @<AnnotationType> ;
+          <annotation_method> @linkml:String ;
+          <annotation_criteria> @linkml:String ? ;
+          <annotation_coverage> @linkml:String ? ;
+          <source_image> @linkml:String ? ;
+          <annotation_confidence_level> @linkml:String ? ;
+          <spatial_information> @linkml:String ? ;
+          <transformatons> @linkml:String ? ;
+          <authors> @<Author> *
+       ) ;
+       rdf:type [ <Annotations> ] ?
+    )
+}
+
+<Author> CLOSED {
+    (  $<Author_tes> (  schema1:name @linkml:String ;
+          schema1:name @linkml:String ;
+          schema1:email @linkml:String ? ;
+          schema1:affiliation @linkml:String + ;
+          schema1:roleName @linkml:String +
+       ) ;
+       rdf:type [ <Author> ]
+    )
+}
+
+<AuthorCollection> {
+    (  $<AuthorCollection_tes> <authors> @<Author> * ;
+       rdf:type [ <AuthorCollection> ] ?
+    )
+}
+
+<FundingStatement> CLOSED {
+    (  $<FundingStatement_tes> <funding_statement> @linkml:String ;
+       rdf:type [ <FundingStatement> ] ?
+    )
+}
+
+<GrantReference> CLOSED {
+    (  $<GrantReference_tes> schema1:funder @linkml:String ;
+       rdf:type [ <GrantReference> ]
+    )
+}
+
+<GrantReferenceCollection> CLOSED {
+    (  $<GrantReferenceCollection_tes> <grants> @<GrantReference> * ;
+       rdf:type [ <GrantReferenceCollection> ] ?
+    )
+}
+
+<Links> {
+    (  $<Links_tes> (  <link_url> @linkml:Uriorcurie + ;
+          <link_description> @linkml:String *
+       ) ;
+       rdf:type [ <Links> ] ?
+    )
+}
+
+<OrganisationInfo> CLOSED {
+    (  $<OrganisationInfo_tes> (  schema1:name @linkml:String ;
+          schema1:name @linkml:String ?
+       ) ;
+       rdf:type [ <OrganisationInfo> ] ?
+    )
+}
+
+<OrganisationInfoCollection> CLOSED {
+    (  $<OrganisationInfoCollection_tes> <organisation> @<OrganisationInfo> * ;
+       rdf:type [ <OrganisationInfoCollection> ] ?
+    )
+}
+
+<OrganisationURL> CLOSED {
+    (  $<OrganisationURL_tes> rdf:type . * ;
+       rdf:type [ <OrganisationURL> ]
+    )
+}
+
+<Publications> CLOSED {
+    (  $<Publications_tes> (  schema1:title @linkml:String ;
+          schema1:author @linkml:String ;
+          <publication_year> @linkml:String ? ;
+          WIKIDATA_PROPERTY:P698 @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <Publications> ]
+    )
+}
+
+<PublicationsCollection> {
+    (  $<PublicationsCollection_tes> <publications> @<Publications> * ;
+       rdf:type [ <PublicationsCollection> ] ?
+    )
+}
+
+<Study> CLOSED {
+    (  $<Study_tes> (  &<PublicationsCollection_tes> ;
+          rdf:type [ <PublicationsCollection> ] ? ;
+          &<AuthorCollection_tes> ;
+          rdf:type [ <AuthorCollection> ] ? ;
+          &<Links_tes> ;
+          rdf:type [ <Links> ] ? ;
+          schema1:title @linkml:String ;
+          schema1:description @linkml:String ;
+          schema1:keywords @linkml:String + ;
+          schema1:license @<LicenseType> ;
+          <ai_models_trained> @linkml:Uriorcurie ? ;
+          <acknowledgements> @linkml:String ? ;
+          <funding> @linkml:String ;
+          <publications> @<Publications> * ;
+          <authors> @<Author> * ;
+          <link_url> @linkml:Uriorcurie + ;
+          <link_description> @linkml:String *
+       ) ;
+       rdf:type [ <Study> ] ?
+    )
+}
+
+<Version> CLOSED {
+    (  $<Version_tes> (  pav:version @linkml:Float ;
+          pav:authoredOn @linkml:Datetime ;
+          <changes> @linkml:String ;
+          pav:previousVersion @linkml:Uriorcurie
+       ) ;
+       rdf:type [ <Version> ] ?
+    )
+}
+
+

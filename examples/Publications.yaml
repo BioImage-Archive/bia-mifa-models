@@ -1,0 +1,12 @@
+publications:
+  - publication_title: The importance of stupidity in scientific research
+    publication_authors: Martin A. Schwartz
+    publication_doi: DOI:10.1242/jcs.033340
+    publication_year: "2008"
+    pubmed_id: PMID:18492790
+  - publication_title: "The BioImage Archive – Building a Home for Life-Sciences Microscopy Data"
+    publication_authors: Matthew Hartley, Gerard J. Kleywegt, Ardan Patwardhan, Ugis Sarkans, Jason R. Swedlow, Alvis Brazma
+    publication_doi: DOI:10.1016/j.jmb.2022.167505
+    publication_year: "2022"
+    pubmed_id: PMID:35189131
+  

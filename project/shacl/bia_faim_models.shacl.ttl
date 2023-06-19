@@ -1,0 +1,311 @@
+@prefix WIKIDATA_PROPERTY: <https://www.wikidata.org/prop/> .
+@prefix bia_faim_models: <https://w3id.org/BioImage-Archive/bia-faim-models/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema1: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bia_faim_models:Annotations a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A set of annotations for an AI-ready dataset" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Annotation type, for example class labels, segmentation masks, counts..." ;
+            sh:in ( "class_labels" "bounding_boxes" "counts" "segmentation_mask" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path bia_faim_models:annotation_type ],
+        [ sh:description "Any transformations required to link the images to the annotations" ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path bia_faim_models:transformatons ],
+        [ sh:description "Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available" ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path bia_faim_models:annotation_coverage ],
+        [ sh:description "Confidence on annotation accuracy" ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path bia_faim_models:annotation_confidence_level ],
+        [ sh:description "Rules used to generate annotations" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path bia_faim_models:annotation_criteria ],
+        [ sh:description "Short descriptive summary indicating the type of annotation and how it was generated" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path bia_faim_models:annotation_overview ],
+        [ sh:description "Description of how the annotations where created. For example, software used" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path bia_faim_models:annotation_method ],
+        [ sh:class bia_faim_models:Author ;
+            sh:description "a collection of the authors of a study" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 9 ;
+            sh:path bia_faim_models:authors ],
+        [ sh:description "Spatial information for non-pixel annotations" ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path bia_faim_models:spatial_information ],
+        [ sh:description "Association between annotations and the source images from which they originated" ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path bia_faim_models:source_image ] ;
+    sh:targetClass bia_faim_models:Annotations .
+
+bia_faim_models:AuthorCollection a sh:NodeShape ;
+    sh:closed false ;
+    sh:description "A holder for Author objects" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class bia_faim_models:Author ;
+            sh:description "a collection of the authors of a study" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path bia_faim_models:authors ] ;
+    sh:targetClass bia_faim_models:AuthorCollection .
+
+bia_faim_models:FundingStatement a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Description of how the study was funded" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Description of how the study was funded" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path bia_faim_models:funding_statement ] ;
+    sh:targetClass bia_faim_models:FundingStatement .
+
+bia_faim_models:GrantReferenceCollection a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A holder for GrantReference objects" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class bia_faim_models:GrantReference ;
+            sh:description "a collection of grant ids and funder names associated with the study" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path bia_faim_models:grants ] ;
+    sh:targetClass bia_faim_models:GrantReferenceCollection .
+
+bia_faim_models:Links a sh:NodeShape ;
+    sh:closed false ;
+    sh:description "Links related to the study" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "The description of the linked content" ;
+            sh:order 1 ;
+            sh:path bia_faim_models:link_description ],
+        [ sh:description "URL of relevant link" ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path bia_faim_models:link_url ] ;
+    sh:targetClass bia_faim_models:Links .
+
+bia_faim_models:OrganisationInfoCollection a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A holder for OrganisationInfo objects" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class bia_faim_models:OrganisationInfo ;
+            sh:description "a collection of the name and address of organisations authors are affiliated with" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path bia_faim_models:organisation ] ;
+    sh:targetClass bia_faim_models:OrganisationInfoCollection .
+
+bia_faim_models:OrganisationURL a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Research Organization Registry ID" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Identifier for the Research Organization Registry" ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path WIKIDATA_PROPERTY:P6782 ] ;
+    sh:targetClass bia_faim_models:OrganisationURL .
+
+bia_faim_models:PublicationsCollection a sh:NodeShape ;
+    sh:closed false ;
+    sh:description "A holder for Publications objects" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class bia_faim_models:Publications ;
+            sh:description "a collection of publications associated with a study" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path bia_faim_models:publications ] ;
+    sh:targetClass bia_faim_models:PublicationsCollection .
+
+bia_faim_models:Study a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "General information about the study" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "URL of relevant link" ;
+            sh:minCount 1 ;
+            sh:order 9 ;
+            sh:path bia_faim_models:link_url ],
+        [ sh:description "Keywords or tags used to describe the dataset" ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:keywords ],
+        [ sh:description "Brief description of the detaset. Must contain the biological application of the dataset" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:description ],
+        [ sh:description "The title for your dataset. This will be displayed when search results including your data are shown. Often this will be the same as an associated publication." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:title ],
+        [ sh:description "The description of the linked content" ;
+            sh:order 10 ;
+            sh:path bia_faim_models:link_description ],
+        [ sh:description "A description of how the data generation was funded. It can be a funding statement (free text) like the ones that appear in a publication,  a class GrantReferenceCollection which includes the grants IDs and funder names or both." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 6 ;
+            sh:path bia_faim_models:funding ],
+        [ sh:description "The license under which the data are available" ;
+            sh:in ( <https://creativecommons.org/publicdomain/zero/1.0/> <https://creativecommons.org/licenses/by/4.0/> ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:license ],
+        [ sh:class bia_faim_models:Author ;
+            sh:description "a collection of the authors of a study" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 8 ;
+            sh:path bia_faim_models:authors ],
+        [ sh:class bia_faim_models:Publications ;
+            sh:description "a collection of publications associated with a study" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 7 ;
+            sh:path bia_faim_models:publications ],
+        [ sh:description "Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path bia_faim_models:ai_models_trained ],
+        [ sh:description "Any people or groups that should be acknowledged as part of the dataset" ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path bia_faim_models:acknowledgements ] ;
+    sh:targetClass bia_faim_models:Study .
+
+bia_faim_models:Version a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Information about the dataset version" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Date and time when the version was created" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path pav:authoredOn ],
+        [ sh:description "Pointer to previous version" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path pav:previousVersion ],
+        [ sh:description "Unique version number" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path pav:version ],
+        [ sh:description "Textual description of changes compared to previous version" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path bia_faim_models:changes ] ;
+    sh:targetClass bia_faim_models:Version .
+
+bia_faim_models:GrantReference a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Information about grant ID and funding body that funded the study" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "The funding body provididing support" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:funder ],
+        [ sh:description "The identifier for the grant" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:identifier ] ;
+    sh:targetClass bia_faim_models:GrantReference .
+
+bia_faim_models:OrganisationInfo a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Information about the organisation the author is affiliated with" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Organisation name" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ],
+        [ sh:description "Organisation address" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:name ] ;
+    sh:targetClass bia_faim_models:OrganisationInfo .
+
+bia_faim_models:Publications a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Information about any publications associated with the dataset" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Identifier for journal articles/abstracts in PubMed" ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path WIKIDATA_PROPERTY:P698 ],
+        [ sh:description "Year of publication" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path bia_faim_models:publication_year ],
+        [ sh:description "Authors of associated publication" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:author ],
+        [ sh:description "The title for a publication associated to the dataset" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:title ],
+        [ sh:description "Digital Object Identifier (DOI)" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path WIKIDATA_PROPERTY:P356 ] ;
+    sh:targetClass bia_faim_models:Publications .
+
+bia_faim_models:Author a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Information about the authors" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Role of the author when creating the dataset" ;
+            sh:minCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:roleName ],
+        [ sh:description "An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID." ;
+            sh:minCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:affiliation ],
+        [ sh:description "Email address of a person" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:email ;
+            sh:pattern "^\\S+@[\\S+\\.]+\\S+" ],
+        [ sh:description "A unique identifier for an author" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path WIKIDATA_PROPERTY:P496 ],
+        [ sh:description "Last name for an author" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:name ],
+        [ sh:description "First name for an author" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ] ;
+    sh:targetClass bia_faim_models:Author .
+

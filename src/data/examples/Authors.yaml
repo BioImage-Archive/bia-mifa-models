@@ -1,0 +1,18 @@
+authors:
+  - author_first_name: foo
+    author_last_name: bar
+    email: foo.bar@example.com
+    orcid_id: ORCID:1234
+    affiliation: 
+      - ror_id: ROR:02catss52
+    role: 
+      - annotator
+      - curator
+  - author_first_name: Juan
+    author_last_name: Perez
+    email: juanp@example.com
+    orcid_id: ORCID:5678
+    affiliation: 
+      - organisation_name: EMBL-EBI
+        address: Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.
+    role: curator

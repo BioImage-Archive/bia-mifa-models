@@ -1,0 +1,54 @@
+title: An annotated fluorescence image dataset for training nuclear segmentation methods
+description: This dataset contains annotated fluorescent nuclear images of normal or cancer cells from different tissue origins and sample preparation types, and can be used to train machine-learning based nuclear image segmentation algorithms.
+keywords:
+  - AI
+  - segmentation
+  - nucleus
+  - fluorescence
+authors:
+  - author_first_name: foo
+    author_last_name: bar
+    email: foo.bar@example.com
+    orcid_id: ORCID:1234
+    affiliation:  
+      ror_id: 
+        - ROR:02catss52
+        - ROR:03dbr7087
+    role: 
+      - annotator
+      - curator
+  - author_first_name: Juan
+    author_last_name: Perez
+    email: juanp@example.com
+    orcid_id: ORCID:5678
+    affiliation: 
+      organisation: 
+        - name: University of Toronto
+          address: Toronto
+        - name: King's College London
+          address: London
+    role: curator
+license: CC0
+ai_models_trained: https://bioimage.io/#/?id=10.5281%2Fzenodo.5874741
+funding: 
+  - funding_statement: T.Z.-C. was supported by an EMBO Long-Term Fellowship (ALTF 1130-)
+  - grants:
+      - grant_id: ALTF 1130-1234
+        funder: "EMBO Long-Term Fellowship"
+      - grant_id: "840767"
+        funder: Marie Sklodowska-Curie
+link_url: https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST265
+link_description: original submission 
+acknowledgements: Thanks to everyone
+publications:
+  - publication_title: The importance of stupidity in scientific research
+    publication_authors: Martin A. Schwartz
+    publication_doi: DOI:10.1242/jcs.033340
+    publication_year: "2008"
+    pubmed_id: PMID:18492790
+  - publication_title: "The BioImage Archive – Building a Home for Life-Sciences Microscopy Data"
+    publication_authors: Matthew Hartley, Gerard J. Kleywegt, Ardan Patwardhan, Ugis Sarkans, Jason R. Swedlow, Alvis Brazma
+    publication_doi: DOI:10.1016/j.jmb.2022.167505
+    publication_year: "2022"
+    pubmed_id: PMID:35189131
+  
