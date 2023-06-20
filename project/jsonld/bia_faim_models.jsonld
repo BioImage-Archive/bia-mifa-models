@@ -1367,7 +1367,6 @@
         }
       ],
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/PublicationsCollection",
-      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -1411,7 +1410,6 @@
         }
       ],
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/AuthorCollection",
-      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -1447,7 +1445,6 @@
         }
       ],
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfoCollection",
-      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -1510,7 +1507,6 @@
         }
       ],
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/GrantReferenceCollection",
-      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -1569,12 +1565,12 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "bia_faim_models.yaml",
-  "source_file_date": "2023-06-19T14:49:34",
-  "source_file_size": 15785,
-  "generation_date": "2023-06-19T15:00:34",
+  "source_file_date": "2023-06-20T09:47:24",
+  "source_file_size": 15705,
+  "generation_date": "2023-06-20T09:51:05",
   "@type": "SchemaDefinition",
   "@context": [
-    "project/jsonld/bia_faim_models.context.jsonld",
+    "project//jsonld/bia_faim_models.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
       "@base": "https://w3id.org/BioImage-Archive/bia-faim-models/"

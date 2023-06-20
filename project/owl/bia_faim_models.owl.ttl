@@ -31,36 +31,12 @@ bia_faim_models:Annotations a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Annotations" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_coverage ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_confidence_level ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_overview ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_method ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:transformatons ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:spatial_information ],
+            owl:allValuesFrom bia_faim_models:Author ;
+            owl:onProperty bia_faim_models:authors ],
         [ a owl:Restriction ;
             owl:onClass bia_faim_models:AnnotationType ;
             owl:onProperty bia_faim_models:annotation_type ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Author ;
-            owl:onProperty bia_faim_models:authors ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -69,57 +45,81 @@ bia_faim_models:Annotations a owl:Class,
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty bia_faim_models:annotation_criteria ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:annotation_coverage ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:annotation_overview ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:annotation_confidence_level ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:spatial_information ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:annotation_method ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:transformatons ],
         bia_faim_models:AuthorCollection ;
     skos:definition "A set of annotations for an AI-ready dataset" .
 
 bia_faim_models:Study a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Study" ;
-    rdfs:subClassOf [ a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:funding ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:Publications ;
+            owl:onProperty bia_faim_models:publications ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:description ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:title ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom linkml:String ;
                         owl:onProperty schema1:keywords ] [ a owl:Restriction ;
                         owl:onProperty schema1:keywords ;
                         owl:someValuesFrom linkml:String ] ) ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Publications ;
-            owl:onProperty bia_faim_models:publications ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_faim_models:link_description ],
-        [ a owl:Restriction ;
-            owl:onClass bia_faim_models:LicenseType ;
-            owl:onProperty schema1:license ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:funding ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty bia_faim_models:ai_models_trained ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:title ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Author ;
-            owl:onProperty bia_faim_models:authors ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:acknowledgements ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:description ;
-            owl:qualifiedCardinality 1 ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom linkml:Uriorcurie ;
                         owl:onProperty bia_faim_models:link_url ] [ a owl:Restriction ;
                         owl:onProperty bia_faim_models:link_url ;
                         owl:someValuesFrom linkml:Uriorcurie ] ) ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty bia_faim_models:ai_models_trained ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:acknowledgements ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:Author ;
+            owl:onProperty bia_faim_models:authors ],
+        [ a owl:Restriction ;
+            owl:onClass bia_faim_models:LicenseType ;
+            owl:onProperty schema1:license ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_faim_models:link_description ],
         bia_faim_models:AuthorCollection,
         bia_faim_models:Links,
         bia_faim_models:PublicationsCollection ;
@@ -172,20 +172,20 @@ bia_faim_models:Version a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Version" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Float ;
-            owl:onProperty pav:version ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:changes ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Datetime ;
             owl:onProperty pav:authoredOn ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onClass linkml:Float ;
+            owl:onProperty pav:version ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty pav:previousVersion ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:changes ;
             owl:qualifiedCardinality 1 ] ;
     skos:definition "Information about the dataset version" .
 
@@ -384,15 +384,15 @@ schema1:title a owl:ObjectProperty,
 bia_faim_models:Links a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Links" ;
-    rdfs:subClassOf [ a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_faim_models:link_description ],
+        [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom linkml:Uriorcurie ;
                         owl:onProperty bia_faim_models:link_url ] [ a owl:Restriction ;
                         owl:onProperty bia_faim_models:link_url ;
                         owl:someValuesFrom linkml:Uriorcurie ] ) ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_faim_models:link_description ],
         linkml:mixin ;
     skos:definition "Links related to the study" .
 
@@ -521,20 +521,20 @@ bia_faim_models:Publications a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Publications" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P698 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:title ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty schema1:author ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty WIKIDATA_PROPERTY:P356 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty WIKIDATA_PROPERTY:P698 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:title ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -552,21 +552,9 @@ bia_faim_models:Author a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Author" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P496 ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty schema1:email ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ;
-            owl:qualifiedCardinality 1 ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom linkml:String ;
@@ -578,7 +566,19 @@ bia_faim_models:Author a owl:Class,
                         owl:allValuesFrom linkml:String ;
                         owl:onProperty schema1:affiliation ] [ a owl:Restriction ;
                         owl:onProperty schema1:affiliation ;
-                        owl:someValuesFrom linkml:String ] ) ] ;
+                        owl:someValuesFrom linkml:String ] ) ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty WIKIDATA_PROPERTY:P496 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:name ;
+            owl:qualifiedCardinality 1 ] ;
     skos:definition "Information about the authors" .
 
 bia_faim_models:AnnotationType a owl:Class,

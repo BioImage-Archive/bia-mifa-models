@@ -56,7 +56,6 @@ classes:
       - DOI
   
   PublicationsCollection:
-    tree_root: true
     mixin: true
     description: >-
       A holder for Publications objects
@@ -81,7 +80,6 @@ classes:
       - ORCID
 
   AuthorCollection:
-    tree_root: true
     mixin: true
     description: >-
       A holder for Author objects
@@ -99,7 +97,6 @@ classes:
       - address
 
   OrganisationInfoCollection:
-    tree_root: true
     description: >-
       A holder for OrganisationInfo objects
     attributes:
@@ -128,7 +125,6 @@ classes:
       - funder
 
   GrantReferenceCollection:
-    tree_root: true
     description: >-
       A holder for GrantReference objects
     attributes:

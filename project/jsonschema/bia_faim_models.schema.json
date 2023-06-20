@@ -495,17 +495,7 @@
     "$id": "https://w3id.org/BioImage-Archive/bia-faim-models",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
-    "description": "A holder for OrganisationInfo objects",
     "metamodel_version": "1.7.0",
-    "properties": {
-        "organisation": {
-            "description": "a collection of the name and address of organisations authors are affiliated with",
-            "items": {
-                "$ref": "#/$defs/OrganisationInfo"
-            },
-            "type": "array"
-        }
-    },
     "title": "bia-faim-models",
     "type": "object",
     "version": null
