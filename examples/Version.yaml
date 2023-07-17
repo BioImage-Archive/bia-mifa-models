@@ -1,4 +1,0 @@
-version: 5.4
-timestamp: 2002-10-10T12:00:00-05:00
-changes: 10 more images (image_200 to image_209) and their corresponding annotations have been added to the dataset
-previous_version: https://example.org/version_5.3

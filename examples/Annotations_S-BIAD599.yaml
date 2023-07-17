@@ -1,0 +1,601 @@
+annotation_overview: Segmentation maks of cells in a 3D tissue in zebrafish embryos, curated by experts from the output of an automated method
+authors:
+  - author_first_name: Jonas 
+    author_last_name: Hartmann
+    email: jonas.m.hartmann@protonmail.com
+    orcid_id: https://orcid.org/0000-0002-5600-8285
+    organisation: 
+      - organisation_name: Cell Biology and Biophysics Unit, European Molecular Biology Laboratory (EMBL), Heidelberg, Germany
+    role: 
+      - data curation
+      - software development
+annotation_method: 3D single-cell segmentation was performed on deconvolved and preprocessed membrane-labeled confocal microscopy stacks, using an automated image analysis pipeline. All segmentations were double-checked by an expert.  Rare cases where more than approx. 10% of cells in a stack had been missed or exhibited under- or oversegmentation were discarded.
+file_metadata: 
+  - annotation_id : 20200220-ftp/experimentA/056F63395C/056F63395C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/056F63395C/056F63395C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/08B96BE794/08B96BE794_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/08B96BE794/08B96BE794_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/0B51F8B46C/0B51F8B46C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/0B51F8B46C/0B51F8B46C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/0E48AB134C/0E48AB134C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/0E48AB134C/0E48AB134C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/1C43D83E9A/1C43D83E9A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/1C43D83E9A/1C43D83E9A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/22DF2AE1A0/22DF2AE1A0_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/22DF2AE1A0/22DF2AE1A0_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/2902E38204/2902E38204_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/2902E38204/2902E38204_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/2B23352582/2B23352582_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/2B23352582/2B23352582_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/3612A6CEF5/3612A6CEF5_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/3612A6CEF5/3612A6CEF5_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/4DC24FC301/4DC24FC301_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/4DC24FC301/4DC24FC301_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/673A65D087/673A65D087_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/673A65D087/673A65D087_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/6F18162F4C/6F18162F4C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/6F18162F4C/6F18162F4C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/8713481504/8713481504_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/8713481504/8713481504_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/8C633380D2/8C633380D2_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/8C633380D2/8C633380D2_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/8C83D4387F/8C83D4387F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/8C83D4387F/8C83D4387F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/8CA33561B5/8CA33561B5_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/8CA33561B5/8CA33561B5_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/AB98466077/AB98466077_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/AB98466077/AB98466077_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/B95A4F6D95/B95A4F6D95_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/B95A4F6D95/B95A4F6D95_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/C95F528559/C95F528559_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/C95F528559/C95F528559_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/CB87D7CBC9/CB87D7CBC9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/CB87D7CBC9/CB87D7CBC9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/E013272A99/E013272A99_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/E013272A99/E013272A99_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/E6E56C3F42/E6E56C3F42_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/E6E56C3F42/E6E56C3F42_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/EC77708A51/EC77708A51_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/EC77708A51/EC77708A51_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentA/FC90367714/FC90367714_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentA/FC90367714/FC90367714_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentB/03887B26C1/03887B26C1_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/03887B26C1/03887B26C1_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/15999C80F3/15999C80F3_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/15999C80F3/15999C80F3_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/3BD50B1F34/3BD50B1F34_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/3BD50B1F34/3BD50B1F34_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/492B944A71/492B944A71_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/492B944A71/492B944A71_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/4A644B6C69/4A644B6C69_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/4A644B6C69/4A644B6C69_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/4BDFE7B8D2/4BDFE7B8D2_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/4BDFE7B8D2/4BDFE7B8D2_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/4C059E69BC/4C059E69BC_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/4C059E69BC/4C059E69BC_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/77135D126D/77135D126D_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/77135D126D/77135D126D_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/7ADFA42907/7ADFA42907_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/7ADFA42907/7ADFA42907_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/8179A86D76/8179A86D76_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/8179A86D76/8179A86D76_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/9CB73DC13A/9CB73DC13A_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/9CB73DC13A/9CB73DC13A_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/A921B80A44/A921B80A44_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/A921B80A44/A921B80A44_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/B154DF856B/B154DF856B_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/B154DF856B/B154DF856B_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/C22FC95129/C22FC95129_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/C22FC95129/C22FC95129_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/D2470961E8/D2470961E8_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/D2470961E8/D2470961E8_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/D34B941004/D34B941004_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/D34B941004/D34B941004_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/D486DD3904/D486DD3904_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/D486DD3904/D486DD3904_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/D9314261C0/D9314261C0_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/D9314261C0/D9314261C0_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/F8346191C7/F8346191C7_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/F8346191C7/F8346191C7_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentB/FDE484C778/FDE484C778_8bit_lynEGFP_linUnmix_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentB/FDE484C778/FDE484C778_8bit_lynEGFP_linUnmix.tif
+  - annotation_id : 20200220-ftp/experimentC/00E41C184C/00E41C184C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/00E41C184C/00E41C184C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/296696DB86/296696DB86_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/296696DB86/296696DB86_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/2BDB74A7D6/2BDB74A7D6_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/2BDB74A7D6/2BDB74A7D6_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/2FC33D7301/2FC33D7301_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/2FC33D7301/2FC33D7301_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/39E81EDC34/39E81EDC34_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/39E81EDC34/39E81EDC34_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/567C0C9CB6/567C0C9CB6_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/567C0C9CB6/567C0C9CB6_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/608BEE23AA/608BEE23AA_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/608BEE23AA/608BEE23AA_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/64484C06F9/64484C06F9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/64484C06F9/64484C06F9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/7427532FD9/7427532FD9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/7427532FD9/7427532FD9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/770CB12681/770CB12681_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/770CB12681/770CB12681_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/8D037347B9/8D037347B9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/8D037347B9/8D037347B9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/9B64B26626/9B64B26626_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/9B64B26626/9B64B26626_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/A07C79157A/A07C79157A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/A07C79157A/A07C79157A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/A96BA2AE1C/A96BA2AE1C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/A96BA2AE1C/A96BA2AE1C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/B2B1FB7EE0/B2B1FB7EE0_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/B2B1FB7EE0/B2B1FB7EE0_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/BCAAF27981/BCAAF27981_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/BCAAF27981/BCAAF27981_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/BCE9C7BBCB/BCE9C7BBCB_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/BCE9C7BBCB/BCE9C7BBCB_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/F465AE8B97/F465AE8B97_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/F465AE8B97/F465AE8B97_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentC/F80ACE04D5/F80ACE04D5_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentC/F80ACE04D5/F80ACE04D5_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/1A3F9F428A/1A3F9F428A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/1A3F9F428A/1A3F9F428A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/544D6C59FD/544D6C59FD_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/544D6C59FD/544D6C59FD_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/655E9D7D39/655E9D7D39_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/655E9D7D39/655E9D7D39_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/6565C3193C/6565C3193C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/6565C3193C/6565C3193C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/8494E67C25/8494E67C25_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/8494E67C25/8494E67C25_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/BACFB0475A/BACFB0475A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/BACFB0475A/BACFB0475A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/D6B1A93BDE/D6B1A93BDE_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/D6B1A93BDE/D6B1A93BDE_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/DBD0449625/DBD0449625_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/DBD0449625/DBD0449625_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/E63DB08265/E63DB08265_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/E63DB08265/E63DB08265_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/E99A87B085/E99A87B085_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/E99A87B085/E99A87B085_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentD/EE11691237/EE11691237_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentD/EE11691237/EE11691237_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/02ED8CA0B9/02ED8CA0B9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/02ED8CA0B9/02ED8CA0B9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/26A9D7093E/26A9D7093E_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/26A9D7093E/26A9D7093E_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/3E0EE13177/3E0EE13177_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/3E0EE13177/3E0EE13177_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/47B31836B0/47B31836B0_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/47B31836B0/47B31836B0_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/61E7CD2F27/61E7CD2F27_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/61E7CD2F27/61E7CD2F27_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/81E0137C14/81E0137C14_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/81E0137C14/81E0137C14_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/828AAFF38C/828AAFF38C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/828AAFF38C/828AAFF38C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/86AEB2E414/86AEB2E414_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/86AEB2E414/86AEB2E414_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/889D6DDB1F/889D6DDB1F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/889D6DDB1F/889D6DDB1F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/D050E92E38/D050E92E38_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/D050E92E38/D050E92E38_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/D4846901BC/D4846901BC_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/D4846901BC/D4846901BC_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/D4974C20CF/D4974C20CF_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/D4974C20CF/D4974C20CF_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/E75A7F5AE7/E75A7F5AE7_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/E75A7F5AE7/E75A7F5AE7_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentE/E794F7AE68/E794F7AE68_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentE/E794F7AE68/E794F7AE68_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/0C7E6EE381/0C7E6EE381_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/0C7E6EE381/0C7E6EE381_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/0F6C27F441/0F6C27F441_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/0F6C27F441/0F6C27F441_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/11E67B39A7/11E67B39A7_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/11E67B39A7/11E67B39A7_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/16A18E70D0/16A18E70D0_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/16A18E70D0/16A18E70D0_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/2B1E6C12B3/2B1E6C12B3_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/2B1E6C12B3/2B1E6C12B3_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/4882D586F3/4882D586F3_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/4882D586F3/4882D586F3_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/52A4FD415A/52A4FD415A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/52A4FD415A/52A4FD415A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/7E8CA9482F/7E8CA9482F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/7E8CA9482F/7E8CA9482F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/97E18B10B3/97E18B10B3_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/97E18B10B3/97E18B10B3_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/A243257E0D/A243257E0D_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/A243257E0D/A243257E0D_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/A9213445AE/A9213445AE_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/A9213445AE/A9213445AE_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/B6474DAA3E/B6474DAA3E_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/B6474DAA3E/B6474DAA3E_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/DAA0F8D3A9/DAA0F8D3A9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/DAA0F8D3A9/DAA0F8D3A9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/E0EB753C48/E0EB753C48_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/E0EB753C48/E0EB753C48_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/E17C99121A/E17C99121A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/E17C99121A/E17C99121A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/E4044535BE/E4044535BE_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/E4044535BE/E4044535BE_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/F41E584C7C/F41E584C7C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/F41E584C7C/F41E584C7C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/FCC5A372FC/FCC5A372FC_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/FCC5A372FC/FCC5A372FC_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentF/FFFB66830A/FFFB66830A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentF/FFFB66830A/FFFB66830A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/09034FB7F0/09034FB7F0_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/09034FB7F0/09034FB7F0_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/13BE29A615/13BE29A615_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/13BE29A615/13BE29A615_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/321DEF59FC/321DEF59FC_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/321DEF59FC/321DEF59FC_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/32FF7CB088/32FF7CB088_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/32FF7CB088/32FF7CB088_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/3CAACDE565/3CAACDE565_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/3CAACDE565/3CAACDE565_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/597E83AEEE/597E83AEEE_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/597E83AEEE/597E83AEEE_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/622ABBE65A/622ABBE65A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/622ABBE65A/622ABBE65A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/6E3DAA637E/6E3DAA637E_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/6E3DAA637E/6E3DAA637E_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/7A19015670/7A19015670_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/7A19015670/7A19015670_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/C0FBC841C5/C0FBC841C5_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/C0FBC841C5/C0FBC841C5_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/D7313FE224/D7313FE224_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/D7313FE224/D7313FE224_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/D738F5D435/D738F5D435_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/D738F5D435/D738F5D435_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentG/FC76253BAE/FC76253BAE_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentG/FC76253BAE/FC76253BAE_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/0AF10D7E72/0AF10D7E72_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/0AF10D7E72/0AF10D7E72_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/0BC19C020F/0BC19C020F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/0BC19C020F/0BC19C020F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/1648A8CC34/1648A8CC34_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/1648A8CC34/1648A8CC34_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/32DC08CA03/32DC08CA03_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/32DC08CA03/32DC08CA03_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/43665D3AE9/43665D3AE9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/43665D3AE9/43665D3AE9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/67FD8A06DA/67FD8A06DA_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/67FD8A06DA/67FD8A06DA_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/9169ADF9A0/9169ADF9A0_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/9169ADF9A0/9169ADF9A0_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/9B3C4C613D/9B3C4C613D_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/9B3C4C613D/9B3C4C613D_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/C11B3A3777/C11B3A3777_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/C11B3A3777/C11B3A3777_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentH/DE267BC41F/DE267BC41F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentH/DE267BC41F/DE267BC41F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/119F60A8CE/119F60A8CE_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/119F60A8CE/119F60A8CE_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/464E37847A/464E37847A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/464E37847A/464E37847A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/4CDB5D1964/4CDB5D1964_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/4CDB5D1964/4CDB5D1964_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/6525AAE2D9/6525AAE2D9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/6525AAE2D9/6525AAE2D9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/66A939E038/66A939E038_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/66A939E038/66A939E038_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/6EA948A72F/6EA948A72F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/6EA948A72F/6EA948A72F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/762D43C95A/762D43C95A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/762D43C95A/762D43C95A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/7B241168C9/7B241168C9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/7B241168C9/7B241168C9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/7FBF9F8ABD/7FBF9F8ABD_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/7FBF9F8ABD/7FBF9F8ABD_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/88B2F980DC/88B2F980DC_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/88B2F980DC/88B2F980DC_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/8B697371A1/8B697371A1_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/8B697371A1/8B697371A1_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/9AEE3FC822/9AEE3FC822_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/9AEE3FC822/9AEE3FC822_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/C477F10711/C477F10711_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/C477F10711/C477F10711_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentI/D995B41047/D995B41047_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentI/D995B41047/D995B41047_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/128F6F3122/128F6F3122_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/128F6F3122/128F6F3122_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/17F755A430/17F755A430_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/17F755A430/17F755A430_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/2140A358CC/2140A358CC_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/2140A358CC/2140A358CC_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/23BA70245C/23BA70245C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/23BA70245C/23BA70245C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/4CFD671A2E/4CFD671A2E_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/4CFD671A2E/4CFD671A2E_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/5485505C8F/5485505C8F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/5485505C8F/5485505C8F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/63BC284B28/63BC284B28_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/63BC284B28/63BC284B28_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/65B83F355D/65B83F355D_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/65B83F355D/65B83F355D_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/69DCD8A8EA/69DCD8A8EA_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/69DCD8A8EA/69DCD8A8EA_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/6B76772EDD/6B76772EDD_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/6B76772EDD/6B76772EDD_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/72966B3C13/72966B3C13_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/72966B3C13/72966B3C13_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/87AA6901DC/87AA6901DC_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/87AA6901DC/87AA6901DC_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/8E0B101116/8E0B101116_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/8E0B101116/8E0B101116_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/9134C9CCA6/9134C9CCA6_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/9134C9CCA6/9134C9CCA6_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/91C50915A3/91C50915A3_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/91C50915A3/91C50915A3_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/DA5B48D528/DA5B48D528_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/DA5B48D528/DA5B48D528_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/E536464063/E536464063_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/E536464063/E536464063_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/E5821032EA/E5821032EA_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/E5821032EA/E5821032EA_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/E641CD81AC/E641CD81AC_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/E641CD81AC/E641CD81AC_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/F6B5B972FB/F6B5B972FB_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/F6B5B972FB/F6B5B972FB_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentJ/FEE47C8063/FEE47C8063_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentJ/FEE47C8063/FEE47C8063_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/17A1DC6394/17A1DC6394_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/17A1DC6394/17A1DC6394_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/1D01C63CEE/1D01C63CEE_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/1D01C63CEE/1D01C63CEE_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/2EF96EDA6E/2EF96EDA6E_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/2EF96EDA6E/2EF96EDA6E_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/3CBF362B2A/3CBF362B2A_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/3CBF362B2A/3CBF362B2A_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/42D75830F4/42D75830F4_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/42D75830F4/42D75830F4_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/4404F99D93/4404F99D93_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/4404F99D93/4404F99D93_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/465ED01E64/465ED01E64_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/465ED01E64/465ED01E64_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/4E2807EBE0/4E2807EBE0_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/4E2807EBE0/4E2807EBE0_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/50A3A129F9/50A3A129F9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/50A3A129F9/50A3A129F9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/5289DAC61C/5289DAC61C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/5289DAC61C/5289DAC61C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/5AFF045EBD/5AFF045EBD_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/5AFF045EBD/5AFF045EBD_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/5F6D469A95/5F6D469A95_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/5F6D469A95/5F6D469A95_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/6ACC2844A6/6ACC2844A6_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/6ACC2844A6/6ACC2844A6_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/6D2084BCB4/6D2084BCB4_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/6D2084BCB4/6D2084BCB4_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/7386DF8F0F/7386DF8F0F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/7386DF8F0F/7386DF8F0F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/74FF349E2F/74FF349E2F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/74FF349E2F/74FF349E2F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/793CBAF665/793CBAF665_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/793CBAF665/793CBAF665_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/80759AC74C/80759AC74C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/80759AC74C/80759AC74C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/8C802060C6/8C802060C6_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/8C802060C6/8C802060C6_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/96F0FB9612/96F0FB9612_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/96F0FB9612/96F0FB9612_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/991A69891C/991A69891C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/991A69891C/991A69891C_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/9ABCF1CE23/9ABCF1CE23_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/9ABCF1CE23/9ABCF1CE23_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/C8D718E52D/C8D718E52D_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/C8D718E52D/C8D718E52D_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/CFDAF9893E/CFDAF9893E_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/CFDAF9893E/CFDAF9893E_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/D38A387250/D38A387250_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/D38A387250/D38A387250_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/D8EF7BBD36/D8EF7BBD36_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/D8EF7BBD36/D8EF7BBD36_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/E2F8A41369/E2F8A41369_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/E2F8A41369/E2F8A41369_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/EE5CF455D9/EE5CF455D9_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/EE5CF455D9/EE5CF455D9_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/EF83427BD6/EF83427BD6_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/EF83427BD6/EF83427BD6_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/F3070ACF4F/F3070ACF4F_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/F3070ACF4F/F3070ACF4F_8bit_lynEGFP.tif
+  - annotation_id : 20200220-ftp/experimentK/F36714457C/F36714457C_8bit_lynEGFP_seg.tif
+    annotation_type : segmentation_mask
+    source_image_id : 20200220-ftp/experimentK/F36714457C/F36714457C_8bit_lynEGFP.tif

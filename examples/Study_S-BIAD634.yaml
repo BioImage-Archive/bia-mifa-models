@@ -1,0 +1,121 @@
+title: An annotated fluorescence image dataset for training nuclear segmentation methods
+description: This dataset contains annotated fluorescent nuclear images of normal or cancer cells from different tissue origins and sample preparation types, and can be used to train machine-learning based nuclear image segmentation algorithms. It consists of 79 expert-annotated fluorescence images of immuno and DAPI stained samples containing 7813 nuclei in total. In addition, the dataset is heterogenous in aspects such as type of preparation, imaging modality, magnification, signal-to-noise ratio and other technical aspects. Relevant parameters, e.g. diagnosis, magnification, signal-to-noise ratio and modality with respect to the type of preparation are provided in the file list. The images are derived from one Schwann cell stroma-rich tissue (from a ganglioneuroblastoma) cryosection (10 images/2773 nuclei), seven neuroblastoma (NB) patients (19 images/931 nuclei), one Wilms patient (1 image/102 nuclei), two NB cell lines (CLB-Ma, STA-NB10) (8 images/1785 nuclei) and a human keratinocyte cell line (HaCaT) (41 images/2222 nuclei).
+keywords:
+  - AI 
+  - segmentation
+  - nucleus
+  - fluorescence
+authors:
+  - author_first_name: Sabine 
+    author_last_name: Taschner-Mandl
+    email: sabine.taschner@ccri.at
+    orcid_id: 0000-0002-1439-5301
+    organisation:
+      - organisation_name: Children's Cancer Research Institute
+        address: Zimmermannplatz 10, 1090 Vienna, Austria
+    role: 
+      - conceptualization
+      - data acquisition
+  - author_first_name: Inge M. 
+    author_last_name: Ambros
+    email: inge.ambros@ccri.at
+    organisation: 
+      - organisation_name: Children's Cancer Research Institute
+        address: Zimmermannplatz 10, 1090 Vienna, Austria
+    role: 
+      - data acquisition
+      - data annotation
+  - author_first_name: Peter F. 
+    author_last_name: Ambros
+    email: peter.ambros@ccri.at
+    orcid_id: 0000-0002-5507-7211
+    organisation: 
+      - organisation_name: Children's Cancer Research Institute
+        address: Zimmermannplatz 10, 1090 Vienna, Austria
+    role: 
+      - conceptualization
+      - data acquisition
+  - author_first_name: Klaus 
+    author_last_name: Beiske
+    email: klaus.beiske@medisin.uio.no
+    organisation: 
+      - organisation_name: Oslo University Hospital
+        address: Ullernchausseen 70, 0379 Oslo
+    role: data annotation
+  - author_first_name: Allan  
+    author_last_name: Hanbury
+    email: hanbury@ifs.tuwien.ac.at
+    orcid_id: 0000-0002-7149-5843
+    organisation: 
+      - organisation_name: TU Wien
+        address: Favoritenstrasse 9-11/194, 1040 Wien
+    role: conceptualization
+  - author_first_name: Wolfgang
+    author_last_name: Doerr
+    email: wolfgang.doerr@meduniwien.ac.at
+    orcid_id: 0000-0003-1477-6849
+    organisation: 
+      - organisation_name: TRAB-Applied and Translational Radiobiology, Department of Radiation Oncology, Medical University of Vienna
+        address: Waehringer Guertel 18-20, 1090 Vienna, Austria
+    role: resources
+  - author_first_name: Tamara
+    author_last_name: Weiss
+    email: tamara.weiss@meduniwien.ac.at
+    orcid_id: 0000-0001-7046-3412
+    organisation:
+      - organisation_name: Children's Cancer Research Institute
+        address: Zimmermannplatz 10, 1090 Vienna, Austria
+    role: 
+      - data acquisition
+      - data annotation
+  - author_first_name: Maria 
+    author_last_name: Berneder
+    email: maria.berneder@ccri.at
+    organisation: 
+      - organisation_name: Tumor biology group, Children's Cancer Research Institute
+        address: Zimmermannplatz 10, 1090 Vienna, Austria
+    role: sample preparation
+  - author_first_name: Magdalena
+    author_last_name: Ambros
+    email: magdalena.ambros@ccri.at
+    organisation: 
+      - organisation_name: Tumor biology group, Children's Cancer Research Institute
+        address: Zimmermannplatz 10, 1090 Vienna, Austria
+    role: data acquisition 
+  - author_first_name: Eva
+    author_last_name: Bozsaky
+    email: eva.bozsaky@ccri.at
+    organisation:
+      - organisation_name: Tumor biology group, Children's Cancer Research Institute
+        address: Labdia Labordiagnostik GmbH
+    role: 
+      - data acquisition
+      - data annotation
+  - author_first_name: Florian 
+    author_last_name: Kromp
+    email: florian.kromp@ccri.at
+    orcid_id: 0000-0003-4557-5652
+    organisation:
+      - organisation_name: Tumor biology group, Children's Cancer Research Institute
+        address: Zimmermannplatz 10, 1090 Vienna, Austria
+    role: 
+      - conceptualization
+      - data acquisition
+      - data annotation
+      - data analysis
+  - author_first_name: Teresa
+    author_last_name: Zulueta-Coarasa
+    email: teresaz@ebi.ac.uk
+    orcid_id: 0000-0002-0456-6912
+    organisation: 
+      - organisation_name: European Bioinformatics Institute (EMBL-EBI)
+    role: data curation
+license: CC0
+ai_models_trained: https://github.com/perlfloccri/NuclearSegmentationPipeline
+funding_statement: This work was facilitated by an EraSME grant (project TisQuant) under the grant no. 844198 and by a COIN grant (project VISIOMICS) under the grant no. 861750, both grants kindly provided by the Austrian Research Promotion Agency (FFG), and the St. Anna Kinderkrebsforschung. Partial funding was further provided by BMK, BMDW, and the Province of Upper Austria in the frame of the COMET Programme managed by FFG.
+publications:
+  - publication_title: An annotated fluorescence image dataset for training nuclear segmentation methods
+    publication_authors: Florian Kromp, Eva Bozsaky, Fikret Rifatbegovic, Lukas Fischer, Magdalena Ambros, Maria Berneder, Tamara Weiss, Daria Lazic, Wolfgang Dörr, Allan Hanbury, Klaus Beiske, Peter F. Ambros, Inge M. Ambros & Sabine Taschner-Mandl
+    publication_doi: https://doi.org/10.1038/s41597-020-00608-w
+link_url: https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST265
+link_description: Original submission (not curated) 

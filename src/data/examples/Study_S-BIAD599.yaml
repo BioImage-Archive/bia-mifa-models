@@ -1,0 +1,66 @@
+title: An image-based data-driven analysis of cellular architecture in a developing tissue
+description: A data-driven analysis of cell morphology and intracellular organization in the developing zebrafish posterior lateral line primordium, a model tissue for the study of self-organized morphogenesis. 3D image stacks were acquired using AiryScan FAST-mode confocal fluorescence microscopy. Automated single-cell segmentation and point cloud-based morphometry were developed to extract numerical features representing cell morphology and intracellular protein distributions. Machine learning was used with the extracted numerical features to perform data integration across experiments and context-guided data visualization. The resulting data was analyzed to discover biologically meaningful patterns at the cell and tissue scale.
+keywords:
+  - zebrafish
+  - machine learning
+  - segmentation
+  - organogenesis
+authors:
+  - author_first_name: Jonas 
+    author_last_name: Hartmann
+    email: jonas.m.hartmann@protonmail.com
+    orcid_id: https://orcid.org/0000-0002-5600-8285
+    organisation: 
+      - organisation_name: Cell Biology and Biophysics Unit, European Molecular Biology Laboratory (EMBL), Heidelberg, Germany
+    role: 
+      - conceptualization 
+      - data curation 
+      - software 
+      - formal analysis 
+      - validation
+      - investigation
+      - visualization
+      - methodology 
+      - writing - original draft 
+      - writing - review and editing
+  - author_first_name: Mie 
+    author_last_name: Wong
+    organisation: 
+      - organisation_name: Institute of Molecular Life Sciences, University of Zurich (UZH), Zurich, Switzerland
+    role: 
+      - investigation
+      - writing - review and editing
+  - author_first_name: Elisa 
+    author_last_name: Gallo
+    orcid_id: https://orcid.org/0000-0003-2203-6787
+    organisation: 
+      - organisation_name: Cell Biology and Biophysics Unit, European Molecular Biology Laboratory (EMBL), Heidelberg, Germany 
+      - organisation_name: Institute of Molecular Life Sciences, University of Zurich (UZH)  Zurich, Switzerland 
+      - organisation_name: Collaboration for joint PhD degree between EMBL and Heidelberg University, Faculty of Biosciences, Heidelberg, Germany
+    role: 
+      - investigation 
+      - writing - review and editing
+  - author_first_name: Darren 
+    author_last_name: Gilmour
+    email: darren.gilmour@imls.uzh.ch
+    orcid_id: https://orcid.org/0000-0001-7613-090X
+    organisation: 
+      - organisation_name: Institute of Molecular Life Sciences, University of Zurich (UZH), Zurich, Switzerland
+    role: 
+      - conceptualization 
+      - resources 
+      - supervision 
+      - funding acquisition 
+      - project administration 
+      - writing - review and editing
+license: CC_BY
+ai_models_trained: https://github.com/WhoIsJack/data-driven-analysis-lateralline
+funding_statement: "Jonas Hartmann: European Molecular Biology Laboratory (International PhD Programme). Elisa Gallo: European Molecular Biology Laboratory (International PhD Programme). Mie Wong: European Molecular Biology Organization (ALTF 205-2015) and H2020 Marie Skłodowska-Curie Actions (COFUNDII - EMBL Interdisciplinary Post-doc (EIPOD) Program). Darren Gilmour: European Molecular Biology Laboratory, Schweizerischer Nationalfonds zur Förderung der Wissenschaftlichen Forschung (31003A_176235) and University of Zurich. The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication."
+acknowledgements: We thank Sabine Görgens and Andreas Kunze for their support with fish and lab maintenance, respectively. We thank the EMBL Advanced Light Microscopy Facility (ALMF) and the UZH Center for Microscopy and Image Analysis (ZMB) for maintenance of and assistance with microscopes. We thank Alejandra Guzman Herrera for generating the Act2b:mKate2-Rab11a line. We thank Francesca Peri and Stefano De Renzis for kindly providing temporary lab space. We thank Christian Tischer and Marvin Albert for helpful discussion on image analysis and numerical computation. We thank Stefano De Renzis, Daniel Krueger, Marvin Albert and Andrew Kennard for critical reading of the manuscript. JH and EG were supported by the EMBL International PhD Programme (EIPP), M.W. was supported by an EMBO Long-Term Fellowship and the EMBL Interdisciplinary Postdoc (EIPOD) Program under Marie Curie COFUNDII Actions. The Gilmour lab was supported by the European Molecular Biology Laboratory (EMBL), the University of Zurich (UZH) and Swiss National Science Funds Grant 31003A_176235.
+publications:
+  - publication_title: An image-based data-driven analysis of cellular architecture in a developing tissue
+    publication_authors: Jonas Hartmann, Mie Wong, Elisa Gallo, Darren Gilmour
+    publication_doi: https://doi.org/10.7554/eLife.55913
+    pubmed_id: PMC7274788
+link_url: https://idr.openmicroscopy.org/webclient/?show=project-1105
+link_description: Image Data Resource

@@ -1,0 +1,4 @@
+version: 1.1
+timestamp:  2023-03-07T14:37:00-00:00
+changes: The new version of the dataset includes more study-level metadata. The files have been unzipped and they are accessible individually. File-level metadata has been included for both images and annotations.
+previous_version: https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST265

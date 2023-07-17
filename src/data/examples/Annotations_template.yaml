@@ -1,0 +1,49 @@
+annotation_overview: 
+authors:
+  - author_first_name: 
+    author_last_name:
+    email: 
+    orcid_id: 
+    organisation: 
+      - organisation_name: 
+        address: 
+        ror_id: 
+      - organisation_name: 
+        address:
+        ror_id: 
+    role: 
+      - 
+      - 
+  - author_first_name: 
+    author_last_name:
+    email: 
+    orcid_id: 
+    organisation: 
+      - organisation_name: 
+        address: 
+        ror_id: 
+      - organisation_name: 
+        address:
+        ror_id: 
+    role: 
+      - 
+      - 
+annotation_method: 
+annotation_confidence_level: 
+annotation_criteria: 
+annotation_coverage: 
+file_metadata:
+  - annotation_id: 
+    annotation_type: 
+      - 
+      - 
+    source_image_id: 
+    transformations:
+    spatial_information: 
+  - annotation_id: 
+    annotation_type: 
+      - 
+      - 
+    source_image_id: 
+    transformations:
+    spatial_information: 
