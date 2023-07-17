@@ -147,6 +147,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#mixin-usage">
+    Mixin Usage
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
@@ -199,6 +204,8 @@
 <p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/GrantReferenceCollection">bia_faim_models:GrantReferenceCollection</a></p>
 <div class="mermaid"> classDiagram
     class GrantReferenceCollection
+      GrantReferenceCollection &lt;|-- Study
+
       GrantReferenceCollection : grants
 
           GrantReferenceCollection --|&gt; GrantReference : grants
@@ -222,6 +229,21 @@
 <td>0..* <br/> <a href="../GrantReference/">GrantReference</a></td>
 <td>a collection of grant ids and funder names associated with the study</td>
 <td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mixin-usage">Mixin Usage</h2>
+<table>
+<thead>
+<tr>
+<th>mixed into</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td>General information about the study</td>
 </tr>
 </tbody>
 </table>
@@ -256,6 +278,7 @@
 <pre><code class="language-yaml">name: GrantReferenceCollection
 description: A holder for GrantReference objects
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+mixin: true
 attributes:
   grants:
     name: grants
@@ -265,6 +288,7 @@ attributes:
     multivalued: true
     range: GrantReference
     inlined: true
+    inlined_as_list: true
 
 </code></pre>
 </details>
@@ -273,6 +297,7 @@ attributes:
 <pre><code class="language-yaml">name: GrantReferenceCollection
 description: A holder for GrantReference objects
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+mixin: true
 attributes:
   grants:
     name: grants
@@ -286,6 +311,7 @@ attributes:
     - GrantReferenceCollection
     range: GrantReference
     inlined: true
+    inlined_as_list: true
 
 </code></pre>
 </details>

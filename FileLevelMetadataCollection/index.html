@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://BioImage-Archive.github.io/bia-faim-models/OrganisationURL/" rel="canonical"/>
+<link href="https://BioImage-Archive.github.io/bia-faim-models/FileLevelMetadataCollection/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: OrganisationURL - bia-faim-models</title>
+<title>Class: FileLevelMetadataCollection - bia-faim-models</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-organisationurl">
+<a class="md-skip" href="#class-filelevelmetadatacollection">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: OrganisationURL
+              Class: FileLevelMetadataCollection
             
           </span>
 </div>
@@ -147,16 +147,16 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#mixin-usage">
+    Mixin Usage
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
 <nav aria-label="Identifier and Mapping Information" class="md-nav">
 <ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#valid-id-prefixes">
-    Valid ID Prefixes
-  </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#schema-source">
     Schema Source
@@ -196,15 +196,19 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/OrganisationURL.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/FileLevelMetadataCollection.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-organisationurl">Class: OrganisationURL</h1>
-<p><em>Research Organization Registry ID</em></p>
-<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationURL">bia_faim_models:OrganisationURL</a></p>
+<h1 id="class-filelevelmetadatacollection">Class: FileLevelMetadataCollection</h1>
+<p><em>A holder for FileLevelMetadata objects</em></p>
+<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadataCollection">bia_faim_models:FileLevelMetadataCollection</a></p>
 <div class="mermaid"> classDiagram
-    class OrganisationURL
-      OrganisationURL : ror_id
+    class FileLevelMetadataCollection
+      FileLevelMetadataCollection &lt;|-- Annotations
+
+      FileLevelMetadataCollection : file_metadata
+
+          FileLevelMetadataCollection --|&gt; FileLevelMetadata : file_metadata
 
 
 </div>
@@ -221,19 +225,29 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ror_id/">ror_id</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
-<td>Identifier for the Research Organization Registry</td>
+<td><a href="../file_metadata/">file_metadata</a></td>
+<td>0..* <br/> <a href="../FileLevelMetadata/">FileLevelMetadata</a></td>
+<td>a collection of the file level metadata for each annotation</td>
 <td>direct</td>
 </tr>
 </tbody>
 </table>
+<h2 id="mixin-usage">Mixin Usage</h2>
+<table>
+<thead>
+<tr>
+<th>mixed into</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Annotations/">Annotations</a></td>
+<td>A set of annotations for an AI-ready dataset</td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="valid-id-prefixes">Valid ID Prefixes</h3>
-<p>Instances of this class <em>should</em> have identifiers with one of the following prefixes:</p>
-<ul>
-<li>ROR</li>
-</ul>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/BioImage-Archive/bia-faim-models</li>
@@ -249,11 +263,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>bia_faim_models:OrganisationURL</td>
+<td>bia_faim_models:FileLevelMetadataCollection</td>
 </tr>
 <tr>
 <td>native</td>
-<td>bia_faim_models:OrganisationURL</td>
+<td>bia_faim_models:FileLevelMetadataCollection</td>
 </tr>
 </tbody>
 </table>
@@ -261,40 +275,43 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: OrganisationURL
-id_prefixes:
-- ROR
-description: Research Organization Registry ID
+<pre><code class="language-yaml">name: FileLevelMetadataCollection
+description: A holder for FileLevelMetadata objects
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-slots:
-- ror_id
+mixin: true
+attributes:
+  file_metadata:
+    name: file_metadata
+    description: a collection of the file level metadata for each annotation
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    rank: 1000
+    multivalued: true
+    range: FileLevelMetadata
+    inlined: true
+    inlined_as_list: true
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: OrganisationURL
-id_prefixes:
-- ROR
-description: Research Organization Registry ID
+<pre><code class="language-yaml">name: FileLevelMetadataCollection
+description: A holder for FileLevelMetadata objects
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+mixin: true
 attributes:
-  ror_id:
-    name: ror_id
-    description: Identifier for the Research Organization Registry
-    examples:
-    - value: '[''ROR:02catss52'', ''ROR:03dbr7087'']'
+  file_metadata:
+    name: file_metadata
+    description: a collection of the file level metadata for each annotation
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
-    slot_uri: WIKIDATA_PROPERTY:P6782
     multivalued: true
-    identifier: true
-    alias: ror_id
-    owner: OrganisationURL
+    alias: file_metadata
+    owner: FileLevelMetadataCollection
     domain_of:
-    - OrganisationURL
-    range: string
-    required: true
+    - FileLevelMetadataCollection
+    range: FileLevelMetadata
+    inlined: true
+    inlined_as_list: true
 
 </code></pre>
 </details>

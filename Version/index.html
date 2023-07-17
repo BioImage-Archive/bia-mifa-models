@@ -235,13 +235,13 @@
 </tr>
 <tr>
 <td><a href="../changes/">changes</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Textual description of changes compared to previous version</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../previous_version/">previous_version</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Pointer to previous version</td>
 <td>direct</td>
 </tr>
@@ -297,6 +297,7 @@ attributes:
     description: Unique version number
     examples:
     - value: '1.1'
+    - value: '3.0'
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: pav:version
@@ -311,6 +312,7 @@ attributes:
     description: Date and time when the version was created
     examples:
     - value: '2023-12-10 12:20:00-05:00'
+    - value: '2021-07-03 13:26:00+00:00'
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: pav:authoredOn
@@ -326,6 +328,8 @@ attributes:
     examples:
     - value: The segmentation mask for image 10 (segmentation_10.tif) has been updated
         with the annotation of two nuclei that were missing in the previous version
+    - value: New annotations for images 12047635 and 12063916 have been included in
+        the dataset with annotation ids AN12047635 and AN12063916 respectively
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: changes
@@ -333,12 +337,12 @@ attributes:
     domain_of:
     - Version
     range: string
-    required: true
   previous_version:
     name: previous_version
     description: Pointer to previous version
     examples:
     - value: example:version1.0
+    - value: example:version2.9
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: pav:previousVersion
@@ -347,7 +351,6 @@ attributes:
     domain_of:
     - Version
     range: uriorcurie
-    required: true
 
 </code></pre>
 </details>

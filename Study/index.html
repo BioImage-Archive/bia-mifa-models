@@ -207,6 +207,7 @@
       PublicationsCollection &lt;|-- Study
       AuthorCollection &lt;|-- Study
       Links &lt;|-- Study
+      GrantReferenceCollection &lt;|-- Study
 
       Study : acknowledgements
 
@@ -218,7 +219,11 @@
 
       Study : description
 
-      Study : funding
+      Study : funding_statement
+
+      Study : grants
+
+          Study --|&gt; GrantReference : grants
 
       Study : keywords
 
@@ -240,7 +245,7 @@
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><strong>Study</strong> [ <a href="../PublicationsCollection/">PublicationsCollection</a> <a href="../AuthorCollection/">AuthorCollection</a> <a href="../Links/">Links</a>]</li>
+<li><strong>Study</strong> [ <a href="../PublicationsCollection/">PublicationsCollection</a> <a href="../AuthorCollection/">AuthorCollection</a> <a href="../Links/">Links</a> <a href="../GrantReferenceCollection/">GrantReferenceCollection</a>]</li>
 </ul>
 <h2 id="slots">Slots</h2>
 <table>
@@ -279,7 +284,7 @@
 </tr>
 <tr>
 <td><a href="../ai_models_trained/">ai_models_trained</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Link to the models that have been trained with this dataset (if any)</td>
 <td>direct</td>
 </tr>
@@ -290,9 +295,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../funding/">funding</a></td>
+<td><a href="../funding_statement/">funding_statement</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td>A description of how the data generation was funded</td>
+<td>Description of how the study was funded</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -318,6 +323,12 @@
 <td>0..* <br/> <a href="../String/">String</a></td>
 <td>The description of the linked content</td>
 <td><a href="../Links/">Links</a></td>
+</tr>
+<tr>
+<td><a href="../grants/">grants</a></td>
+<td>0..* <br/> <a href="../GrantReference/">GrantReference</a></td>
+<td>a collection of grant ids and funder names associated with the study</td>
+<td><a href="../GrantReferenceCollection/">GrantReferenceCollection</a></td>
 </tr>
 </tbody>
 </table>
@@ -356,6 +367,7 @@ mixins:
 - PublicationsCollection
 - AuthorCollection
 - Links
+- GrantReferenceCollection
 slots:
 - title
 - description
@@ -363,7 +375,7 @@ slots:
 - license
 - ai_models_trained
 - acknowledgements
-- funding
+- funding_statement
 
 </code></pre>
 </details>
@@ -376,6 +388,7 @@ mixins:
 - PublicationsCollection
 - AuthorCollection
 - Links
+- GrantReferenceCollection
 attributes:
   title:
     name: title
@@ -385,6 +398,8 @@ attributes:
     examples:
     - value: An annotated fluorescence image dataset for training nuclear segmentation
         methods
+    - value: Embryonic mice ultrasound volumes with body and brain volume segmentation
+        masks
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:title
@@ -404,6 +419,10 @@ attributes:
         from a normal human skin cell line, and from different tumour samples from
         cancer patients.  This dataset can be used to train nuclear image segmentation
         algorithms.
+    - value: The number of cells in an embryo at early stages of development can be
+        used to understand its viability, however counting cells on DIC images is
+        a challenging task.  This dataset contains annotated DIC images of mouse embryos
+        to train machine learning models.
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:description
@@ -418,6 +437,8 @@ attributes:
     description: Keywords or tags used to describe the dataset
     examples:
     - value: '[''segmentation'', ''nuclei'', ''cancer'']'
+    - value: '[''image segmentation'', ''high-frequency ultrasound'', ''mouse embryo'',
+        ''volumetric deep learning'']'
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:keywords
@@ -433,6 +454,7 @@ attributes:
     description: The license under which the data are available
     examples:
     - value: CC0
+    - value: CC_BY
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:license
@@ -447,9 +469,11 @@ attributes:
     description: Link to the models that have been trained with this dataset (if any).
       This could be links to GitHub or repositories like the BioImage Zoo.
     examples:
-    - value: https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097
+    - value: https://github.com/BIIFSweden/MariaUlvmar2020-1
+    - value: '[''https://github.com/perlfloccri/NuclearSegmentationPipeline'', ''https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097'']'
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
+    multivalued: true
     alias: ai_models_trained
     owner: Study
     domain_of:
@@ -459,7 +483,11 @@ attributes:
     name: acknowledgements
     description: Any people or groups that should be acknowledged as part of the dataset
     examples:
-    - value: We thank the Institute microscopy facility for support with image acquisition
+    - value: We thank the Institute microscopy facility for support with image acquisition.  Flybase
+        provided important information for this study.
+    - value: 'We are grateful to Y. Papadopoulos for providing reagents and access
+        to her confocal microscope.  We thank J. Dupont and E. Mustermann for comments
+        on the manuscript, and G. Hong for useful discussions. '
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: acknowledgements
@@ -467,32 +495,28 @@ attributes:
     domain_of:
     - Study
     range: string
-  funding:
-    name: funding
-    description: A description of how the data generation was funded. It can be a
-      funding statement (free text) like the ones that appear in a publication,  a
-      class GrantReferenceCollection which includes the grants IDs and funder names
-      or both.
+  funding_statement:
+    name: funding_statement
+    description: Description of how the study was funded
     examples:
-    - value: '[{''funding_statement'': ''T.G. was supported by an EMBO Long-Term Fellowship
-        (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation
-        programme  under the Marie Sklodowska-Curie grant agreement No 12345. This
-        work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\\123456)
-        to J.C.''}]'
-    - value: '[{''grant_id'': ''ALTF 123'', ''funder'': ''EMBO Long-Term Fellowship''},
-        {''grant_id'': ''1234'', ''funder'': ''Marie Sklodowska-Curie Indiviadual
-        Fellowship''}]'
+    - value: T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678),
+        and the European Union Horizon 2020 research and innovation programme  under
+        the Marie Sklodowska-Curie grant agreement No 12345. This work was supported
+        by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.
+    - value: This work was facilitated by an EraSME grant (project TisQuant) under
+        the grant no. 844198 and by a COIN grant (project VISIOMICS)  under the grant
+        no. 861750, both grants kindly provided by the Austrian Research Promotion
+        Agency (FFG), and the St. Anna Kinderkrebsforschung.  Partial funding was
+        further provided by BMK, BMDW, and the Province of Upper Austria in the frame
+        of the COMET Programme managed by FFG.
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
-    alias: funding
+    alias: funding_statement
     owner: Study
     domain_of:
     - Study
     range: string
     required: true
-    any_of:
-    - range: FundingStatement
-    - range: GrantReferenceCollection
   publications:
     name: publications
     description: a collection of publications associated with a study
@@ -516,7 +540,7 @@ attributes:
     domain_of:
     - AuthorCollection
     range: Author
-    inlined: true
+    inlined_as_list: true
   link_url:
     name: link_url
     description: URL of relevant link
@@ -545,6 +569,18 @@ attributes:
     domain_of:
     - Links
     range: string
+  grants:
+    name: grants
+    description: a collection of grant ids and funder names associated with the study
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    rank: 1000
+    multivalued: true
+    alias: grants
+    owner: Study
+    domain_of:
+    - GrantReferenceCollection
+    range: GrantReference
+    inlined_as_list: true
 
 </code></pre>
 </details>

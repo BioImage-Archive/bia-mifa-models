@@ -339,23 +339,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../OrganisationURL/">OrganisationURL</a></td>
-<td>Research Organization Registry ID</td>
+<td><a href="../OrganisationInfo/">OrganisationInfo</a></td>
+<td>Information about the organisation the author is affiliated with</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../String/">String</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -366,7 +358,10 @@
 </thead>
 <tbody>
 <tr>
-<td>['ROR:02catss52', 'ROR:03dbr7087']</td>
+<td>ROR:02catss52</td>
+</tr>
+<tr>
+<td>ROR:03dbr7087</td>
 </tr>
 </tbody>
 </table>
@@ -381,17 +376,15 @@
 <pre><code class="language-yaml">name: ror_id
 description: Identifier for the Research Organization Registry
 examples:
-- value: '[''ROR:02catss52'', ''ROR:03dbr7087'']'
+- value: ROR:02catss52
+- value: ROR:03dbr7087
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
 slot_uri: WIKIDATA_PROPERTY:P6782
-multivalued: true
-identifier: true
 alias: ror_id
 domain_of:
-- OrganisationURL
-range: string
-required: true
+- OrganisationInfo
+range: uriorcurie
 
 </code></pre>
 

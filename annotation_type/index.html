@@ -339,8 +339,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Annotations/">Annotations</a></td>
-<td>A set of annotations for an AI-ready dataset</td>
+<td><a href="../FileLevelMetadata/">FileLevelMetadata</a></td>
+<td>metadata atributes that must be detailed at the file level</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -349,6 +349,9 @@
 <ul>
 <li>
 <p>Range: <a href="../AnnotationType/">AnnotationType</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
 </li>
 <li>
 <p>Required: True</p>
@@ -363,7 +366,10 @@
 </thead>
 <tbody>
 <tr>
-<td>Segmentations mask</td>
+<td>['segmentation_mask', 'class_labels']</td>
+</tr>
+<tr>
+<td>counts</td>
 </tr>
 </tbody>
 </table>
@@ -378,12 +384,14 @@
 <pre><code class="language-yaml">name: annotation_type
 description: Annotation type, for example class labels, segmentation masks, counts...
 examples:
-- value: Segmentations mask
+- value: '[''segmentation_mask'', ''class_labels'']'
+- value: counts
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
+multivalued: true
 alias: annotation_type
 domain_of:
-- Annotations
+- FileLevelMetadata
 range: AnnotationType
 required: true
 

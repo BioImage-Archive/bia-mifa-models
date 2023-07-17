@@ -405,8 +405,12 @@
 <td>A holder for Author objects</td>
 </tr>
 <tr>
-<td><a href="FundingStatement/">FundingStatement</a></td>
-<td>Description of how the study was funded</td>
+<td><a href="FileLevelMetadata/">FileLevelMetadata</a></td>
+<td>metadata atributes that must be detailed at the file level</td>
+</tr>
+<tr>
+<td><a href="FileLevelMetadataCollection/">FileLevelMetadataCollection</a></td>
+<td>A holder for FileLevelMetadata objects</td>
 </tr>
 <tr>
 <td><a href="GrantReference/">GrantReference</a></td>
@@ -427,10 +431,6 @@
 <tr>
 <td><a href="OrganisationInfoCollection/">OrganisationInfoCollection</a></td>
 <td>A holder for OrganisationInfo objects</td>
-</tr>
-<tr>
-<td><a href="OrganisationURL/">OrganisationURL</a></td>
-<td>Research Organization Registry ID</td>
 </tr>
 <tr>
 <td><a href="Publications/">Publications</a></td>
@@ -468,10 +468,6 @@
 <td>Organisation address</td>
 </tr>
 <tr>
-<td><a href="affiliation/">affiliation</a></td>
-<td>An organization that the author person is affiliated with</td>
-</tr>
-<tr>
 <td><a href="ai_models_trained/">ai_models_trained</a></td>
 <td>Link to the models that have been trained with this dataset (if any)</td>
 </tr>
@@ -488,8 +484,12 @@
 <td>Rules used to generate annotations</td>
 </tr>
 <tr>
+<td><a href="annotation_id/">annotation_id</a></td>
+<td>The identifier for the annotation</td>
+</tr>
+<tr>
 <td><a href="annotation_method/">annotation_method</a></td>
-<td>Description of how the annotations where created</td>
+<td>Description of how the annotations were created</td>
 </tr>
 <tr>
 <td><a href="annotation_overview/">annotation_overview</a></td>
@@ -524,12 +524,12 @@
 <td>Email address of a person</td>
 </tr>
 <tr>
-<td><a href="funder/">funder</a></td>
-<td>The funding body provididing support</td>
+<td><a href="file_metadata/">file_metadata</a></td>
+<td>a collection of the file level metadata for each annotation</td>
 </tr>
 <tr>
-<td><a href="funding/">funding</a></td>
-<td>A description of how the data generation was funded</td>
+<td><a href="funder/">funder</a></td>
+<td>The funding body provididing support</td>
 </tr>
 <tr>
 <td><a href="funding_statement/">funding_statement</a></td>
@@ -608,8 +608,8 @@
 <td>Identifier for the Research Organization Registry</td>
 </tr>
 <tr>
-<td><a href="source_image/">source_image</a></td>
-<td>Association between annotations and the source images from which they origina...</td>
+<td><a href="source_image_id/">source_image_id</a></td>
+<td>identifier of the source image from which the annotation originated</td>
 </tr>
 <tr>
 <td><a href="spatial_information/">spatial_information</a></td>
@@ -624,7 +624,7 @@
 <td>The title for your dataset</td>
 </tr>
 <tr>
-<td><a href="transformatons/">transformatons</a></td>
+<td><a href="transformations/">transformations</a></td>
 <td>Any transformations required to link the images to the annotations</td>
 </tr>
 <tr>

@@ -205,6 +205,7 @@
 <div class="mermaid"> classDiagram
     class Annotations
       AuthorCollection &lt;|-- Annotations
+      FileLevelMetadataCollection &lt;|-- Annotations
 
       Annotations : annotation_confidence_level
 
@@ -216,25 +217,19 @@
 
       Annotations : annotation_overview
 
-      Annotations : annotation_type
-
-          Annotations --|&gt; AnnotationType : annotation_type
-
       Annotations : authors
 
           Annotations --|&gt; Author : authors
 
-      Annotations : source_image
+      Annotations : file_metadata
 
-      Annotations : spatial_information
-
-      Annotations : transformatons
+          Annotations --|&gt; FileLevelMetadata : file_metadata
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><strong>Annotations</strong> [ <a href="../AuthorCollection/">AuthorCollection</a>]</li>
+<li><strong>Annotations</strong> [ <a href="../AuthorCollection/">AuthorCollection</a> <a href="../FileLevelMetadataCollection/">FileLevelMetadataCollection</a>]</li>
 </ul>
 <h2 id="slots">Slots</h2>
 <table>
@@ -254,15 +249,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../annotation_type/">annotation_type</a></td>
-<td>1..1 <br/> <a href="../AnnotationType/">AnnotationType</a></td>
-<td>Annotation type, for example class labels, segmentation masks, counts</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../annotation_method/">annotation_method</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td>Description of how the annotations where created</td>
+<td>Description of how the annotations were created</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -278,27 +267,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../source_image/">source_image</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Association between annotations and the source images from which they origina...</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../annotation_confidence_level/">annotation_confidence_level</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Confidence on annotation accuracy</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../spatial_information/">spatial_information</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Spatial information for non-pixel annotations</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../transformatons/">transformatons</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Any transformations required to link the images to the annotations</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -306,6 +277,12 @@
 <td>0..* <br/> <a href="../Author/">Author</a></td>
 <td>a collection of the authors of a study</td>
 <td><a href="../AuthorCollection/">AuthorCollection</a></td>
+</tr>
+<tr>
+<td><a href="../file_metadata/">file_metadata</a></td>
+<td>0..* <br/> <a href="../FileLevelMetadata/">FileLevelMetadata</a></td>
+<td>a collection of the file level metadata for each annotation</td>
+<td><a href="../FileLevelMetadataCollection/">FileLevelMetadataCollection</a></td>
 </tr>
 </tbody>
 </table>
@@ -342,16 +319,14 @@ description: A set of annotations for an AI-ready dataset
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 mixins:
 - AuthorCollection
+- FileLevelMetadataCollection
 slots:
 - annotation_overview
-- annotation_type
 - annotation_method
 - annotation_criteria
 - annotation_coverage
-- source_image
 - annotation_confidence_level
-- spatial_information
-- transformatons
+tree_root: true
 
 </code></pre>
 </details>
@@ -362,14 +337,17 @@ description: A set of annotations for an AI-ready dataset
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 mixins:
 - AuthorCollection
+- FileLevelMetadataCollection
 attributes:
   annotation_overview:
     name: annotation_overview
     description: Short descriptive summary indicating the type of annotation and how
       it was generated
     examples:
-    - value: Segmentations masks of human cell nuclei curated by experts from a model
+    - value: Segmentation masks of human cell nuclei curated by experts from a model
         prediction
+    - value: Manual quantification of the number of cells in mouse embryos performed
+        by experts
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: annotation_overview
@@ -378,28 +356,20 @@ attributes:
     - Annotations
     range: string
     required: true
-  annotation_type:
-    name: annotation_type
-    description: Annotation type, for example class labels, segmentation masks, counts...
-    examples:
-    - value: Segmentations mask
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-    rank: 1000
-    alias: annotation_type
-    owner: Annotations
-    domain_of:
-    - Annotations
-    range: AnnotationType
-    required: true
   annotation_method:
     name: annotation_method
-    description: Description of how the annotations where created. For example, software
-      used
+    description: Description of how the annotations were created. For example, were
+      the annotations crowdsourced or expertly annotated,  produced by  a human or
+      software, what software was used, when were the annotations created,  protocols
+      used for consensus and quality assurance
     examples:
     - value: A machine learning-based framework was utilized to produce a first coarse
         annotation of nuclear contours.  Then, a disease expert curated all annotations
         by editing, adding, or removing polygons.  Finally, an expert pathologist
         revised all image annotations and a final version of the annotations was curated.
+    - value: Cell counts were performed manually by expert biologists. For cases difficult
+        to quantify,  a vote including all experts was taken and annotations were
+        corrected according to the majority view.
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: annotation_method
@@ -414,6 +384,10 @@ attributes:
     examples:
     - value: Only nuclei in focus were annotated, if parts of a nucleus were out of
         focus, only the part of the nucleus being in focus was annotated
+    - value: During cell counting, cell division was tracked using anillin localization.
+        Mitosis was considered completed when anillin stop localising  at the contractile
+        ring and re-entered the cell nucleus, at which point the dividing cell was
+        considered two different cells.
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: annotation_criteria
@@ -427,23 +401,11 @@ attributes:
       of the data has been annotated from what is available
     examples:
     - value: All images were annotated
+    - value: 'Images: image_1, image_2 and image_3 were not annotated due to the abnormal
+        cell death rates compared to other samples.'
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: annotation_coverage
-    owner: Annotations
-    domain_of:
-    - Annotations
-    range: string
-  source_image:
-    name: source_image
-    description: Association between annotations and the source images from which
-      they originated
-    examples:
-    - value: The path and file name of the source image for each mask is provided
-        in a tsv file that contains the file level metadata
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-    rank: 1000
-    alias: source_image
     owner: Annotations
     domain_of:
     - Annotations
@@ -453,35 +415,13 @@ attributes:
     description: Confidence on annotation accuracy
     examples:
     - value: Curators had 15 and 20 years of experience working in cancer pathology
+    - value: To characterize the quality of gold standard segmentation annotations,  we
+        calculated the average and standard deviation performance of the three independent
+        annotators  relative to the gold truth that was established by merging the
+        triplets of manual annotations.  For the whole dataset this metric was 0.904±0.081
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: annotation_confidence_level
-    owner: Annotations
-    domain_of:
-    - Annotations
-    range: string
-  spatial_information:
-    name: spatial_information
-    description: Spatial information for non-pixel annotations
-    examples:
-    - value: The pixels belonging to the mouse embryo are provided in a binary mask
-        for each source image
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-    rank: 1000
-    alias: spatial_information
-    owner: Annotations
-    domain_of:
-    - Annotations
-    range: string
-  transformatons:
-    name: transformatons
-    description: Any transformations required to link the images to the annotations
-    examples:
-    - value: The rotation angle for each image is provided in a tsv file that contains
-        the file level metadata
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-    rank: 1000
-    alias: transformatons
     owner: Annotations
     domain_of:
     - Annotations
@@ -498,6 +438,21 @@ attributes:
     - AuthorCollection
     range: Author
     inlined: true
+    inlined_as_list: true
+  file_metadata:
+    name: file_metadata
+    description: a collection of the file level metadata for each annotation
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    rank: 1000
+    multivalued: true
+    alias: file_metadata
+    owner: Annotations
+    domain_of:
+    - FileLevelMetadataCollection
+    range: FileLevelMetadata
+    inlined: true
+    inlined_as_list: true
+tree_root: true
 
 </code></pre>
 </details>

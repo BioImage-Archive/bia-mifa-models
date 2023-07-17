@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -157,11 +162,6 @@
   </a>
 <nav aria-label="Identifier and Mapping Information" class="md-nav">
 <ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#valid-id-prefixes">
-    Valid ID Prefixes
-  </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#schema-source">
     Schema Source
@@ -209,7 +209,7 @@
 <p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/Author">bia_faim_models:Author</a></p>
 <div class="mermaid"> classDiagram
     class Author
-      Author : affiliation
+      OrganisationInfoCollection &lt;|-- Author
 
       Author : author_first_name
 
@@ -219,11 +219,18 @@
 
       Author : orcid_id
 
+      Author : organisation
+
+          Author --|&gt; OrganisationInfo : organisation
+
       Author : role
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><strong>Author</strong> [ <a href="../OrganisationInfoCollection/">OrganisationInfoCollection</a>]</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -255,21 +262,21 @@
 </tr>
 <tr>
 <td><a href="../orcid_id/">orcid_id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for an author</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../affiliation/">affiliation</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
-<td>An organization that the author person is affiliated with</td>
+<td><a href="../role/">role</a></td>
+<td>0..* <br/> <a href="../String/">String</a></td>
+<td>Role of the author when creating the dataset</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../role/">role</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
-<td>Role of the author when creating the dataset</td>
-<td>direct</td>
+<td><a href="../organisation/">organisation</a></td>
+<td>0..* <br/> <a href="../OrganisationInfo/">OrganisationInfo</a></td>
+<td>a collection of the name and address of organisations authors are affiliated ...</td>
+<td><a href="../OrganisationInfoCollection/">OrganisationInfoCollection</a></td>
 </tr>
 </tbody>
 </table>
@@ -305,11 +312,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="valid-id-prefixes">Valid ID Prefixes</h3>
-<p>Instances of this class <em>should</em> have identifiers with one of the following prefixes:</p>
-<ul>
-<li>ORCID</li>
-</ul>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/BioImage-Archive/bia-faim-models</li>
@@ -338,16 +340,15 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Author
-id_prefixes:
-- ORCID
 description: Information about the authors
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+mixins:
+- OrganisationInfoCollection
 slots:
 - author_first_name
 - author_last_name
 - email
 - orcid_id
-- affiliation
 - role
 
 </code></pre>
@@ -355,16 +356,17 @@ slots:
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Author
-id_prefixes:
-- ORCID
 description: Information about the authors
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+mixins:
+- OrganisationInfoCollection
 attributes:
   author_first_name:
     name: author_first_name
     description: First name for an author
     examples:
     - value: Josiah
+    - value: Marie
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:name
@@ -379,6 +381,7 @@ attributes:
     description: Last name for an author
     examples:
     - value: Carberry
+    - value: Skłodowska–Curie
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:name
@@ -393,6 +396,7 @@ attributes:
     description: Email address of a person
     examples:
     - value: jcarberry@example.com
+    - value: mariesc@example.com
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:email
@@ -407,44 +411,21 @@ attributes:
     description: A unique identifier for an author
     examples:
     - value: ORCID:0000-0002-1825-0097
+    - value: ORCID:0000-0002-9079-593X
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: WIKIDATA_PROPERTY:P496
-    identifier: true
     alias: orcid_id
     owner: Author
     domain_of:
     - Author
     range: uriorcurie
-    required: true
-  affiliation:
-    name: affiliation
-    description: An organization that the author person is affiliated with. The user
-      can provide name and address of the organisation or the ROR ID.
-    examples:
-    - value: '[{''ror_id'': ''ROR:02catss52''}, {''ror_id'': ''ROR:03dbr7087''}]'
-    - value: '[{''organisation_name'': ''EMBL-EBI'', ''address'': ''Wellcome Genome
-        Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.''}, {''organisation_name'':
-        ''University of Toronto'', ''address'': "27 King''s College Cir, Toronto,
-        ON M5S, Canada."}]'
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-    rank: 1000
-    slot_uri: schema:affiliation
-    multivalued: true
-    alias: affiliation
-    owner: Author
-    domain_of:
-    - Author
-    range: string
-    required: true
-    exactly_one_of:
-    - range: OrganisationURL
-    - range: OrganisationInfoCollection
   role:
     name: role
     description: Role of the author when creating the dataset
     examples:
-    - value: annotator
+    - value: '[''data annotation'', ''data acquisition'', ''conceptualization'']'
+    - value: data curator
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:roleName
@@ -454,7 +435,20 @@ attributes:
     domain_of:
     - Author
     range: string
-    required: true
+  organisation:
+    name: organisation
+    description: a collection of the name and address of organisations authors are
+      affiliated with
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    rank: 1000
+    multivalued: true
+    alias: organisation
+    owner: Author
+    domain_of:
+    - OrganisationInfoCollection
+    range: OrganisationInfo
+    inlined: true
+    inlined_as_list: true
 
 </code></pre>
 </details>

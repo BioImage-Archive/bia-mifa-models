@@ -339,8 +339,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Annotations/">Annotations</a></td>
-<td>A set of annotations for an AI-ready dataset</td>
+<td><a href="../FileLevelMetadata/">FileLevelMetadata</a></td>
+<td>metadata atributes that must be detailed at the file level</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -358,7 +358,10 @@
 </thead>
 <tbody>
 <tr>
-<td>The pixels belonging to the mouse embryo are provided in a binary mask for each source image</td>
+<td>The pixels belonging to the mouse embryo related to this cell count are provided in the binary mask with annotation id AN1237946</td>
+</tr>
+<tr>
+<td>Each annotated object contains a category_id indicating the annotation class label, and an associated bounding box delineating the corresponding blod vessel</td>
 </tr>
 </tbody>
 </table>
@@ -373,13 +376,15 @@
 <pre><code class="language-yaml">name: spatial_information
 description: Spatial information for non-pixel annotations
 examples:
-- value: The pixels belonging to the mouse embryo are provided in a binary mask for
-    each source image
+- value: The pixels belonging to the mouse embryo related to this cell count are provided
+    in the binary mask with annotation id AN1237946
+- value: Each annotated object contains a category_id indicating the annotation class
+    label, and an associated bounding box delineating the corresponding blod vessel
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
 alias: spatial_information
 domain_of:
-- Annotations
+- FileLevelMetadata
 range: string
 
 </code></pre>

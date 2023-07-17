@@ -360,6 +360,9 @@
 <tr>
 <td>Only nuclei in focus were annotated, if parts of a nucleus were out of focus, only the part of the nucleus being in focus was annotated</td>
 </tr>
+<tr>
+<td>During cell counting, cell division was tracked using anillin localization. Mitosis was considered completed when anillin stop localising  at the contractile ring and re-entered the cell nucleus, at which point the dividing cell was considered two different cells.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -375,6 +378,10 @@ description: Rules used to generate annotations
 examples:
 - value: Only nuclei in focus were annotated, if parts of a nucleus were out of focus,
     only the part of the nucleus being in focus was annotated
+- value: During cell counting, cell division was tracked using anillin localization.
+    Mitosis was considered completed when anillin stop localising  at the contractile
+    ring and re-entered the cell nucleus, at which point the dividing cell was considered
+    two different cells.
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
 alias: annotation_criteria

@@ -347,12 +347,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../String/">String</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -364,6 +359,9 @@
 <tbody>
 <tr>
 <td>The segmentation mask for image 10 (segmentation_10.tif) has been updated with the annotation of two nuclei that were missing in the previous version</td>
+</tr>
+<tr>
+<td>New annotations for images 12047635 and 12063916 have been included in the dataset with annotation ids AN12047635 and AN12063916 respectively</td>
 </tr>
 </tbody>
 </table>
@@ -380,13 +378,14 @@ description: Textual description of changes compared to previous version
 examples:
 - value: The segmentation mask for image 10 (segmentation_10.tif) has been updated
     with the annotation of two nuclei that were missing in the previous version
+- value: New annotations for images 12047635 and 12063916 have been included in the
+    dataset with annotation ids AN12047635 and AN12063916 respectively
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
 alias: changes
 domain_of:
 - Version
 range: string
-required: true
 
 </code></pre>
 

@@ -208,6 +208,8 @@
 
       OrganisationInfo : organisation_name
 
+      OrganisationInfo : ror_id
+
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -234,6 +236,12 @@
 <td>Organisation address</td>
 <td>direct</td>
 </tr>
+<tr>
+<td><a href="../ror_id/">ror_id</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Identifier for the Research Organization Registry</td>
+<td>direct</td>
+</tr>
 </tbody>
 </table>
 <h2 id="usages">Usages</h2>
@@ -247,6 +255,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../Author/">Author</a></td>
+<td><a href="../organisation/">organisation</a></td>
+<td>range</td>
+<td><a href="./">OrganisationInfo</a></td>
+</tr>
 <tr>
 <td><a href="../OrganisationInfoCollection/">OrganisationInfoCollection</a></td>
 <td><a href="../organisation/">organisation</a></td>
@@ -289,6 +303,7 @@ from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 slots:
 - organisation_name
 - address
+- ror_id
 
 </code></pre>
 </details>
@@ -303,6 +318,7 @@ attributes:
     description: Organisation name
     examples:
     - value: EMBL-EBI
+    - value: University of Toronto
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:name
@@ -317,6 +333,7 @@ attributes:
     description: Organisation address
     examples:
     - value: Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.
+    - value: 27 King's College Cir, Toronto, ON M5S, Canada.
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:name
@@ -325,6 +342,20 @@ attributes:
     domain_of:
     - OrganisationInfo
     range: string
+  ror_id:
+    name: ror_id
+    description: Identifier for the Research Organization Registry
+    examples:
+    - value: ROR:02catss52
+    - value: ROR:03dbr7087
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    rank: 1000
+    slot_uri: WIKIDATA_PROPERTY:P6782
+    alias: ror_id
+    owner: OrganisationInfo
+    domain_of:
+    - OrganisationInfo
+    range: uriorcurie
 
 </code></pre>
 </details>

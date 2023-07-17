@@ -339,8 +339,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../FundingStatement/">FundingStatement</a></td>
-<td>Description of how the study was funded</td>
+<td><a href="../Study/">Study</a></td>
+<td>General information about the study</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -365,6 +365,9 @@
 <tr>
 <td>T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme  under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.</td>
 </tr>
+<tr>
+<td>This work was facilitated by an EraSME grant (project TisQuant) under the grant no. 844198 and by a COIN grant (project VISIOMICS)  under the grant no. 861750, both grants kindly provided by the Austrian Research Promotion Agency (FFG), and the St. Anna Kinderkrebsforschung.  Partial funding was further provided by BMK, BMDW, and the Province of Upper Austria in the frame of the COMET Programme managed by FFG.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -382,11 +385,17 @@ examples:
     the European Union Horizon 2020 research and innovation programme  under the Marie
     Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer
     Research UK Programme Grant (DRCNPG-123\123456) to J.C.
+- value: This work was facilitated by an EraSME grant (project TisQuant) under the
+    grant no. 844198 and by a COIN grant (project VISIOMICS)  under the grant no.
+    861750, both grants kindly provided by the Austrian Research Promotion Agency
+    (FFG), and the St. Anna Kinderkrebsforschung.  Partial funding was further provided
+    by BMK, BMDW, and the Province of Upper Austria in the frame of the COMET Programme
+    managed by FFG.
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
 alias: funding_statement
 domain_of:
-- FundingStatement
+- Study
 range: string
 required: true
 

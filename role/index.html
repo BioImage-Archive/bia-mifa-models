@@ -353,9 +353,6 @@
 <li>
 <p>Multivalued: True</p>
 </li>
-<li>
-<p>Required: True</p>
-</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -366,7 +363,10 @@
 </thead>
 <tbody>
 <tr>
-<td>annotator</td>
+<td>['data annotation', 'data acquisition', 'conceptualization']</td>
+</tr>
+<tr>
+<td>data curator</td>
 </tr>
 </tbody>
 </table>
@@ -381,7 +381,8 @@
 <pre><code class="language-yaml">name: role
 description: Role of the author when creating the dataset
 examples:
-- value: annotator
+- value: '[''data annotation'', ''data acquisition'', ''conceptualization'']'
+- value: data curator
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
 slot_uri: schema:roleName
@@ -390,7 +391,6 @@ alias: role
 domain_of:
 - Author
 range: string
-required: true
 
 </code></pre>
 

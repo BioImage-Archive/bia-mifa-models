@@ -347,7 +347,12 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+<li>
+<p>Range: <a href="../Uriorcurie/">Uriorcurie</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -358,7 +363,10 @@
 </thead>
 <tbody>
 <tr>
-<td>https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097</td>
+<td>https://github.com/BIIFSweden/MariaUlvmar2020-1</td>
+</tr>
+<tr>
+<td>['https://github.com/perlfloccri/NuclearSegmentationPipeline', 'https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097']</td>
 </tr>
 </tbody>
 </table>
@@ -374,9 +382,11 @@
 description: Link to the models that have been trained with this dataset (if any).
   This could be links to GitHub or repositories like the BioImage Zoo.
 examples:
-- value: https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097
+- value: https://github.com/BIIFSweden/MariaUlvmar2020-1
+- value: '[''https://github.com/perlfloccri/NuclearSegmentationPipeline'', ''https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097'']'
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
+multivalued: true
 alias: ai_models_trained
 domain_of:
 - Study

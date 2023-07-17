@@ -344,9 +344,44 @@
 <td>number of objects, such as cells, found in an image</td>
 </tr>
 <tr>
+<td>derived_annotations</td>
+<td>None</td>
+<td>additional analytical data extracted from the images</td>
+</tr>
+<tr>
+<td>geometrical_annotations</td>
+<td>None</td>
+<td>polygons and shapes that outline a region of interest in the image</td>
+</tr>
+<tr>
+<td>graphs</td>
+<td>None</td>
+<td>graphical representations of the morphology, connectivity, or spatial arrange...</td>
+</tr>
+<tr>
+<td>point_annotations</td>
+<td>None</td>
+<td>X, Y, and Z coordinates of a point of interest in an image (for example an ob...</td>
+</tr>
+<tr>
 <td>segmentation_mask</td>
 <td>None</td>
 <td>an image, the same size as the source image, with the value of each pixel rep...</td>
+</tr>
+<tr>
+<td>tracks</td>
+<td>None</td>
+<td>annotations marking the movement or trajectory of objects within a sequence o...</td>
+</tr>
+<tr>
+<td>weak_annotations</td>
+<td>None</td>
+<td>rough imprecise annotations that are fast to generate</td>
+</tr>
+<tr>
+<td>other</td>
+<td>None</td>
+<td>other types of annotations, please specify in the annotation overview section</td>
 </tr>
 </tbody>
 </table>
@@ -393,10 +428,55 @@ permissible_values:
     description: number of objects, such as cells, found in an image
     todos:
     - map this to an ontology
+  derived_annotations:
+    text: derived_annotations
+    description: additional analytical data extracted from the images. For example,
+      the image point spread function,the signal to noise ratio, focus information…
+    todos:
+    - map this to an ontology
+  geometrical_annotations:
+    text: geometrical_annotations
+    description: polygons and shapes that outline a region of interest in the image.
+      These can be geometrical primitives, 2D polygons, 3D meshes…
+    todos:
+    - map this to an ontology
+  graphs:
+    text: graphs
+    description: graphical representations of the morphology, connectivity, or spatial
+      arrangement of biological structures in an image. Graphs, such as skeletons
+      or connectivity diagrams, typically consist of nodes and edges, where nodes
+      represent individual elements or regions and edges represent the connections
+      or interactions between them
+    todos:
+    - map this to an ontology
+  point_annotations:
+    text: point_annotations
+    description: X, Y, and Z coordinates of a point of interest in an image (for example
+      an object's centroid).
+    todos:
+    - map this to an ontology
   segmentation_mask:
     text: segmentation_mask
     description: an image, the same size as the source image, with the value of each
       pixel representing some biological identity or background region
+    todos:
+    - map this to an ontology
+  tracks:
+    text: tracks
+    description: annotations marking the movement or trajectory of objects within
+      a sequence of bioimages
+    todos:
+    - map this to an ontology
+  weak_annotations:
+    text: weak_annotations
+    description: rough imprecise annotations that are fast to generate. These annotations
+      are used, for example,  to detect an object without providing accurate boundaries
+    todos:
+    - map this to an ontology
+  other:
+    text: other
+    description: other types of annotations, please specify in the annotation overview
+      section
     todos:
     - map this to an ontology
 

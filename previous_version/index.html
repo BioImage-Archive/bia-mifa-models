@@ -347,12 +347,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../Uriorcurie/">Uriorcurie</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -364,6 +359,9 @@
 <tbody>
 <tr>
 <td>example:version1.0</td>
+</tr>
+<tr>
+<td>example:version2.9</td>
 </tr>
 </tbody>
 </table>
@@ -379,6 +377,7 @@
 description: Pointer to previous version
 examples:
 - value: example:version1.0
+- value: example:version2.9
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
 slot_uri: pav:previousVersion
@@ -386,7 +385,6 @@ alias: previous_version
 domain_of:
 - Version
 range: uriorcurie
-required: true
 
 </code></pre>
 
