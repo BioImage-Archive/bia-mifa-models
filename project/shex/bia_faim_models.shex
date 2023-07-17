@@ -48,29 +48,31 @@ linkml:Sparqlpath xsd:string
 <Annotations> CLOSED {
     (  $<Annotations_tes> (  &<AuthorCollection_tes> ;
           rdf:type [ <AuthorCollection> ] ? ;
+          &<FileLevelMetadataCollection_tes> ;
+          rdf:type [ <FileLevelMetadataCollection> ] ? ;
           <annotation_overview> @linkml:String ;
-          <annotation_type> @<AnnotationType> ;
           <annotation_method> @linkml:String ;
           <annotation_criteria> @linkml:String ? ;
           <annotation_coverage> @linkml:String ? ;
-          <source_image> @linkml:String ? ;
           <annotation_confidence_level> @linkml:String ? ;
-          <spatial_information> @linkml:String ? ;
-          <transformatons> @linkml:String ? ;
-          <authors> @<Author> *
+          <authors> @<Author> * ;
+          <file_metadata> @<FileLevelMetadata> *
        ) ;
        rdf:type [ <Annotations> ] ?
     )
 }
 
 <Author> CLOSED {
-    (  $<Author_tes> (  schema1:name @linkml:String ;
+    (  $<Author_tes> (  &<OrganisationInfoCollection_tes> ;
+          rdf:type [ <OrganisationInfoCollection> ] ? ;
+          schema1:name @linkml:String ;
           schema1:name @linkml:String ;
           schema1:email @linkml:String ? ;
-          schema1:affiliation @linkml:String + ;
-          schema1:roleName @linkml:String +
+          WIKIDATA_PROPERTY:P496 @linkml:Uriorcurie ? ;
+          schema1:roleName @linkml:String * ;
+          <organisation> @<OrganisationInfo> *
        ) ;
-       rdf:type [ <Author> ]
+       rdf:type [ <Author> ] ?
     )
 }
 
@@ -80,9 +82,19 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<FundingStatement> CLOSED {
-    (  $<FundingStatement_tes> <funding_statement> @linkml:String ;
-       rdf:type [ <FundingStatement> ] ?
+<FileLevelMetadata> CLOSED {
+    (  $<FileLevelMetadata_tes> (  <annotation_type> @<AnnotationType> + ;
+          <source_image_id> @linkml:String ;
+          <transformations> @linkml:String ? ;
+          <spatial_information> @linkml:String ?
+       ) ;
+       rdf:type [ <FileLevelMetadata> ]
+    )
+}
+
+<FileLevelMetadataCollection> {
+    (  $<FileLevelMetadataCollection_tes> <file_metadata> @<FileLevelMetadata> * ;
+       rdf:type [ <FileLevelMetadataCollection> ] ?
     )
 }
 
@@ -92,7 +104,7 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<GrantReferenceCollection> CLOSED {
+<GrantReferenceCollection> {
     (  $<GrantReferenceCollection_tes> <grants> @<GrantReference> * ;
        rdf:type [ <GrantReferenceCollection> ] ?
     )
@@ -108,21 +120,16 @@ linkml:Sparqlpath xsd:string
 
 <OrganisationInfo> CLOSED {
     (  $<OrganisationInfo_tes> (  schema1:name @linkml:String ;
-          schema1:name @linkml:String ?
+          schema1:name @linkml:String ? ;
+          WIKIDATA_PROPERTY:P6782 @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <OrganisationInfo> ] ?
     )
 }
 
-<OrganisationInfoCollection> CLOSED {
+<OrganisationInfoCollection> {
     (  $<OrganisationInfoCollection_tes> <organisation> @<OrganisationInfo> * ;
        rdf:type [ <OrganisationInfoCollection> ] ?
-    )
-}
-
-<OrganisationURL> CLOSED {
-    (  $<OrganisationURL_tes> rdf:type . * ;
-       rdf:type [ <OrganisationURL> ]
     )
 }
 
@@ -149,17 +156,20 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <AuthorCollection> ] ? ;
           &<Links_tes> ;
           rdf:type [ <Links> ] ? ;
+          &<GrantReferenceCollection_tes> ;
+          rdf:type [ <GrantReferenceCollection> ] ? ;
           schema1:title @linkml:String ;
           schema1:description @linkml:String ;
           schema1:keywords @linkml:String + ;
           schema1:license @<LicenseType> ;
-          <ai_models_trained> @linkml:Uriorcurie ? ;
+          <ai_models_trained> @linkml:Uriorcurie * ;
           <acknowledgements> @linkml:String ? ;
-          <funding> @linkml:String ;
+          <funding_statement> @linkml:String ;
           <publications> @<Publications> * ;
           <authors> @<Author> * ;
           <link_url> @linkml:Uriorcurie + ;
-          <link_description> @linkml:String *
+          <link_description> @linkml:String * ;
+          <grants> @<GrantReference> *
        ) ;
        rdf:type [ <Study> ] ?
     )
@@ -168,8 +178,8 @@ linkml:Sparqlpath xsd:string
 <Version> CLOSED {
     (  $<Version_tes> (  pav:version @linkml:Float ;
           pav:authoredOn @linkml:Datetime ;
-          <changes> @linkml:String ;
-          pav:previousVersion @linkml:Uriorcurie
+          <changes> @linkml:String ? ;
+          pav:previousVersion @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <Version> ] ?
     )

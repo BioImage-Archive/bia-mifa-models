@@ -12,15 +12,14 @@
 
 <https://w3id.org/BioImage-Archive/bia-faim-models> a owl:Ontology ;
     rdfs:label "bia-faim-models" ;
-    IAO:0000700 bia_faim_models:Author,
-        bia_faim_models:AuthorCollection,
-        bia_faim_models:FundingStatement,
+    IAO:0000700 bia_faim_models:AuthorCollection,
+        bia_faim_models:FileLevelMetadata,
+        bia_faim_models:FileLevelMetadataCollection,
         bia_faim_models:GrantReference,
         bia_faim_models:GrantReferenceCollection,
         bia_faim_models:Links,
         bia_faim_models:OrganisationInfo,
         bia_faim_models:OrganisationInfoCollection,
-        bia_faim_models:OrganisationURL,
         bia_faim_models:Publications,
         bia_faim_models:PublicationsCollection,
         bia_faim_models:Version ;
@@ -31,16 +30,12 @@ bia_faim_models:Annotations a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Annotations" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Author ;
-            owl:onProperty bia_faim_models:authors ],
-        [ a owl:Restriction ;
-            owl:onClass bia_faim_models:AnnotationType ;
-            owl:onProperty bia_faim_models:annotation_type ;
-            owl:qualifiedCardinality 1 ],
+            owl:allValuesFrom bia_faim_models:FileLevelMetadata ;
+            owl:onProperty bia_faim_models:file_metadata ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:source_image ],
+            owl:onProperty bia_faim_models:annotation_confidence_level ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -50,26 +45,18 @@ bia_faim_models:Annotations a owl:Class,
             owl:onClass linkml:String ;
             owl:onProperty bia_faim_models:annotation_coverage ],
         [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:Author ;
+            owl:onProperty bia_faim_models:authors ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty bia_faim_models:annotation_overview ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_confidence_level ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:spatial_information ],
-        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty bia_faim_models:annotation_method ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:transformatons ],
-        bia_faim_models:AuthorCollection ;
+        bia_faim_models:AuthorCollection,
+        bia_faim_models:FileLevelMetadataCollection ;
     skos:definition "A set of annotations for an AI-ready dataset" .
 
 bia_faim_models:Study a owl:Class,
@@ -77,18 +64,24 @@ bia_faim_models:Study a owl:Class,
     rdfs:label "Study" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:funding ;
+            owl:onProperty schema1:title ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom bia_faim_models:Publications ;
             owl:onProperty bia_faim_models:publications ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:description ;
-            owl:qualifiedCardinality 1 ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_faim_models:link_description ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty schema1:title ;
+            owl:onProperty bia_faim_models:funding_statement ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_faim_models:ai_models_trained ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:description ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
@@ -96,6 +89,13 @@ bia_faim_models:Study a owl:Class,
                         owl:onProperty schema1:keywords ] [ a owl:Restriction ;
                         owl:onProperty schema1:keywords ;
                         owl:someValuesFrom linkml:String ] ) ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:Author ;
+            owl:onProperty bia_faim_models:authors ],
+        [ a owl:Restriction ;
+            owl:onClass bia_faim_models:LicenseType ;
+            owl:onProperty schema1:license ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom linkml:Uriorcurie ;
@@ -104,23 +104,13 @@ bia_faim_models:Study a owl:Class,
                         owl:someValuesFrom linkml:Uriorcurie ] ) ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty bia_faim_models:ai_models_trained ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty bia_faim_models:acknowledgements ],
         [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Author ;
-            owl:onProperty bia_faim_models:authors ],
-        [ a owl:Restriction ;
-            owl:onClass bia_faim_models:LicenseType ;
-            owl:onProperty schema1:license ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_faim_models:link_description ],
+            owl:allValuesFrom bia_faim_models:GrantReference ;
+            owl:onProperty bia_faim_models:grants ],
         bia_faim_models:AuthorCollection,
+        bia_faim_models:GrantReferenceCollection,
         bia_faim_models:Links,
         bia_faim_models:PublicationsCollection ;
     skos:definition "General information about the study" .
@@ -132,61 +122,25 @@ linkml:TypeDefinition a owl:Class .
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
-bia_faim_models:FundingStatement a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "FundingStatement" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:funding_statement ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:definition "Description of how the study was funded" .
-
-bia_faim_models:GrantReferenceCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "GrantReferenceCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:GrantReference ;
-            owl:onProperty bia_faim_models:grants ] ;
-    skos:definition "A holder for GrantReference objects" .
-
-bia_faim_models:OrganisationInfoCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "OrganisationInfoCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:OrganisationInfo ;
-            owl:onProperty bia_faim_models:organisation ] ;
-    skos:definition "A holder for OrganisationInfo objects" .
-
-bia_faim_models:OrganisationURL a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "OrganisationURL" ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom linkml:String ;
-                        owl:onProperty WIKIDATA_PROPERTY:P6782 ] [ a owl:Restriction ;
-                        owl:onProperty WIKIDATA_PROPERTY:P6782 ;
-                        owl:someValuesFrom linkml:String ] ) ] ;
-    skos:definition "Research Organization Registry ID" .
-
 bia_faim_models:Version a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Version" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty pav:authoredOn ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Float ;
             owl:onProperty pav:version ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty pav:previousVersion ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:changes ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Datetime ;
+            owl:onProperty pav:authoredOn ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:changes ;
-            owl:qualifiedCardinality 1 ] ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty pav:previousVersion ] ;
     skos:definition "Information about the dataset version" .
 
 bia_faim_models:acknowledgements a owl:ObjectProperty,
@@ -223,7 +177,7 @@ bia_faim_models:annotation_method a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "annotation_method" ;
     rdfs:range linkml:String ;
-    skos:definition "Description of how the annotations where created. For example, software used" .
+    skos:definition "Description of how the annotations were created. For example, were the annotations crowdsourced or expertly annotated,  produced by  a human or software, what software was used, when were the annotations created,  protocols used for consensus and quality assurance" .
 
 bia_faim_models:annotation_overview a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -231,23 +185,11 @@ bia_faim_models:annotation_overview a owl:ObjectProperty,
     rdfs:range linkml:String ;
     skos:definition "Short descriptive summary indicating the type of annotation and how it was generated" .
 
-bia_faim_models:annotation_type a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "annotation_type" ;
-    rdfs:range bia_faim_models:AnnotationType ;
-    skos:definition "Annotation type, for example class labels, segmentation masks, counts..." .
-
 bia_faim_models:changes a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "changes" ;
     rdfs:range linkml:String ;
     skos:definition "Textual description of changes compared to previous version" .
-
-bia_faim_models:funding a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "funding" ;
-    rdfs:range linkml:String ;
-    skos:definition "A description of how the data generation was funded. It can be a funding statement (free text) like the ones that appear in a publication,  a class GrantReferenceCollection which includes the grants IDs and funder names or both." .
 
 bia_faim_models:funding_statement a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -255,29 +197,17 @@ bia_faim_models:funding_statement a owl:ObjectProperty,
     rdfs:range linkml:String ;
     skos:definition "Description of how the study was funded" .
 
-bia_faim_models:grants a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "grants" ;
-    rdfs:range bia_faim_models:GrantReference ;
-    skos:definition "a collection of grant ids and funder names associated with the study" .
-
-bia_faim_models:organisation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "organisation" ;
-    rdfs:range bia_faim_models:OrganisationInfo ;
-    skos:definition "a collection of the name and address of organisations authors are affiliated with" .
-
 bia_faim_models:publication_year a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "publication_year" ;
     rdfs:range linkml:String ;
     skos:definition "Year of publication" .
 
-bia_faim_models:source_image a owl:ObjectProperty,
+bia_faim_models:source_image_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "source_image" ;
+    rdfs:label "source_image_id" ;
     rdfs:range linkml:String ;
-    skos:definition "Association between annotations and the source images from which they originated" .
+    skos:definition "identifier of the source image from which the annotation originated" .
 
 bia_faim_models:spatial_information a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -285,9 +215,9 @@ bia_faim_models:spatial_information a owl:ObjectProperty,
     rdfs:range linkml:String ;
     skos:definition "Spatial information for non-pixel annotations" .
 
-bia_faim_models:transformatons a owl:ObjectProperty,
+bia_faim_models:transformations a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "transformatons" ;
+    rdfs:label "transformations" ;
     rdfs:range linkml:String ;
     skos:definition "Any transformations required to link the images to the annotations" .
 
@@ -341,11 +271,7 @@ schema1:funder a owl:ObjectProperty,
     skos:exactMatch schema1:funder .
 
 schema1:identifier a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "grant_id" ;
-    rdfs:range linkml:String ;
-    skos:definition "The identifier for the grant" ;
-    skos:exactMatch schema1:identifier .
+        linkml:SlotDefinition .
 
 schema1:license a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -353,6 +279,13 @@ schema1:license a owl:ObjectProperty,
     rdfs:range bia_faim_models:LicenseType ;
     skos:definition "The license under which the data are available" ;
     skos:exactMatch schema1:license .
+
+schema1:roleName a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "role" ;
+    rdfs:range linkml:String ;
+    skos:definition "Role of the author when creating the dataset" ;
+    skos:exactMatch schema1:roleName .
 
 schema1:title a owl:ObjectProperty,
         linkml:SlotDefinition .
@@ -377,24 +310,79 @@ schema1:title a owl:ObjectProperty,
         bia_faim_models:AnnotationType ;
     rdfs:label "counts" .
 
+<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#derived_annotations> a owl:Class,
+        bia_faim_models:AnnotationType ;
+    rdfs:label "derived_annotations" .
+
+<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#geometrical_annotations> a owl:Class,
+        bia_faim_models:AnnotationType ;
+    rdfs:label "geometrical_annotations" .
+
+<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#graphs> a owl:Class,
+        bia_faim_models:AnnotationType ;
+    rdfs:label "graphs" .
+
+<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#other> a owl:Class,
+        bia_faim_models:AnnotationType ;
+    rdfs:label "other" .
+
+<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#point_annotations> a owl:Class,
+        bia_faim_models:AnnotationType ;
+    rdfs:label "point_annotations" .
+
 <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask> a owl:Class,
         bia_faim_models:AnnotationType ;
     rdfs:label "segmentation_mask" .
 
+<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#tracks> a owl:Class,
+        bia_faim_models:AnnotationType ;
+    rdfs:label "tracks" .
+
+<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#weak_annotations> a owl:Class,
+        bia_faim_models:AnnotationType ;
+    rdfs:label "weak_annotations" .
+
+bia_faim_models:FileLevelMetadataCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "FileLevelMetadataCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:FileLevelMetadata ;
+            owl:onProperty bia_faim_models:file_metadata ],
+        linkml:mixin ;
+    skos:definition "A holder for FileLevelMetadata objects" .
+
+bia_faim_models:GrantReferenceCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "GrantReferenceCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:GrantReference ;
+            owl:onProperty bia_faim_models:grants ],
+        linkml:mixin ;
+    skos:definition "A holder for GrantReference objects" .
+
 bia_faim_models:Links a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Links" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_faim_models:link_description ],
-        [ a owl:Class ;
+    rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom linkml:Uriorcurie ;
                         owl:onProperty bia_faim_models:link_url ] [ a owl:Restriction ;
                         owl:onProperty bia_faim_models:link_url ;
                         owl:someValuesFrom linkml:Uriorcurie ] ) ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_faim_models:link_description ],
         linkml:mixin ;
     skos:definition "Links related to the study" .
+
+bia_faim_models:OrganisationInfoCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "OrganisationInfoCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:OrganisationInfo ;
+            owl:onProperty bia_faim_models:organisation ],
+        linkml:mixin ;
+    skos:definition "A holder for OrganisationInfo objects" .
 
 bia_faim_models:PublicationsCollection a owl:Class,
         linkml:ClassDefinition ;
@@ -405,11 +393,35 @@ bia_faim_models:PublicationsCollection a owl:Class,
         linkml:mixin ;
     skos:definition "A holder for Publications objects" .
 
+bia_faim_models:annotation_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_type" ;
+    rdfs:range bia_faim_models:AnnotationType ;
+    skos:definition "Annotation type, for example class labels, segmentation masks, counts..." .
+
+bia_faim_models:file_metadata a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "file_metadata" ;
+    rdfs:range bia_faim_models:FileLevelMetadata ;
+    skos:definition "a collection of the file level metadata for each annotation" .
+
+bia_faim_models:grants a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "grants" ;
+    rdfs:range bia_faim_models:GrantReference ;
+    skos:definition "a collection of grant ids and funder names associated with the study" .
+
 bia_faim_models:link_description a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "link_description" ;
     rdfs:range linkml:String ;
     skos:definition "The description of the linked content" .
+
+bia_faim_models:organisation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organisation" ;
+    rdfs:range bia_faim_models:OrganisationInfo ;
+    skos:definition "a collection of the name and address of organisations authors are affiliated with" .
 
 bia_faim_models:publications a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -431,6 +443,13 @@ WIKIDATA_PROPERTY:P496 a owl:ObjectProperty,
     skos:definition "A unique identifier for an author" ;
     skos:exactMatch WIKIDATA_PROPERTY:P496 .
 
+WIKIDATA_PROPERTY:P6782 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ror_id" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "Identifier for the Research Organization Registry" ;
+    skos:exactMatch WIKIDATA_PROPERTY:P6782 .
+
 WIKIDATA_PROPERTY:P698 a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "pubmed_id" ;
@@ -438,26 +457,12 @@ WIKIDATA_PROPERTY:P698 a owl:ObjectProperty,
     skos:definition "Identifier for journal articles/abstracts in PubMed" ;
     skos:exactMatch WIKIDATA_PROPERTY:P698 .
 
-schema1:affiliation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "affiliation" ;
-    rdfs:range linkml:String ;
-    skos:definition "An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID." ;
-    skos:exactMatch schema1:affiliation .
-
 schema1:keywords a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "keywords" ;
     rdfs:range linkml:String ;
     skos:definition "Keywords or tags used to describe the dataset" ;
     skos:exactMatch schema1:keywords .
-
-schema1:roleName a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "role" ;
-    rdfs:range linkml:String ;
-    skos:definition "Role of the author when creating the dataset" ;
-    skos:exactMatch schema1:roleName .
 
 bia_faim_models:AuthorCollection a owl:Class,
         linkml:ClassDefinition ;
@@ -468,18 +473,89 @@ bia_faim_models:AuthorCollection a owl:Class,
         linkml:mixin ;
     skos:definition "A holder for Author objects" .
 
+bia_faim_models:authors a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "authors" ;
+    rdfs:range bia_faim_models:Author ;
+    skos:definition "a collection of the authors of a study" .
+
+schema1:name a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+bia_faim_models:Author a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Author" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom bia_faim_models:OrganisationInfo ;
+            owl:onProperty bia_faim_models:organisation ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:email ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:roleName ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty WIKIDATA_PROPERTY:P496 ],
+        bia_faim_models:OrganisationInfoCollection ;
+    skos:definition "Information about the authors" .
+
+bia_faim_models:FileLevelMetadata a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "FileLevelMetadata" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema1:identifier ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:allValuesFrom bia_faim_models:AnnotationType ;
+                        owl:onProperty bia_faim_models:annotation_type ] [ a owl:Restriction ;
+                        owl:onProperty bia_faim_models:annotation_type ;
+                        owl:someValuesFrom bia_faim_models:AnnotationType ] ) ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:source_image_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:transformations ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty bia_faim_models:spatial_information ] ;
+    skos:definition "metadata atributes that must be detailed at the file level" .
+
 bia_faim_models:GrantReference a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "GrantReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty schema1:identifier ;
+            owl:onProperty schema1:funder ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty schema1:funder ;
+            owl:onProperty schema1:identifier ;
             owl:qualifiedCardinality 1 ] ;
     skos:definition "Information about grant ID and funding body that funded the study" .
+
+bia_faim_models:LicenseType a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "LicenseType" ;
+    owl:unionOf ( <https://creativecommons.org/publicdomain/zero/1.0/> <https://creativecommons.org/licenses/by/4.0/> ) ;
+    linkml:permissible_values <https://creativecommons.org/licenses/by/4.0/>,
+        <https://creativecommons.org/publicdomain/zero/1.0/> .
 
 bia_faim_models:OrganisationInfo a owl:Class,
         linkml:ClassDefinition ;
@@ -490,51 +566,32 @@ bia_faim_models:OrganisationInfo a owl:Class,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty WIKIDATA_PROPERTY:P6782 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty schema1:name ] ;
     skos:definition "Information about the organisation the author is affiliated with" .
-
-bia_faim_models:authors a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "authors" ;
-    rdfs:range bia_faim_models:Author ;
-    skos:definition "a collection of the authors of a study" .
-
-WIKIDATA_PROPERTY:P6782 a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "ror_id" ;
-    rdfs:range linkml:String ;
-    skos:definition "Identifier for the Research Organization Registry" ;
-    skos:exactMatch WIKIDATA_PROPERTY:P6782 .
-
-schema1:name a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-bia_faim_models:LicenseType a owl:Class,
-        linkml:EnumDefinition ;
-    rdfs:label "LicenseType" ;
-    owl:unionOf ( <https://creativecommons.org/publicdomain/zero/1.0/> <https://creativecommons.org/licenses/by/4.0/> ) ;
-    linkml:permissible_values <https://creativecommons.org/licenses/by/4.0/>,
-        <https://creativecommons.org/publicdomain/zero/1.0/> .
 
 bia_faim_models:Publications a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Publications" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty schema1:author ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P356 ;
+            owl:onProperty schema1:title ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty WIKIDATA_PROPERTY:P698 ],
         [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty WIKIDATA_PROPERTY:P356 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty schema1:title ;
+            owl:onProperty schema1:author ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -548,47 +605,21 @@ bia_faim_models:link_url a owl:ObjectProperty,
     rdfs:range linkml:Uriorcurie ;
     skos:definition "URL of relevant link" .
 
-bia_faim_models:Author a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Author" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:email ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom linkml:String ;
-                        owl:onProperty schema1:roleName ] [ a owl:Restriction ;
-                        owl:onProperty schema1:roleName ;
-                        owl:someValuesFrom linkml:String ] ) ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom linkml:String ;
-                        owl:onProperty schema1:affiliation ] [ a owl:Restriction ;
-                        owl:onProperty schema1:affiliation ;
-                        owl:someValuesFrom linkml:String ] ) ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P496 ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:definition "Information about the authors" .
-
 bia_faim_models:AnnotationType a owl:Class,
         linkml:EnumDefinition ;
     rdfs:label "AnnotationType" ;
-    owl:unionOf ( <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#class_labels> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#bounding_boxes> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#counts> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask> ) ;
+    owl:unionOf ( <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#class_labels> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#bounding_boxes> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#counts> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#derived_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#geometrical_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#graphs> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#point_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#tracks> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#weak_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#other> ) ;
     linkml:permissible_values <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#bounding_boxes>,
         <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#class_labels>,
         <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#counts>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask> .
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#derived_annotations>,
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#geometrical_annotations>,
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#graphs>,
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#other>,
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#point_annotations>,
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask>,
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#tracks>,
+        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#weak_annotations> .
 
 linkml:ClassDefinition a owl:Class .
 

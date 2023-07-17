@@ -34,6 +34,7 @@ classes:
       - PublicationsCollection
       - AuthorCollection
       - Links
+      - GrantReferenceCollection
     slots:
       - title
       - description
@@ -41,7 +42,7 @@ classes:
       - license
       - ai_models_trained
       - acknowledgements
-      - funding
+      - funding_statement
 
   Publications:
     description: >-
@@ -69,15 +70,16 @@ classes:
   Author:
     description: >-
       Information about the authors
+    mixins: 
+      - OrganisationInfoCollection
     slots:
       - author_first_name
       - author_last_name
       - email
       - orcid_id
-      - affiliation
       - role
-    id_prefixes:
-      - ORCID
+    #id_prefixes:
+     # - ORCID
 
   AuthorCollection:
     mixin: true
@@ -88,15 +90,17 @@ classes:
         description: a collection of the authors of a study
         range: Author
         multivalued: true
-        inlined: true
+        inlined_as_list: true
   
   OrganisationInfo: 
     description: Information about the organisation the author is affiliated with
     slots:
       - organisation_name
       - address
+      - ror_id
 
   OrganisationInfoCollection:
+    mixin: true
     description: >-
       A holder for OrganisationInfo objects
     attributes:
@@ -104,19 +108,7 @@ classes:
         description: a collection of the name and address of organisations authors are affiliated with
         range: OrganisationInfo
         multivalued: true
-        inlined: true
-  
-  OrganisationURL: 
-    description: Research Organization Registry ID
-    slots:
-      - ror_id
-    id_prefixes:
-      - ROR
-
-  FundingStatement:
-    description: Description of how the study was funded
-    slots:
-      - funding_statement
+        inlined_as_list: true
 
   GrantReference:
     description: Information about grant ID and funding body that funded the study
@@ -125,6 +117,7 @@ classes:
       - funder
 
   GrantReferenceCollection:
+    mixin: true
     description: >-
       A holder for GrantReference objects
     attributes:
@@ -132,31 +125,49 @@ classes:
         description: a collection of grant ids and funder names associated with the study
         range: GrantReference
         multivalued: true
-        inlined: true
-  
+        inlined_as_list: true
+
   Links:
     description: Links related to the study
     mixin: true
     slots:
       - link_url
       - link_description
+  
+  FileLevelMetadata:
+    description: metadata atributes that must be detailed at the file level
+    slots:
+      - annotation_id
+      - annotation_type
+      - source_image_id
+      - transformations
+      - spatial_information
+
+  FileLevelMetadataCollection:
+    mixin: true
+    description: >-
+      A holder for FileLevelMetadata objects
+    attributes:
+      file_metadata:
+        description: a collection of the file level metadata for each annotation
+        range: FileLevelMetadata
+        multivalued: true
+        inlined_as_list: true
 
   Annotations:
+    tree_root: true
     description: >-
       A set of annotations for an AI-ready dataset
     mixins:
       - AuthorCollection
+      - FileLevelMetadataCollection
     slots:
       - annotation_overview
-      - annotation_type
       - annotation_method
       - annotation_criteria
       - annotation_coverage
-      - source_image
       - annotation_confidence_level
-      - spatial_information
-      - transformatons
-  
+      
   Version:
     description: >-
       Information about the dataset version
@@ -167,12 +178,14 @@ classes:
       - previous_version
 
 slots:
+
   title:
     slot_uri: schema:title
     description: The title for your dataset. This will be displayed when search results including your data are shown. Often this will be the same as an associated publication.
     required: true
     examples:
       - value: An annotated fluorescence image dataset for training nuclear segmentation methods
+      - value: Embryonic mice ultrasound volumes with body and brain volume segmentation masks
   
   description:
     slot_uri: schema:description
@@ -183,6 +196,9 @@ slots:
           Accurate quantification of nuclear features is critical for the characterization of tumours. 
           This dataset contains annotated fluorescent images of cell nuclei from a normal human skin cell line, and from different tumour samples from cancer patients. 
           This dataset can be used to train nuclear image segmentation algorithms.
+      - value: >-
+          The number of cells in an embryo at early stages of development can be used to understand its viability, however counting cells on DIC images is a challenging task. 
+          This dataset contains annotated DIC images of mouse embryos to train machine learning models.
   
   keywords:
     slot_uri: schema:keywords
@@ -194,6 +210,11 @@ slots:
         - segmentation
         - nuclei
         - cancer
+      - value:
+        - image segmentation 
+        - high-frequency ultrasound 
+        - mouse embryo 
+        - volumetric deep learning
   
   license:
     slot_uri: schema:license
@@ -202,12 +223,17 @@ slots:
     range: LicenseType
     examples:
       - value: CC0
+      - value: CC_BY
  
   ai_models_trained:
     description: Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo.
     range: uriorcurie
+    multivalued: true
     examples:
-      - value: https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097
+      - value: https://github.com/BIIFSweden/MariaUlvmar2020-1
+      - value: 
+        - https://github.com/perlfloccri/NuclearSegmentationPipeline
+        - https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097
   
   funding_statement:
     description: Description of how the study was funded
@@ -216,7 +242,11 @@ slots:
       - value: >-
           T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme 
           under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.
-
+      - value: >-
+          This work was facilitated by an EraSME grant (project TisQuant) under the grant no. 844198 and by a COIN grant (project VISIOMICS) 
+          under the grant no. 861750, both grants kindly provided by the Austrian Research Promotion Agency (FFG), and the St. Anna Kinderkrebsforschung. 
+          Partial funding was further provided by BMK, BMDW, and the Province of Upper Austria in the frame of the COMET Programme managed by FFG.
+  
   grant_id:
     description: The identifier for the grant
     identifier: true
@@ -224,6 +254,7 @@ slots:
     slot_uri: schema:identifier
     examples: 
       - value: ALTF 1234-567
+      - value: "840767"
 
   funder:
     slot_uri: schema:funder
@@ -231,32 +262,15 @@ slots:
     required: true
     examples:
       - value: EMBO Long-Term Fellowship
+      - value: Marie Sklodowska-Curie Individual Fellowship
   
-  funding:
-    required: true
-    description: >-
-      A description of how the data generation was funded. It can be a funding statement (free text) like the ones that appear in a publication, 
-      a class GrantReferenceCollection which includes the grants IDs and funder names or both.
-    any_of:
-      - range: FundingStatement
-      - range: GrantReferenceCollection
-    examples:
-      - value: 
-        - funding_statement: >-
-            T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme 
-            under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.
-      - value: 
-        - grant_id: ALTF 123
-          funder: EMBO Long-Term Fellowship
-        - grant_id: "1234"
-          funder: Marie Sklodowska-Curie Indiviadual Fellowship
-
   publication_title:
     slot_uri: schema:title
     description: The title for a publication associated to the dataset
     required: true
     examples:
       - value: An annotated fluorescence image dataset for training nuclear segmentation methods
+      - value: "Deep Mouse: An End-to-End Auto-Context Refinement Framework for Brain Ventricle & Body Segmentation in Embryonic Mice Ultrasound Volumes"
 
   publication_authors:
     slot_uri: schema:author
@@ -264,6 +278,7 @@ slots:
     required: true
     examples:
       - value: Truman Grayson, Josiah Carberry
+      - value: J. Perez, F. Fulan, J. Doe, W. Wu and J. Novak 
 
   publication_doi:
     identifier: true
@@ -272,11 +287,13 @@ slots:
     description: Digital Object Identifier (DOI)
     examples: 
       - value: DOI:10.1242/jcs.033340
+      - value: DOI:10.1242/jcs.174946
 
   publication_year:
     description: Year of publication
     examples:
-      - value: "2023"
+      - value: "2021"
+      - value: "1986"
   
   pubmed_id:
     slot_uri: WIKIDATA_PROPERTY:P698
@@ -284,6 +301,7 @@ slots:
     description: Identifier for journal articles/abstracts in PubMed
     examples: 
       - value: PMID:18492790
+      - value: PMID:26136366
   
   link_url:
     description: URL of relevant link
@@ -306,15 +324,21 @@ slots:
   acknowledgements:
     description: Any people or groups that should be acknowledged as part of the dataset
     examples:
-      - value: We thank the Institute microscopy facility for support with image acquisition
-  
+      - value: >-
+          We thank the Institute microscopy facility for support with image acquisition. 
+          Flybase provided important information for this study.
+      - value: >-
+          We are grateful to Y. Papadopoulos for providing reagents and access to her confocal microscope. 
+          We thank J. Dupont and E. Mustermann for comments on the manuscript, and G. Hong for useful discussions. 
+        
   orcid_id:
-    identifier: true
+    #identifier: true
     slot_uri:  WIKIDATA_PROPERTY:P496
     range: uriorcurie
     description: A unique identifier for an author
     examples: 
       - value: ORCID:0000-0002-1825-0097
+      - value: ORCID:0000-0002-9079-593X
   
   author_first_name:
     slot_uri: schema:name
@@ -322,6 +346,7 @@ slots:
     required: true
     examples:
       - value: Josiah
+      - value: Marie
   
   author_last_name:
     slot_uri: schema:name
@@ -329,6 +354,7 @@ slots:
     required: true
     examples:
       - value: Carberry
+      - value: "Skłodowska–Curie"
   
   email:
     slot_uri: schema:email
@@ -336,6 +362,7 @@ slots:
     pattern: "^\\S+@[\\S+\\.]+\\S+"
     examples: 
       - value: jcarberry@example.com
+      - value: mariesc@example.com
   
   organisation_name:
     slot_uri: schema:name
@@ -343,102 +370,118 @@ slots:
     required: true
     examples:
       - value: EMBL-EBI
+      - value: University of Toronto
 
   ror_id:
-    identifier: true
+    range: uriorcurie
     slot_uri:  WIKIDATA_PROPERTY:P6782
-    range: string
-    multivalued: true
-    required: true
     description: Identifier for the Research Organization Registry
     examples: 
-      - value: 
-        - ROR:02catss52
-        - ROR:03dbr7087
+      - value: ROR:02catss52
+      - value: ROR:03dbr7087
 
   address:
     slot_uri: schema:name
     description: Organisation address
     examples:
       - value: Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.
-
-  affiliation:
-    slot_uri: schema:affiliation
-    description: An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID.
-    required: true
-    multivalued: true
-    exactly_one_of:
-      - range: OrganisationURL
-      - range: OrganisationInfoCollection
-    examples:
-      - value: 
-        - ror_id: ROR:02catss52
-        - ror_id: ROR:03dbr7087
-      - value: 
-        - organisation_name: EMBL-EBI
-          address: Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.
-        - organisation_name: University of Toronto
-          address: 27 King's College Cir, Toronto, ON M5S, Canada.
+      - value: 27 King's College Cir, Toronto, ON M5S, Canada.
 
   role:
     slot_uri: schema:roleName
     description: Role of the author when creating the dataset
     multivalued: true
-    required: true
     examples: 
-      - value: annotator
+      - value: 
+        - data annotation
+        - data acquisition
+        - conceptualization
+      - value: data curator
   
   annotation_overview:
     description: Short descriptive summary indicating the type of annotation and how it was generated
     required: true
     examples: 
-      - value: Segmentations masks of human cell nuclei curated by experts from a model prediction 
+      - value: Segmentation masks of human cell nuclei curated by experts from a model prediction 
+      - value: Manual quantification of the number of cells in mouse embryos performed by experts
   
   annotation_type:
     required: true
     range: AnnotationType
+    multivalued: true
     description: Annotation type, for example class labels, segmentation masks, counts...
     examples: 
-      - value: Segmentations mask  
+      - value: 
+        - segmentation_mask 
+        - class_labels
+      - value: counts 
   
   annotation_method:
     required: true
-    description: Description of how the annotations where created. For example, software used
+    description: >-
+      Description of how the annotations were created. For example, were the annotations crowdsourced or expertly annotated, 
+      produced by  a human or software, what software was used, when were the annotations created, 
+      protocols used for consensus and quality assurance
     examples: 
       - value: >-
           A machine learning-based framework was utilized to produce a first coarse annotation of nuclear contours. 
           Then, a disease expert curated all annotations by editing, adding, or removing polygons. 
           Finally, an expert pathologist revised all image annotations and a final version of the annotations was curated.
+      - value: >-
+          Cell counts were performed manually by expert biologists. For cases difficult to quantify, 
+          a vote including all experts was taken and annotations were corrected according to the majority view.
   
   annotation_criteria:
     description: Rules used to generate annotations
     examples:
       - value: Only nuclei in focus were annotated, if parts of a nucleus were out of focus, only the part of the nucleus being in focus was annotated
+      - value: >-
+          During cell counting, cell division was tracked using anillin localization. Mitosis was considered completed when anillin stop localising 
+          at the contractile ring and re-entered the cell nucleus, at which point the dividing cell was considered two different cells.
   
   annotation_coverage:
     description: Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available
     examples:
       - value: All images were annotated
+      - value: "Images: image_1, image_2 and image_3 were not annotated due to the abnormal cell death rates compared to other samples."
   
-  source_image:
-    description: Association between annotations and the source images from which they originated
+  source_image_id:
+    required: true
+    description: identifier of the source image from which the annotation originated
     examples:
-      - value: The path and file name of the source image for each mask is provided in a tsv file that contains the file level metadata
+      - value: IM1
+      - value: "12532806"
+  
+  annotation_id:
+    description: The identifier for the annotation
+    identifier: true
+    required: true
+    slot_uri: schema:identifier
+    examples: 
+      - value: AN1
+      - value: "12345678"
   
   annotation_confidence_level:
     description: Confidence on annotation accuracy
     examples: 
       - value: Curators had 15 and 20 years of experience working in cancer pathology
+      - value: >- 
+          To characterize the quality of gold standard segmentation annotations, 
+          we calculated the average and standard deviation performance of the three independent annotators 
+          relative to the gold truth that was established by merging the triplets of manual annotations. 
+          For the whole dataset this metric was 0.904±0.081
   
   spatial_information:
     description: Spatial information for non-pixel annotations
     examples:
-     - value: The pixels belonging to the mouse embryo are provided in a binary mask for each source image
+      - value: The pixels belonging to the mouse embryo related to this cell count are provided in the binary mask with annotation id AN1237946
+      - value: Each annotated object contains a category_id indicating the annotation class label, and an associated bounding box delineating the corresponding blod vessel
   
-  transformatons:
+  transformations:
     description: Any transformations required to link the images to the annotations
     examples:
-      - value: The rotation angle for each image is provided in a tsv file that contains the file level metadata
+      - value: Rotation_angle = 37°
+      - value: Translation_horizontal_pixel_displacement = 150, Translation_vertical_pixel_displacement = 92
   
   version:
     required: true
@@ -447,6 +490,7 @@ slots:
     description: Unique version number
     examples:
       - value: 1.1
+      - value: 3.0
   
   timestamp:
     required: true
@@ -455,46 +499,90 @@ slots:
     description: Date and time when the version was created
     examples:
       - value: 2023-12-10T12:20:00-05:00
+      - value: 2021-07-03T13:26:00-00:00
   
   changes:
-    required: true
+    range: string
     description: Textual description of changes compared to previous version
     examples:
       - value: The segmentation mask for image 10 (segmentation_10.tif) has been updated with the annotation of two nuclei that were missing in the previous version
- 
+      - value: New annotations for images 12047635 and 12063916 have been included in the dataset with annotation ids AN12047635 and AN12063916 respectively
+  
   previous_version:
-    required: true
     range: uriorcurie
     slot_uri: pav:previousVersion
     description: Pointer to previous version
     examples:
       - value: example:version1.0
+      - value: example:version2.9
 
 enums:
+
   AnnotationType:
     permissible_values:
+
       class_labels:
         description: tags that identify specific features, patterns or classes in images
         todos:
           - map this to an ontology
+      
       bounding_boxes:
         description: rectangles completely enclosing a structure of interest within an image
         todos:
           - map this to an ontology
+      
       counts:
         description: number of objects, such as cells, found in an image
         todos:
           - map this to an ontology
+      
+      derived_annotations:
+        description: additional analytical data extracted from the images. For example, the image point spread function,the signal to noise ratio, focus information…
+        todos:
+          - map this to an ontology
+      
+      geometrical_annotations:
+        description: polygons and shapes that outline a region of interest in the image. These can be geometrical primitives, 2D polygons, 3D meshes…
+        todos:
+          - map this to an ontology
+      
+      graphs:
+        description: graphical representations of the morphology, connectivity, or spatial arrangement of biological structures in an image. Graphs, such as skeletons or connectivity diagrams, typically consist of nodes and edges, where nodes represent individual elements or regions and edges represent the connections or interactions between them
+        todos:
+          - map this to an ontology
+      
+      point_annotations:
+        description:  X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid).
+        todos:
+          - map this to an ontology
+      
       segmentation_mask:
         description: an image, the same size as the source image, with the value of each pixel representing some biological identity or background region
         todos:
           - map this to an ontology
-
+      
+      tracks:
+        description: annotations marking the movement or trajectory of objects within a sequence of bioimages
+        todos:
+          - map this to an ontology
+      
+      weak_annotations:
+        description: rough imprecise annotations that are fast to generate. These annotations are used, for example,  to detect an object without providing accurate boundaries
+        todos:
+          - map this to an ontology
+      
+      other:
+        description: other types of annotations, please specify in the annotation overview section
+        todos:
+          - map this to an ontology
+  
   LicenseType:
     permissible_values:
+
       CC0:
         description: No Copyright. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
         meaning: https://creativecommons.org/publicdomain/zero/1.0/
+      
       CC_BY:
         description: >-
          You are free to: Share — copy and redistribute the material in any medium or format. Adapt — remix, transform, and build upon the material 

@@ -339,8 +339,57 @@
           ]
         },
         {
+          "text": "derived_annotations",
+          "description": "additional analytical data extracted from the images. For example, the image point spread function,the signal to noise ratio, focus information\u2026",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
+          "text": "geometrical_annotations",
+          "description": "polygons and shapes that outline a region of interest in the image. These can be geometrical primitives, 2D polygons, 3D meshes\u2026",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
+          "text": "graphs",
+          "description": "graphical representations of the morphology, connectivity, or spatial arrangement of biological structures in an image. Graphs, such as skeletons or connectivity diagrams, typically consist of nodes and edges, where nodes represent individual elements or regions and edges represent the connections or interactions between them",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
+          "text": "point_annotations",
+          "description": "X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid).",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
           "text": "segmentation_mask",
           "description": "an image, the same size as the source image, with the value of each pixel representing some biological identity or background region",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
+          "text": "tracks",
+          "description": "annotations marking the movement or trajectory of objects within a sequence of bioimages",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
+          "text": "weak_annotations",
+          "description": "rough imprecise annotations that are fast to generate. These annotations are used, for example,  to detect an object without providing accurate boundaries",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
+          "text": "other",
+          "description": "other types of annotations, please specify in the annotation overview section",
           "todos": [
             "map this to an ontology"
           ]
@@ -374,6 +423,10 @@
         {
           "value": "An annotated fluorescence image dataset for training nuclear segmentation methods",
           "@type": "Example"
+        },
+        {
+          "value": "Embryonic mice ultrasound volumes with body and brain volume segmentation masks",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -397,6 +450,10 @@
         {
           "value": "Accurate quantification of nuclear features is critical for the characterization of tumours.  This dataset contains annotated fluorescent images of cell nuclei from a normal human skin cell line, and from different tumour samples from cancer patients.  This dataset can be used to train nuclear image segmentation algorithms.",
           "@type": "Example"
+        },
+        {
+          "value": "The number of cells in an embryo at early stages of development can be used to understand its viability, however counting cells on DIC images is a challenging task.  This dataset contains annotated DIC images of mouse embryos to train machine learning models.",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -419,6 +476,10 @@
       "examples": [
         {
           "value": "['segmentation', 'nuclei', 'cancer']",
+          "@type": "Example"
+        },
+        {
+          "value": "['image segmentation', 'high-frequency ultrasound', 'mouse embryo', 'volumetric deep learning']",
           "@type": "Example"
         }
       ],
@@ -444,6 +505,10 @@
         {
           "value": "CC0",
           "@type": "Example"
+        },
+        {
+          "value": "CC_BY",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -465,12 +530,17 @@
       "description": "Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo.",
       "examples": [
         {
-          "value": "https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097",
+          "value": "https://github.com/BIIFSweden/MariaUlvmar2020-1",
+          "@type": "Example"
+        },
+        {
+          "value": "['https://github.com/perlfloccri/NuclearSegmentationPipeline', 'https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097']",
           "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
       "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/ai_models_trained",
+      "multivalued": true,
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -486,13 +556,17 @@
         {
           "value": "T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme  under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\\123456) to J.C.",
           "@type": "Example"
+        },
+        {
+          "value": "This work was facilitated by an EraSME grant (project TisQuant) under the grant no. 844198 and by a COIN grant (project VISIOMICS)  under the grant no. 861750, both grants kindly provided by the Austrian Research Promotion Agency (FFG), and the St. Anna Kinderkrebsforschung.  Partial funding was further provided by BMK, BMDW, and the Province of Upper Austria in the frame of the COMET Programme managed by FFG.",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
       "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/funding_statement",
-      "owner": "FundingStatement",
+      "owner": "Study",
       "domain_of": [
-        "FundingStatement"
+        "Study"
       ],
       "range": "string",
       "required": true,
@@ -505,6 +579,10 @@
       "examples": [
         {
           "value": "ALTF 1234-567",
+          "@type": "Example"
+        },
+        {
+          "value": "840767",
           "@type": "Example"
         }
       ],
@@ -530,6 +608,10 @@
         {
           "value": "EMBO Long-Term Fellowship",
           "@type": "Example"
+        },
+        {
+          "value": "Marie Sklodowska-Curie Individual Fellowship",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -546,46 +628,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "funding",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/funding",
-      "description": "A description of how the data generation was funded. It can be a funding statement (free text) like the ones that appear in a publication,  a class GrantReferenceCollection which includes the grants IDs and funder names or both.",
-      "examples": [
-        {
-          "value": "[{'funding_statement': 'T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme  under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\\\\123456) to J.C.'}]",
-          "@type": "Example"
-        },
-        {
-          "value": "[{'grant_id': 'ALTF 123', 'funder': 'EMBO Long-Term Fellowship'}, {'grant_id': '1234', 'funder': 'Marie Sklodowska-Curie Indiviadual Fellowship'}]",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/funding",
-      "owner": "Study",
-      "domain_of": [
-        "Study"
-      ],
-      "range": "string",
-      "required": true,
-      "any_of": [
-        {
-          "range": "FundingStatement",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "GrantReferenceCollection",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "publication_title",
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/publication_title",
       "description": "The title for a publication associated to the dataset",
       "examples": [
         {
           "value": "An annotated fluorescence image dataset for training nuclear segmentation methods",
+          "@type": "Example"
+        },
+        {
+          "value": "Deep Mouse: An End-to-End Auto-Context Refinement Framework for Brain Ventricle & Body Segmentation in Embryonic Mice Ultrasound Volumes",
           "@type": "Example"
         }
       ],
@@ -610,6 +662,10 @@
         {
           "value": "Truman Grayson, Josiah Carberry",
           "@type": "Example"
+        },
+        {
+          "value": "J. Perez, F. Fulan, J. Doe, W. Wu and J. Novak",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -633,6 +689,10 @@
         {
           "value": "DOI:10.1242/jcs.033340",
           "@type": "Example"
+        },
+        {
+          "value": "DOI:10.1242/jcs.174946",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -655,7 +715,11 @@
       "description": "Year of publication",
       "examples": [
         {
-          "value": "2023",
+          "value": "2021",
+          "@type": "Example"
+        },
+        {
+          "value": "1986",
           "@type": "Example"
         }
       ],
@@ -675,6 +739,10 @@
       "examples": [
         {
           "value": "PMID:18492790",
+          "@type": "Example"
+        },
+        {
+          "value": "PMID:26136366",
           "@type": "Example"
         }
       ],
@@ -737,7 +805,11 @@
       "description": "Any people or groups that should be acknowledged as part of the dataset",
       "examples": [
         {
-          "value": "We thank the Institute microscopy facility for support with image acquisition",
+          "value": "We thank the Institute microscopy facility for support with image acquisition.  Flybase provided important information for this study.",
+          "@type": "Example"
+        },
+        {
+          "value": "We are grateful to Y. Papadopoulos for providing reagents and access to her confocal microscope.  We thank J. Dupont and E. Mustermann for comments on the manuscript, and G. Hong for useful discussions. ",
           "@type": "Example"
         }
       ],
@@ -758,6 +830,10 @@
         {
           "value": "ORCID:0000-0002-1825-0097",
           "@type": "Example"
+        },
+        {
+          "value": "ORCID:0000-0002-9079-593X",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -765,13 +841,11 @@
         "https://www.wikidata.org/prop/P496"
       ],
       "slot_uri": "https://www.wikidata.org/prop/P496",
-      "identifier": true,
       "owner": "Author",
       "domain_of": [
         "Author"
       ],
       "range": "uriorcurie",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -781,6 +855,10 @@
       "examples": [
         {
           "value": "Josiah",
+          "@type": "Example"
+        },
+        {
+          "value": "Marie",
           "@type": "Example"
         }
       ],
@@ -805,6 +883,10 @@
         {
           "value": "Carberry",
           "@type": "Example"
+        },
+        {
+          "value": "Sk\u0142odowska\u2013Curie",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -827,6 +909,10 @@
       "examples": [
         {
           "value": "jcarberry@example.com",
+          "@type": "Example"
+        },
+        {
+          "value": "mariesc@example.com",
           "@type": "Example"
         }
       ],
@@ -851,6 +937,10 @@
         {
           "value": "EMBL-EBI",
           "@type": "Example"
+        },
+        {
+          "value": "University of Toronto",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -872,7 +962,11 @@
       "description": "Identifier for the Research Organization Registry",
       "examples": [
         {
-          "value": "['ROR:02catss52', 'ROR:03dbr7087']",
+          "value": "ROR:02catss52",
+          "@type": "Example"
+        },
+        {
+          "value": "ROR:03dbr7087",
           "@type": "Example"
         }
       ],
@@ -881,14 +975,11 @@
         "https://www.wikidata.org/prop/P6782"
       ],
       "slot_uri": "https://www.wikidata.org/prop/P6782",
-      "multivalued": true,
-      "identifier": true,
-      "owner": "OrganisationURL",
+      "owner": "OrganisationInfo",
       "domain_of": [
-        "OrganisationURL"
+        "OrganisationInfo"
       ],
-      "range": "string",
-      "required": true,
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -898,6 +989,10 @@
       "examples": [
         {
           "value": "Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.",
+          "@type": "Example"
+        },
+        {
+          "value": "27 King's College Cir, Toronto, ON M5S, Canada.",
           "@type": "Example"
         }
       ],
@@ -914,50 +1009,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "affiliation",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/affiliation",
-      "description": "An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID.",
-      "examples": [
-        {
-          "value": "[{'ror_id': 'ROR:02catss52'}, {'ror_id': 'ROR:03dbr7087'}]",
-          "@type": "Example"
-        },
-        {
-          "value": "[{'organisation_name': 'EMBL-EBI', 'address': 'Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.'}, {'organisation_name': 'University of Toronto', 'address': \"27 King's College Cir, Toronto, ON M5S, Canada.\"}]",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "mappings": [
-        "http://schema.org/affiliation"
-      ],
-      "slot_uri": "http://schema.org/affiliation",
-      "multivalued": true,
-      "owner": "Author",
-      "domain_of": [
-        "Author"
-      ],
-      "range": "string",
-      "required": true,
-      "exactly_one_of": [
-        {
-          "range": "OrganisationURL",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "OrganisationInfoCollection",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "role",
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/role",
       "description": "Role of the author when creating the dataset",
       "examples": [
         {
-          "value": "annotator",
+          "value": "['data annotation', 'data acquisition', 'conceptualization']",
+          "@type": "Example"
+        },
+        {
+          "value": "data curator",
           "@type": "Example"
         }
       ],
@@ -972,7 +1033,6 @@
         "Author"
       ],
       "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -981,7 +1041,11 @@
       "description": "Short descriptive summary indicating the type of annotation and how it was generated",
       "examples": [
         {
-          "value": "Segmentations masks of human cell nuclei curated by experts from a model prediction",
+          "value": "Segmentation masks of human cell nuclei curated by experts from a model prediction",
+          "@type": "Example"
+        },
+        {
+          "value": "Manual quantification of the number of cells in mouse embryos performed by experts",
           "@type": "Example"
         }
       ],
@@ -1001,15 +1065,20 @@
       "description": "Annotation type, for example class labels, segmentation masks, counts...",
       "examples": [
         {
-          "value": "Segmentations mask",
+          "value": "['segmentation_mask', 'class_labels']",
+          "@type": "Example"
+        },
+        {
+          "value": "counts",
           "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
       "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_type",
-      "owner": "Annotations",
+      "multivalued": true,
+      "owner": "FileLevelMetadata",
       "domain_of": [
-        "Annotations"
+        "FileLevelMetadata"
       ],
       "range": "AnnotationType",
       "required": true,
@@ -1018,10 +1087,14 @@
     {
       "name": "annotation_method",
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_method",
-      "description": "Description of how the annotations where created. For example, software used",
+      "description": "Description of how the annotations were created. For example, were the annotations crowdsourced or expertly annotated,  produced by  a human or software, what software was used, when were the annotations created,  protocols used for consensus and quality assurance",
       "examples": [
         {
           "value": "A machine learning-based framework was utilized to produce a first coarse annotation of nuclear contours.  Then, a disease expert curated all annotations by editing, adding, or removing polygons.  Finally, an expert pathologist revised all image annotations and a final version of the annotations was curated.",
+          "@type": "Example"
+        },
+        {
+          "value": "Cell counts were performed manually by expert biologists. For cases difficult to quantify,  a vote including all experts was taken and annotations were corrected according to the majority view.",
           "@type": "Example"
         }
       ],
@@ -1043,6 +1116,10 @@
         {
           "value": "Only nuclei in focus were annotated, if parts of a nucleus were out of focus, only the part of the nucleus being in focus was annotated",
           "@type": "Example"
+        },
+        {
+          "value": "During cell counting, cell division was tracked using anillin localization. Mitosis was considered completed when anillin stop localising  at the contractile ring and re-entered the cell nucleus, at which point the dividing cell was considered two different cells.",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -1062,6 +1139,10 @@
         {
           "value": "All images were annotated",
           "@type": "Example"
+        },
+        {
+          "value": "Images: image_1, image_2 and image_3 were not annotated due to the abnormal cell death rates compared to other samples.",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -1074,22 +1155,55 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "source_image",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/source_image",
-      "description": "Association between annotations and the source images from which they originated",
+      "name": "source_image_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/source_image_id",
+      "description": "identifier of the source image from which the annotation originated",
       "examples": [
         {
-          "value": "The path and file name of the source image for each mask is provided in a tsv file that contains the file level metadata",
+          "value": "IM1",
+          "@type": "Example"
+        },
+        {
+          "value": "12532806",
           "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/source_image",
-      "owner": "Annotations",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/source_image_id",
+      "owner": "FileLevelMetadata",
       "domain_of": [
-        "Annotations"
+        "FileLevelMetadata"
       ],
       "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "annotation_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_id",
+      "description": "The identifier for the annotation",
+      "examples": [
+        {
+          "value": "AN1",
+          "@type": "Example"
+        },
+        {
+          "value": "12345678",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "mappings": [
+        "http://schema.org/identifier"
+      ],
+      "slot_uri": "http://schema.org/identifier",
+      "identifier": true,
+      "owner": "FileLevelMetadata",
+      "domain_of": [
+        "FileLevelMetadata"
+      ],
+      "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1099,6 +1213,10 @@
       "examples": [
         {
           "value": "Curators had 15 and 20 years of experience working in cancer pathology",
+          "@type": "Example"
+        },
+        {
+          "value": "To characterize the quality of gold standard segmentation annotations,  we calculated the average and standard deviation performance of the three independent annotators  relative to the gold truth that was established by merging the triplets of manual annotations.  For the whole dataset this metric was 0.904\u00b10.081",
           "@type": "Example"
         }
       ],
@@ -1117,34 +1235,42 @@
       "description": "Spatial information for non-pixel annotations",
       "examples": [
         {
-          "value": "The pixels belonging to the mouse embryo are provided in a binary mask for each source image",
+          "value": "The pixels belonging to the mouse embryo related to this cell count are provided in the binary mask with annotation id AN1237946",
+          "@type": "Example"
+        },
+        {
+          "value": "Each annotated object contains a category_id indicating the annotation class label, and an associated bounding box delineating the corresponding blod vessel",
           "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
       "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/spatial_information",
-      "owner": "Annotations",
+      "owner": "FileLevelMetadata",
       "domain_of": [
-        "Annotations"
+        "FileLevelMetadata"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "transformatons",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/transformatons",
+      "name": "transformations",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/transformations",
       "description": "Any transformations required to link the images to the annotations",
       "examples": [
         {
-          "value": "The rotation angle for each image is provided in a tsv file that contains the file level metadata",
+          "value": "Rotation_angle = 37\u00b0",
+          "@type": "Example"
+        },
+        {
+          "value": "Translation_horizontal_pixel_displacement = 150, Translation_vertical_pixel_displacement = 92",
           "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/transformatons",
-      "owner": "Annotations",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/transformations",
+      "owner": "FileLevelMetadata",
       "domain_of": [
-        "Annotations"
+        "FileLevelMetadata"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1156,6 +1282,10 @@
       "examples": [
         {
           "value": "1.1",
+          "@type": "Example"
+        },
+        {
+          "value": "3.0",
           "@type": "Example"
         }
       ],
@@ -1180,6 +1310,10 @@
         {
           "value": "2023-12-10 12:20:00-05:00",
           "@type": "Example"
+        },
+        {
+          "value": "2021-07-03 13:26:00+00:00",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -1203,6 +1337,10 @@
         {
           "value": "The segmentation mask for image 10 (segmentation_10.tif) has been updated with the annotation of two nuclei that were missing in the previous version",
           "@type": "Example"
+        },
+        {
+          "value": "New annotations for images 12047635 and 12063916 have been included in the dataset with annotation ids AN12047635 and AN12063916 respectively",
+          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
@@ -1212,7 +1350,6 @@
         "Version"
       ],
       "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1222,6 +1359,10 @@
       "examples": [
         {
           "value": "example:version1.0",
+          "@type": "Example"
+        },
+        {
+          "value": "example:version2.9",
           "@type": "Example"
         }
       ],
@@ -1235,7 +1376,6 @@
         "Version"
       ],
       "range": "uriorcurie",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1266,6 +1406,7 @@
       ],
       "range": "Author",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1281,6 +1422,7 @@
       ],
       "range": "OrganisationInfo",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1296,6 +1438,23 @@
       ],
       "range": "GrantReference",
       "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fileLevelMetadataCollection__file_metadata",
+      "description": "a collection of the file level metadata for each annotation",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/file_metadata",
+      "multivalued": true,
+      "alias": "file_metadata",
+      "owner": "FileLevelMetadataCollection",
+      "domain_of": [
+        "FileLevelMetadataCollection"
+      ],
+      "range": "FileLevelMetadata",
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     }
   ],
@@ -1308,7 +1467,8 @@
       "mixins": [
         "PublicationsCollection",
         "AuthorCollection",
-        "Links"
+        "Links",
+        "GrantReferenceCollection"
       ],
       "slots": [
         "title",
@@ -1317,11 +1477,12 @@
         "license",
         "ai_models_trained",
         "acknowledgements",
-        "funding",
+        "funding_statement",
         "publicationsCollection__publications",
         "authorCollection__authors",
         "link_url",
-        "link_description"
+        "link_description",
+        "grantReferenceCollection__grants"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Study",
@@ -1371,19 +1532,19 @@
     },
     {
       "name": "Author",
-      "id_prefixes": [
-        "ORCID"
-      ],
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Author",
       "description": "Information about the authors",
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "mixins": [
+        "OrganisationInfoCollection"
+      ],
       "slots": [
         "author_first_name",
         "author_last_name",
         "email",
         "orcid_id",
-        "affiliation",
-        "role"
+        "role",
+        "organisationInfoCollection__organisation"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Author",
@@ -1405,7 +1566,7 @@
           "description": "a collection of the authors of a study",
           "multivalued": true,
           "range": "Author",
-          "inlined": true,
+          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -1419,7 +1580,8 @@
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
       "slots": [
         "organisation_name",
-        "address"
+        "address",
+        "ror_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfo",
@@ -1430,6 +1592,7 @@
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfoCollection",
       "description": "A holder for OrganisationInfo objects",
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "mixin": true,
       "slots": [
         "organisationInfoCollection__organisation"
       ],
@@ -1440,38 +1603,11 @@
           "description": "a collection of the name and address of organisations authors are affiliated with",
           "multivalued": true,
           "range": "OrganisationInfo",
-          "inlined": true,
+          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfoCollection",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "OrganisationURL",
-      "id_prefixes": [
-        "ROR"
-      ],
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationURL",
-      "description": "Research Organization Registry ID",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slots": [
-        "ror_id"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationURL",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "FundingStatement",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FundingStatement",
-      "description": "Description of how the study was funded",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slots": [
-        "funding_statement"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FundingStatement",
       "@type": "ClassDefinition"
     },
     {
@@ -1492,6 +1628,7 @@
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/GrantReferenceCollection",
       "description": "A holder for GrantReference objects",
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "mixin": true,
       "slots": [
         "grantReferenceCollection__grants"
       ],
@@ -1502,7 +1639,7 @@
           "description": "a collection of grant ids and funder names associated with the study",
           "multivalued": true,
           "range": "GrantReference",
-          "inlined": true,
+          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -1524,27 +1661,65 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "FileLevelMetadata",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadata",
+      "description": "metadata atributes that must be detailed at the file level",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "slots": [
+        "annotation_id",
+        "annotation_type",
+        "source_image_id",
+        "transformations",
+        "spatial_information"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadata",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FileLevelMetadataCollection",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadataCollection",
+      "description": "A holder for FileLevelMetadata objects",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "mixin": true,
+      "slots": [
+        "fileLevelMetadataCollection__file_metadata"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "file_metadata",
+          "description": "a collection of the file level metadata for each annotation",
+          "multivalued": true,
+          "range": "FileLevelMetadata",
+          "inlined_as_list": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadataCollection",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Annotations",
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Annotations",
       "description": "A set of annotations for an AI-ready dataset",
       "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
       "mixins": [
-        "AuthorCollection"
+        "AuthorCollection",
+        "FileLevelMetadataCollection"
       ],
       "slots": [
         "annotation_overview",
-        "annotation_type",
         "annotation_method",
         "annotation_criteria",
         "annotation_coverage",
-        "source_image",
         "annotation_confidence_level",
-        "spatial_information",
-        "transformatons",
-        "authorCollection__authors"
+        "authorCollection__authors",
+        "fileLevelMetadataCollection__file_metadata"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Annotations",
+      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -1565,9 +1740,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "bia_faim_models.yaml",
-  "source_file_date": "2023-06-20T09:47:24",
-  "source_file_size": 15705,
-  "generation_date": "2023-06-20T09:51:05",
+  "source_file_date": "2023-07-17T13:38:25",
+  "source_file_size": 20447,
+  "generation_date": "2023-07-17T14:43:17",
   "@type": "SchemaDefinition",
   "@context": [
     "project//jsonld/bia_faim_models.context.jsonld",

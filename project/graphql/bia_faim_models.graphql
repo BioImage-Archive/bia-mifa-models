@@ -1,25 +1,22 @@
-type Annotations implements AuthorCollection
+type Annotations implements AuthorCollection, FileLevelMetadataCollection
   {
     annotationOverview: String!
-    annotationType: AnnotationType!
     annotationMethod: String!
     annotationCriteria: String
     annotationCoverage: String
-    sourceImage: String
     annotationConfidenceLevel: String
-    spatialInformation: String
-    transformatons: String
     authors: [Author]
+    fileMetadata: [FileLevelMetadata]
   }
 
-type Author
+type Author implements OrganisationInfoCollection
   {
     authorFirstName: String!
     authorLastName: String!
     email: String
-    orcidId: Uriorcurie!
-    affiliation: [String]!
-    role: [String]!
+    orcidId: Uriorcurie
+    role: [String]
+    organisation: [OrganisationInfo]
   }
 
 interface AuthorCollection
@@ -27,9 +24,18 @@ interface AuthorCollection
     authors: [Author]
   }
 
-type FundingStatement
+type FileLevelMetadata
   {
-    fundingStatement: String!
+    annotationId: String!
+    annotationType: [AnnotationType]!
+    sourceImageId: String!
+    transformations: String
+    spatialInformation: String
+  }
+
+interface FileLevelMetadataCollection
+  {
+    fileMetadata: [FileLevelMetadata]
   }
 
 type GrantReference
@@ -38,7 +44,7 @@ type GrantReference
     funder: String!
   }
 
-type GrantReferenceCollection
+interface GrantReferenceCollection
   {
     grants: [GrantReference]
   }
@@ -53,16 +59,12 @@ type OrganisationInfo
   {
     organisationName: String!
     address: String
+    rorId: Uriorcurie
   }
 
-type OrganisationInfoCollection
+interface OrganisationInfoCollection
   {
     organisation: [OrganisationInfo]
-  }
-
-type OrganisationURL
-  {
-    rorId: [String]!
   }
 
 type Publications
@@ -79,26 +81,27 @@ interface PublicationsCollection
     publications: [Publications]
   }
 
-type Study implements PublicationsCollection, AuthorCollection, Links
+type Study implements PublicationsCollection, AuthorCollection, Links, GrantReferenceCollection
   {
     title: String!
     description: String!
     keywords: [String]!
     license: LicenseType!
-    aiModelsTrained: Uriorcurie
+    aiModelsTrained: [Uriorcurie]
     acknowledgements: String
-    funding: String!
+    fundingStatement: String!
     publications: [Publications]
     authors: [Author]
     linkUrl: [Uriorcurie]!
     linkDescription: [String]
+    grants: [GrantReference]
   }
 
 type Version
   {
     version: Float!
     timestamp: Datetime!
-    changes: String!
-    previousVersion: Uriorcurie!
+    changes: String
+    previousVersion: Uriorcurie
   }
 
