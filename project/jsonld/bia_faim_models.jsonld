@@ -1740,9 +1740,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "bia_faim_models.yaml",
-  "source_file_date": "2023-07-17T13:38:25",
-  "source_file_size": 20447,
-  "generation_date": "2023-07-17T14:43:17",
+  "source_file_date": "2023-07-17T15:21:27",
+  "source_file_size": 20392,
+  "generation_date": "2023-07-17T15:22:10",
   "@type": "SchemaDefinition",
   "@context": [
     "project//jsonld/bia_faim_models.context.jsonld",

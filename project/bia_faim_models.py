@@ -1,5 +1,5 @@
 # Auto generated from bia_faim_models.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-07-17T14:43:29
+# Generation date: 2023-07-17T15:22:23
 # Schema: bia-faim-models
 #
 # id: https://w3id.org/BioImage-Archive/bia-faim-models

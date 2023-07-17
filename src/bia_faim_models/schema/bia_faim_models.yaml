@@ -78,8 +78,6 @@ classes:
       - email
       - orcid_id
       - role
-    #id_prefixes:
-     # - ORCID
 
   AuthorCollection:
     mixin: true
@@ -332,7 +330,6 @@ slots:
           We thank J. Dupont and E. Mustermann for comments on the manuscript, and G. Hong for useful discussions. 
         
   orcid_id:
-    #identifier: true
     slot_uri:  WIKIDATA_PROPERTY:P496
     range: uriorcurie
     description: A unique identifier for an author
