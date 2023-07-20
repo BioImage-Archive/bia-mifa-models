@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://BioImage-Archive.github.io/bia-faim-models/PublicationsCollection/" rel="canonical"/>
+<link href="https://BioImage-Archive.github.io/bia-faim-models/FundingStatement/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: PublicationsCollection - bia-faim-models</title>
+<title>Class: FundingStatement - bia-faim-models</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-publicationscollection">
+<a class="md-skip" href="#class-fundingstatement">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: PublicationsCollection
+              Class: FundingStatement
             
           </span>
 </div>
@@ -147,11 +147,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mixin-usage">
-    Mixin Usage
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
@@ -196,19 +191,15 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/PublicationsCollection.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/FundingStatement.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-publicationscollection">Class: PublicationsCollection</h1>
-<p><em>A holder for Publications objects</em></p>
-<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/PublicationsCollection">bia_faim_models:PublicationsCollection</a></p>
+<h1 id="class-fundingstatement">Class: FundingStatement</h1>
+<p><em>Description of how the study was funded</em></p>
+<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/FundingStatement">bia_faim_models:FundingStatement</a></p>
 <div class="mermaid"> classDiagram
-    class PublicationsCollection
-      PublicationsCollection &lt;|-- Study
-
-      PublicationsCollection : publications
-
-          PublicationsCollection --|&gt; Publications : publications
+    class FundingStatement
+      FundingStatement : funding_statement
 
 
 </div>
@@ -225,25 +216,10 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="publications.md">publications</a></td>
-<td>0..* <br/> <a href="../Publications/">Publications</a></td>
-<td>a collection of publications associated with a study</td>
+<td><a href="../funding_statement/">funding_statement</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>Description of how the study was funded</td>
 <td>direct</td>
-</tr>
-</tbody>
-</table>
-<h2 id="mixin-usage">Mixin Usage</h2>
-<table>
-<thead>
-<tr>
-<th>mixed into</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../Study/">Study</a></td>
-<td>General information about the study</td>
 </tr>
 </tbody>
 </table>
@@ -263,11 +239,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>bia_faim_models:PublicationsCollection</td>
+<td>bia_faim_models:FundingStatement</td>
 </tr>
 <tr>
 <td>native</td>
-<td>bia_faim_models:PublicationsCollection</td>
+<td>bia_faim_models:FundingStatement</td>
 </tr>
 </tbody>
 </table>
@@ -275,41 +251,36 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: PublicationsCollection
-description: A holder for Publications objects
+<pre><code class="language-yaml">name: FundingStatement
+description: Description of how the study was funded
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-mixin: true
-attributes:
-  publications:
-    name: publications
-    description: a collection of publications associated with a study
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-    rank: 1000
-    multivalued: true
-    range: Publications
-    inlined: true
+slots:
+- funding_statement
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: PublicationsCollection
-description: A holder for Publications objects
+<pre><code class="language-yaml">name: FundingStatement
+description: Description of how the study was funded
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
-mixin: true
 attributes:
-  publications:
-    name: publications
-    description: a collection of publications associated with a study
+  funding_statement:
+    name: funding_statement
+    description: Description of how the study was funded
+    examples:
+    - value: T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678),
+        and the European Union Horizon 2020 research and innovation programme  under
+        the Marie Sklodowska-Curie grant agreement No 12345. This work was supported
+        by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.
     from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
-    multivalued: true
-    alias: publications
-    owner: PublicationsCollection
+    alias: funding_statement
+    owner: FundingStatement
     domain_of:
-    - PublicationsCollection
-    range: Publications
-    inlined: true
+    - FundingStatement
+    range: string
+    required: true
 
 </code></pre>
 </details>
