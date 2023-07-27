@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://BioImage-Archive.github.io/bia-faim-models/version/">
+        <link rel="canonical" href="https://BioImage-Archive.github.io/bia-faim-models/funding/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: version - bia-faim-models</title>
+        <title>Slot: funding - bia-faim-models</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-version" class="md-skip">
+        <a href="#slot-funding" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: version
+              Slot: funding
             
           </span>
         </div>
@@ -317,15 +317,15 @@
                 
                   
 
-  <a href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/version.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/funding.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-version">Slot: version</h1>
-<p><em>Unique version number</em></p>
-<p>URI: <a href="http://purl.org/pav/version">pav:version</a></p>
+<h1 id="slot-funding">Slot: funding</h1>
+<p><em>A description of how the data generation was funded. It can be a funding statement (free text) like the ones that appear in a publication,  a class GrantReferenceCollection which includes the grants IDs and funder names or both.</em></p>
+<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/funding">bia_faim_models:funding</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,8 +339,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Version/">Version</a></td>
-<td>Information about the dataset version</td>
+<td><a href="../Study/">Study</a></td>
+<td>General information about the study</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -348,7 +348,7 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../Float/">Float</a></p>
+<p>Range: <a href="../String/">String</a></p>
 </li>
 <li>
 <p>Required: True</p>
@@ -363,10 +363,10 @@
 </thead>
 <tbody>
 <tr>
-<td>1.1</td>
+<td>[{'funding_statement': 'T.G. was supported by an EMBO Long-Term Fellowship (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation programme  under the Marie Sklodowska-Curie grant agreement No 12345. This work was supported by a Cancer Research UK Programme Grant (DRCNPG-123\123456) to J.C.'}]</td>
 </tr>
 <tr>
-<td>3.0</td>
+<td>[{'grant_id': 'ALTF 123', 'funder': 'EMBO Long-Term Fellowship'}, {'grant_id': '1234', 'funder': 'Marie Sklodowska-Curie Indiviadual Fellowship'}]</td>
 </tr>
 </tbody>
 </table>
@@ -378,19 +378,28 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: version
-description: Unique version number
+<pre><code class="language-yaml">name: funding
+description: A description of how the data generation was funded. It can be a funding
+  statement (free text) like the ones that appear in a publication,  a class GrantReferenceCollection
+  which includes the grants IDs and funder names or both.
 examples:
-- value: '1.1'
-- value: '3.0'
+- value: '[{''funding_statement'': ''T.G. was supported by an EMBO Long-Term Fellowship
+    (ALTF 1234-5678), and the European Union Horizon 2020 research and innovation
+    programme  under the Marie Sklodowska-Curie grant agreement No 12345. This work
+    was supported by a Cancer Research UK Programme Grant (DRCNPG-123\\123456) to
+    J.C.''}]'
+- value: '[{''grant_id'': ''ALTF 123'', ''funder'': ''EMBO Long-Term Fellowship''},
+    {''grant_id'': ''1234'', ''funder'': ''Marie Sklodowska-Curie Indiviadual Fellowship''}]'
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
-slot_uri: pav:version
-alias: version
+alias: funding
 domain_of:
-- Version
-range: float
+- Study
+range: string
 required: true
+any_of:
+- range: FundingStatement
+- range: GrantReferenceCollection
 
 </code></pre>
 
