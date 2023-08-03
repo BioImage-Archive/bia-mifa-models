@@ -40,6 +40,7 @@ file_metadata:
     source_image_id: 
     transformations:
     spatial_information: 
+    annotation_creation_time:
   - annotation_id: 
     annotation_type: 
       - 
@@ -47,3 +48,4 @@ file_metadata:
     source_image_id: 
     transformations:
     spatial_information: 
+    annotation_creation_time:

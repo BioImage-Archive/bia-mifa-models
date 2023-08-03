@@ -111,6 +111,11 @@
             "additionalProperties": false,
             "description": "metadata atributes that must be detailed at the file level",
             "properties": {
+                "annotation_creation_time": {
+                    "description": "Date and time when the annotation was created",
+                    "format": "date-time",
+                    "type": "string"
+                },
                 "annotation_id": {
                     "description": "The identifier for the annotation",
                     "type": "string"

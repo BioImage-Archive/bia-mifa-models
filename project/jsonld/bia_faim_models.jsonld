@@ -361,7 +361,7 @@
         },
         {
           "text": "point_annotations",
-          "description": "X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid).",
+          "description": "X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid  or landmarks).",
           "todos": [
             "map this to an ontology"
           ]
@@ -1276,6 +1276,32 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "annotation_creation_time",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_creation_time",
+      "description": "Date and time when the annotation was created",
+      "examples": [
+        {
+          "value": "2021-04-11 11:00:15-05:00",
+          "@type": "Example"
+        },
+        {
+          "value": "2017-01-23 18:22:04+00:00",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "mappings": [
+        "http://purl.org/pav/authoredOn"
+      ],
+      "slot_uri": "http://purl.org/pav/authoredOn",
+      "owner": "FileLevelMetadata",
+      "domain_of": [
+        "FileLevelMetadata"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "version",
       "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/version",
       "description": "Unique version number",
@@ -1670,7 +1696,8 @@
         "annotation_type",
         "source_image_id",
         "transformations",
-        "spatial_information"
+        "spatial_information",
+        "annotation_creation_time"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadata",
@@ -1740,9 +1767,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "bia_faim_models.yaml",
-  "source_file_date": "2023-07-17T15:21:27",
-  "source_file_size": 20392,
-  "generation_date": "2023-07-17T15:22:10",
+  "source_file_date": "2023-08-03T15:13:21",
+  "source_file_size": 20678,
+  "generation_date": "2023-08-03T15:23:04",
   "@type": "SchemaDefinition",
   "@context": [
     "project//jsonld/bia_faim_models.context.jsonld",

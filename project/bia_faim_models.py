@@ -1,5 +1,5 @@
 # Auto generated from bia_faim_models.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-07-17T15:22:23
+# Generation date: 2023-08-03T15:23:17
 # Schema: bia-faim-models
 #
 # id: https://w3id.org/BioImage-Archive/bia-faim-models
@@ -419,6 +419,7 @@ class FileLevelMetadata(YAMLRoot):
     source_image_id: str = None
     transformations: Optional[str] = None
     spatial_information: Optional[str] = None
+    annotation_creation_time: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.annotation_id):
@@ -442,6 +443,9 @@ class FileLevelMetadata(YAMLRoot):
 
         if self.spatial_information is not None and not isinstance(self.spatial_information, str):
             self.spatial_information = str(self.spatial_information)
+
+        if self.annotation_creation_time is not None and not isinstance(self.annotation_creation_time, XSDDateTime):
+            self.annotation_creation_time = XSDDateTime(self.annotation_creation_time)
 
         super().__post_init__(**kwargs)
 
@@ -575,7 +579,7 @@ class AnnotationType(EnumDefinitionImpl):
         description="""graphical representations of the morphology, connectivity, or spatial arrangement of biological structures in an image. Graphs, such as skeletons or connectivity diagrams, typically consist of nodes and edges, where nodes represent individual elements or regions and edges represent the connections or interactions between them""")
     point_annotations = PermissibleValue(
         text="point_annotations",
-        description="X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid).")
+        description="""X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid  or landmarks).""")
     segmentation_mask = PermissibleValue(
         text="segmentation_mask",
         description="""an image, the same size as the source image, with the value of each pixel representing some biological identity or background region""")
@@ -714,6 +718,9 @@ slots.spatial_information = Slot(uri=BIA_FAIM_MODELS.spatial_information, name="
 
 slots.transformations = Slot(uri=BIA_FAIM_MODELS.transformations, name="transformations", curie=BIA_FAIM_MODELS.curie('transformations'),
                    model_uri=BIA_FAIM_MODELS.transformations, domain=None, range=Optional[str])
+
+slots.annotation_creation_time = Slot(uri=PAV.authoredOn, name="annotation_creation_time", curie=PAV.curie('authoredOn'),
+                   model_uri=BIA_FAIM_MODELS.annotation_creation_time, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.version = Slot(uri=PAV.version, name="version", curie=PAV.curie('version'),
                    model_uri=BIA_FAIM_MODELS.version, domain=None, range=float)

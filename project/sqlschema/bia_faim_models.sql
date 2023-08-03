@@ -26,6 +26,7 @@ CREATE TABLE "FileLevelMetadata" (
 	source_image_id TEXT NOT NULL, 
 	transformations TEXT, 
 	spatial_information TEXT, 
+	annotation_creation_time DATETIME, 
 	PRIMARY KEY (annotation_id)
 );
 

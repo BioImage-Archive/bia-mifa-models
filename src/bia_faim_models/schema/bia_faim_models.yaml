@@ -140,6 +140,7 @@ classes:
       - source_image_id
       - transformations
       - spatial_information
+      - annotation_creation_time
 
   FileLevelMetadataCollection:
     mixin: true
@@ -480,6 +481,14 @@ slots:
       - value: Rotation_angle = 37°
       - value: Translation_horizontal_pixel_displacement = 150, Translation_vertical_pixel_displacement = 92
   
+  annotation_creation_time:
+    description: Date and time when the annotation was created
+    range: datetime
+    slot_uri: pav:authoredOn
+    examples:
+      - value: 2021-04-11T11:00:15-05:00
+      - value: 2017-01-23T18:22:04-00:00
+  
   version:
     required: true
     range: float
@@ -549,7 +558,7 @@ enums:
           - map this to an ontology
       
       point_annotations:
-        description:  X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid).
+        description:  X, Y, and Z coordinates of a point of interest in an image (for example an object's centroid  or landmarks).
         todos:
           - map this to an ontology
       

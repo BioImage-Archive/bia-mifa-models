@@ -86,7 +86,8 @@ linkml:Sparqlpath xsd:string
     (  $<FileLevelMetadata_tes> (  <annotation_type> @<AnnotationType> + ;
           <source_image_id> @linkml:String ;
           <transformations> @linkml:String ? ;
-          <spatial_information> @linkml:String ?
+          <spatial_information> @linkml:String ? ;
+          pav:authoredOn @linkml:Datetime ?
        ) ;
        rdf:type [ <FileLevelMetadata> ]
     )
