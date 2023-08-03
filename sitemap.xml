@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/FundingStatement/</loc>
+         <lastmod>2023-08-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/GrantReference/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
@@ -122,6 +127,11 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/OrganisationInfoCollection/</loc>
+         <lastmod>2023-08-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/OrganisationURL/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -181,6 +191,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/affiliation/</loc>
+         <lastmod>2023-08-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/ai_models_trained/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
@@ -192,11 +207,6 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/annotation_coverage/</loc>
-         <lastmod>2023-08-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://BioImage-Archive.github.io/bia-faim-models/annotation_creation_time/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -267,6 +277,11 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/funder/</loc>
+         <lastmod>2023-08-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/funding/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -346,11 +361,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://BioImage-Archive.github.io/bia-faim-models/publications/</loc>
-         <lastmod>2023-08-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/pubmed_id/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
@@ -362,6 +372,11 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/ror_id/</loc>
+         <lastmod>2023-08-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/source_image/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -391,7 +406,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://BioImage-Archive.github.io/bia-faim-models/version/</loc>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/transformatons/</loc>
          <lastmod>2023-08-03</lastmod>
          <changefreq>daily</changefreq>
     </url>

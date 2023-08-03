@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://BioImage-Archive.github.io/bia-faim-models/AnnotationType/">
+        <link rel="canonical" href="https://BioImage-Archive.github.io/bia-faim-models/affiliation/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Enum: AnnotationType - bia-faim-models</title>
+        <title>Slot: affiliation - bia-faim-models</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-annotationtype" class="md-skip">
+        <a href="#slot-affiliation" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: AnnotationType
+              Slot: affiliation
             
           </span>
         </div>
@@ -256,15 +256,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#permissible-values" class="md-nav__link">
-    Permissible Values
+  <a href="#applicable-classes" class="md-nav__link">
+    Applicable Classes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    Slots
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -310,93 +317,59 @@
                 
                   
 
-  <a href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/AnnotationType.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/BioImage-Archive/bia-faim-models/edit/master/docs/affiliation.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="enum-annotationtype">Enum: AnnotationType</h1>
-<p>URI: <a href="AnnotationType">AnnotationType</a></p>
-<h2 id="permissible-values">Permissible Values</h2>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Meaning</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>class_labels</td>
-<td>None</td>
-<td>tags that identify specific features, patterns or classes in images</td>
-</tr>
-<tr>
-<td>bounding_boxes</td>
-<td>None</td>
-<td>rectangles completely enclosing a structure of interest within an image</td>
-</tr>
-<tr>
-<td>counts</td>
-<td>None</td>
-<td>number of objects, such as cells, found in an image</td>
-</tr>
-<tr>
-<td>derived_annotations</td>
-<td>None</td>
-<td>additional analytical data extracted from the images</td>
-</tr>
-<tr>
-<td>geometrical_annotations</td>
-<td>None</td>
-<td>polygons and shapes that outline a region of interest in the image</td>
-</tr>
-<tr>
-<td>graphs</td>
-<td>None</td>
-<td>graphical representations of the morphology, connectivity, or spatial arrange...</td>
-</tr>
-<tr>
-<td>point_annotations</td>
-<td>None</td>
-<td>X, Y, and Z coordinates of a point of interest in an image (for example an ob...</td>
-</tr>
-<tr>
-<td>segmentation_mask</td>
-<td>None</td>
-<td>an image, the same size as the source image, with the value of each pixel rep...</td>
-</tr>
-<tr>
-<td>tracks</td>
-<td>None</td>
-<td>annotations marking the movement or trajectory of objects within a sequence o...</td>
-</tr>
-<tr>
-<td>weak_annotations</td>
-<td>None</td>
-<td>rough imprecise annotations that are fast to generate</td>
-</tr>
-<tr>
-<td>other</td>
-<td>None</td>
-<td>other types of annotations, please specify in the annotation overview section</td>
-</tr>
-</tbody>
-</table>
-<h2 id="slots">Slots</h2>
+<h1 id="slot-affiliation">Slot: affiliation</h1>
+<p><em>An organization that the author person is affiliated with. The user can provide name and address of the organisation or the ROR ID.</em></p>
+<p>URI: <a href="http://schema.org/affiliation">schema:affiliation</a></p>
+<!-- no inheritance hierarchy -->
+
+<h2 id="applicable-classes">Applicable Classes</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
+<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../annotation_type/">annotation_type</a></td>
-<td>Annotation type, for example class labels, segmentation masks, counts</td>
+<td><a href="../Author/">Author</a></td>
+<td>Information about the authors</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
+<ul>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[{'ror_id': 'ROR:02catss52'}, {'ror_id': 'ROR:03dbr7087'}]</td>
+</tr>
+<tr>
+<td>[{'organisation_name': 'EMBL-EBI', 'address': 'Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK.'}, {'organisation_name': 'University of Toronto', 'address': "27 King's College Cir, Toronto, ON M5S, Canada."}]</td>
 </tr>
 </tbody>
 </table>
@@ -408,77 +381,26 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: AnnotationType
+<pre><code class="language-yaml">name: affiliation
+description: An organization that the author person is affiliated with. The user can
+  provide name and address of the organisation or the ROR ID.
+examples:
+- value: '[{''ror_id'': ''ROR:02catss52''}, {''ror_id'': ''ROR:03dbr7087''}]'
+- value: '[{''organisation_name'': ''EMBL-EBI'', ''address'': ''Wellcome Genome Campus,
+    Hinxton, Cambridgeshire, CB10 1SD, UK.''}, {''organisation_name'': ''University
+    of Toronto'', ''address'': &quot;27 King''s College Cir, Toronto, ON M5S, Canada.&quot;}]'
 from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 rank: 1000
-permissible_values:
-  class_labels:
-    text: class_labels
-    description: tags that identify specific features, patterns or classes in images
-    todos:
-    - map this to an ontology
-  bounding_boxes:
-    text: bounding_boxes
-    description: rectangles completely enclosing a structure of interest within an
-      image
-    todos:
-    - map this to an ontology
-  counts:
-    text: counts
-    description: number of objects, such as cells, found in an image
-    todos:
-    - map this to an ontology
-  derived_annotations:
-    text: derived_annotations
-    description: additional analytical data extracted from the images. For example,
-      the image point spread function,the signal to noise ratio, focus information…
-    todos:
-    - map this to an ontology
-  geometrical_annotations:
-    text: geometrical_annotations
-    description: polygons and shapes that outline a region of interest in the image.
-      These can be geometrical primitives, 2D polygons, 3D meshes…
-    todos:
-    - map this to an ontology
-  graphs:
-    text: graphs
-    description: graphical representations of the morphology, connectivity, or spatial
-      arrangement of biological structures in an image. Graphs, such as skeletons
-      or connectivity diagrams, typically consist of nodes and edges, where nodes
-      represent individual elements or regions and edges represent the connections
-      or interactions between them
-    todos:
-    - map this to an ontology
-  point_annotations:
-    text: point_annotations
-    description: X, Y, and Z coordinates of a point of interest in an image (for example
-      an object's centroid).
-    todos:
-    - map this to an ontology
-  segmentation_mask:
-    text: segmentation_mask
-    description: an image, the same size as the source image, with the value of each
-      pixel representing some biological identity or background region
-    todos:
-    - map this to an ontology
-  tracks:
-    text: tracks
-    description: annotations marking the movement or trajectory of objects within
-      a sequence of bioimages
-    todos:
-    - map this to an ontology
-  weak_annotations:
-    text: weak_annotations
-    description: rough imprecise annotations that are fast to generate. These annotations
-      are used, for example,  to detect an object without providing accurate boundaries
-    todos:
-    - map this to an ontology
-  other:
-    text: other
-    description: other types of annotations, please specify in the annotation overview
-      section
-    todos:
-    - map this to an ontology
+slot_uri: schema:affiliation
+multivalued: true
+alias: affiliation
+domain_of:
+- Author
+range: string
+required: true
+exactly_one_of:
+- range: OrganisationURL
+- range: OrganisationInfoCollection
 
 </code></pre>
 
