@@ -204,6 +204,8 @@
 <p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadata">bia_faim_models:FileLevelMetadata</a></p>
 <div class="mermaid"> classDiagram
     class FileLevelMetadata
+      FileLevelMetadata : annotation_creation_time
+
       FileLevelMetadata : annotation_id
 
       FileLevelMetadata : annotation_type
@@ -258,6 +260,12 @@
 <td><a href="../spatial_information/">spatial_information</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Spatial information for non-pixel annotations</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../annotation_creation_time/">annotation_creation_time</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>Date and time when the annotation was created</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -324,6 +332,7 @@ slots:
 - source_image_id
 - transformations
 - spatial_information
+- annotation_creation_time
 
 </code></pre>
 </details>
@@ -408,6 +417,20 @@ attributes:
     domain_of:
     - FileLevelMetadata
     range: string
+  annotation_creation_time:
+    name: annotation_creation_time
+    description: Date and time when the annotation was created
+    examples:
+    - value: '2021-04-11 11:00:15-05:00'
+    - value: '2017-01-23 18:22:04+00:00'
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    rank: 1000
+    slot_uri: pav:authoredOn
+    alias: annotation_creation_time
+    owner: FileLevelMetadata
+    domain_of:
+    - FileLevelMetadata
+    range: datetime
 
 </code></pre>
 </details>
