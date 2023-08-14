@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/655723200.svg)](https://zenodo.org/badge/latestdoi/655723200)
+
 # BioImage Archive FAIM metadata models
 
 This repository contains schemas and models for working with the BioImage Archive's FAIM (Formats, Accessibility, Incentives and Metadata) metadata implementation. This metadata model is intended to promote the reusability of AI-ready biological image datasets and it is based on the community recommendations  summarised [here](https://zenodo.org/record/7681687).
