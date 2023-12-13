@@ -201,7 +201,7 @@
 </a>
 <h1 id="class-filelevelmetadata">Class: FileLevelMetadata</h1>
 <p><em>metadata atributes that must be detailed at the file level</em></p>
-<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadata">bia_faim_models:FileLevelMetadata</a></p>
+<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-mifa-models/FileLevelMetadata">bia_mifa_models:FileLevelMetadata</a></p>
 <div class="mermaid"> classDiagram
     class FileLevelMetadata
       FileLevelMetadata : annotation_creation_time
@@ -298,7 +298,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/BioImage-Archive/bia-faim-models</li>
+<li>from schema: https://w3id.org/BioImage-Archive/bia-mifa-models</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -311,11 +311,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>bia_faim_models:FileLevelMetadata</td>
+<td>bia_mifa_models:FileLevelMetadata</td>
 </tr>
 <tr>
 <td>native</td>
-<td>bia_faim_models:FileLevelMetadata</td>
+<td>bia_mifa_models:FileLevelMetadata</td>
 </tr>
 </tbody>
 </table>
@@ -325,7 +325,7 @@
 <details>
 <pre><code class="language-yaml">name: FileLevelMetadata
 description: metadata atributes that must be detailed at the file level
-from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
 slots:
 - annotation_id
 - annotation_type
@@ -340,7 +340,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: FileLevelMetadata
 description: metadata atributes that must be detailed at the file level
-from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
 attributes:
   annotation_id:
     name: annotation_id
@@ -348,7 +348,7 @@ attributes:
     examples:
     - value: AN1
     - value: '12345678'
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -364,7 +364,7 @@ attributes:
     examples:
     - value: '[''segmentation_mask'', ''class_labels'']'
     - value: counts
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     multivalued: true
     alias: annotation_type
@@ -379,7 +379,7 @@ attributes:
     examples:
     - value: IM1
     - value: '12532806'
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: source_image_id
     owner: FileLevelMetadata
@@ -394,7 +394,7 @@ attributes:
     - value: Rotation_angle = 37°
     - value: Translation_horizontal_pixel_displacement = 150, Translation_vertical_pixel_displacement
         = 92
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: transformations
     owner: FileLevelMetadata
@@ -410,7 +410,7 @@ attributes:
     - value: Each annotated object contains a category_id indicating the annotation
         class label, and an associated bounding box delineating the corresponding
         blod vessel
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: spatial_information
     owner: FileLevelMetadata
@@ -423,7 +423,7 @@ attributes:
     examples:
     - value: '2021-04-11 11:00:15-05:00'
     - value: '2017-01-23 18:22:04+00:00'
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     slot_uri: pav:authoredOn
     alias: annotation_creation_time
