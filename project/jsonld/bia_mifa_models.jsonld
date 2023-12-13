@@ -1,19 +1,19 @@
 {
-  "name": "bia-faim-models",
-  "description": "Schemas and models for working with the BioImage Archive's FAIM (Formats, Accessibility, Incentives and Metadata) metadata implementation",
-  "title": "bia-faim-models",
+  "name": "bia-mifa-models",
+  "description": "Schemas and models for working with the BioImage Archive's MIFA (Metadata, Incentives, Formats and Accessibility) metadata implementation",
+  "title": "bia-mifa-models",
   "see_also": [
-    "https://BioImage-Archive.github.io/bia-faim-models"
+    "https://BioImage-Archive.github.io/bia-mifa-models"
   ],
-  "id": "https://w3id.org/BioImage-Archive/bia-faim-models",
+  "id": "https://w3id.org/BioImage-Archive/bia-mifa-models",
   "imports": [
     "linkml:types"
   ],
   "license": "CC0",
   "prefixes": [
     {
-      "prefix_prefix": "bia_faim_models",
-      "prefix_reference": "https://w3id.org/BioImage-Archive/bia-faim-models/"
+      "prefix_prefix": "bia_mifa_models",
+      "prefix_reference": "https://w3id.org/BioImage-Archive/bia-mifa-models/"
     },
     {
       "prefix_prefix": "linkml",
@@ -52,13 +52,16 @@
       "prefix_reference": "https://example.org/"
     }
   ],
-  "default_prefix": "bia_faim_models",
+  "default_prefix": "bia_mifa_models",
   "default_range": "string",
   "types": [
     {
       "name": "string",
       "definition_uri": "https://w3id.org/linkml/String",
       "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "exact_mappings": [
@@ -72,6 +75,9 @@
       "name": "integer",
       "definition_uri": "https://w3id.org/linkml/Integer",
       "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "exact_mappings": [
@@ -85,6 +91,9 @@
       "name": "boolean",
       "definition_uri": "https://w3id.org/linkml/Boolean",
       "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "exact_mappings": [
@@ -99,6 +108,9 @@
       "name": "float",
       "definition_uri": "https://w3id.org/linkml/Float",
       "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "exact_mappings": [
@@ -112,6 +124,9 @@
       "name": "double",
       "definition_uri": "https://w3id.org/linkml/Double",
       "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "close_mappings": [
@@ -125,6 +140,9 @@
       "name": "decimal",
       "definition_uri": "https://w3id.org/linkml/Decimal",
       "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "broad_mappings": [
@@ -139,7 +157,8 @@
       "definition_uri": "https://w3id.org/linkml/Time",
       "description": "A time object represents a (local) time of day, independent of any particular day",
       "notes": [
-        "URI is dateTime because OWL reasoners do not work with straight date or time"
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -156,7 +175,8 @@
       "definition_uri": "https://w3id.org/linkml/Date",
       "description": "a date (year, month and day) in an idealized calendar",
       "notes": [
-        "URI is dateTime because OWL reasoners don't work with straight date or time"
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -172,6 +192,9 @@
       "name": "datetime",
       "definition_uri": "https://w3id.org/linkml/Datetime",
       "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "exact_mappings": [
@@ -186,6 +209,9 @@
       "name": "date_or_datetime",
       "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
       "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "str",
@@ -197,6 +223,9 @@
       "name": "uriorcurie",
       "definition_uri": "https://w3id.org/linkml/Uriorcurie",
       "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "URIorCURIE",
@@ -209,6 +238,9 @@
       "definition_uri": "https://w3id.org/linkml/Curie",
       "conforms_to": "https://www.w3.org/TR/curie/",
       "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
       "comments": [
         "in RDF serializations this MUST be expanded to a URI",
         "in non-RDF serializations MAY be serialized as the compact representation"
@@ -225,6 +257,9 @@
       "definition_uri": "https://w3id.org/linkml/Uri",
       "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
       "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
       "comments": [
         "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
       ],
@@ -242,6 +277,9 @@
       "name": "ncname",
       "definition_uri": "https://w3id.org/linkml/Ncname",
       "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "NCName",
@@ -253,6 +291,9 @@
       "name": "objectidentifier",
       "definition_uri": "https://w3id.org/linkml/Objectidentifier",
       "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
       "comments": [
         "Used for inheritance and type checking"
       ],
@@ -267,6 +308,9 @@
       "name": "nodeidentifier",
       "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
       "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "NodeIdentifier",
@@ -279,6 +323,9 @@
       "definition_uri": "https://w3id.org/linkml/Jsonpointer",
       "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
       "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "str",
@@ -291,6 +338,9 @@
       "definition_uri": "https://w3id.org/linkml/Jsonpath",
       "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
       "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "str",
@@ -303,6 +353,9 @@
       "definition_uri": "https://w3id.org/linkml/Sparqlpath",
       "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
       "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "str",
@@ -314,8 +367,8 @@
   "enums": [
     {
       "name": "AnnotationType",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "permissible_values": [
         {
           "text": "class_labels",
@@ -398,8 +451,8 @@
     },
     {
       "name": "LicenseType",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/LicenseType",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/LicenseType",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "permissible_values": [
         {
           "text": "CC0",
@@ -417,7 +470,7 @@
   "slots": [
     {
       "name": "title",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/title",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/title",
       "description": "The title for your dataset. This will be displayed when search results including your data are shown. Often this will be the same as an associated publication.",
       "examples": [
         {
@@ -429,7 +482,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/title"
       ],
@@ -444,7 +497,7 @@
     },
     {
       "name": "description",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/description",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/description",
       "description": "Brief description of the detaset. Must contain the biological application of the dataset",
       "examples": [
         {
@@ -456,7 +509,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/description"
       ],
@@ -471,7 +524,7 @@
     },
     {
       "name": "keywords",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/keywords",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/keywords",
       "description": "Keywords or tags used to describe the dataset",
       "examples": [
         {
@@ -483,7 +536,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/keywords"
       ],
@@ -499,7 +552,7 @@
     },
     {
       "name": "license",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/license",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/license",
       "description": "The license under which the data are available",
       "examples": [
         {
@@ -511,7 +564,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/license"
       ],
@@ -526,7 +579,7 @@
     },
     {
       "name": "ai_models_trained",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/ai_models_trained",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/ai_models_trained",
       "description": "Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo.",
       "examples": [
         {
@@ -538,8 +591,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/ai_models_trained",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/ai_models_trained",
       "multivalued": true,
       "owner": "Study",
       "domain_of": [
@@ -550,7 +603,7 @@
     },
     {
       "name": "funding_statement",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/funding_statement",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/funding_statement",
       "description": "Description of how the study was funded",
       "examples": [
         {
@@ -562,8 +615,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/funding_statement",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/funding_statement",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -574,7 +627,7 @@
     },
     {
       "name": "grant_id",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/grant_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/grant_id",
       "description": "The identifier for the grant",
       "examples": [
         {
@@ -586,7 +639,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -602,7 +655,7 @@
     },
     {
       "name": "funder",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/funder",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/funder",
       "description": "The funding body provididing support",
       "examples": [
         {
@@ -614,7 +667,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/funder"
       ],
@@ -629,7 +682,7 @@
     },
     {
       "name": "publication_title",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/publication_title",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/publication_title",
       "description": "The title for a publication associated to the dataset",
       "examples": [
         {
@@ -641,7 +694,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/title"
       ],
@@ -656,7 +709,7 @@
     },
     {
       "name": "publication_authors",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/publication_authors",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/publication_authors",
       "description": "Authors of associated publication",
       "examples": [
         {
@@ -668,7 +721,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/author"
       ],
@@ -683,7 +736,7 @@
     },
     {
       "name": "publication_doi",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/publication_doi",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/publication_doi",
       "description": "Digital Object Identifier (DOI)",
       "examples": [
         {
@@ -695,7 +748,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "https://www.wikidata.org/prop/P356"
       ],
@@ -711,7 +764,7 @@
     },
     {
       "name": "publication_year",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/publication_year",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/publication_year",
       "description": "Year of publication",
       "examples": [
         {
@@ -723,8 +776,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/publication_year",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/publication_year",
       "owner": "Publications",
       "domain_of": [
         "Publications"
@@ -734,7 +787,7 @@
     },
     {
       "name": "pubmed_id",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/pubmed_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/pubmed_id",
       "description": "Identifier for journal articles/abstracts in PubMed",
       "examples": [
         {
@@ -746,7 +799,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "https://www.wikidata.org/prop/P698"
       ],
@@ -760,7 +813,7 @@
     },
     {
       "name": "link_url",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/link_url",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/link_url",
       "description": "URL of relevant link",
       "examples": [
         {
@@ -768,8 +821,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/link_url",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/link_url",
       "multivalued": true,
       "owner": "Links",
       "domain_of": [
@@ -781,7 +834,7 @@
     },
     {
       "name": "link_description",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/link_description",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/link_description",
       "description": "The description of the linked content",
       "examples": [
         {
@@ -789,8 +842,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/link_description",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/link_description",
       "multivalued": true,
       "owner": "Links",
       "domain_of": [
@@ -801,7 +854,7 @@
     },
     {
       "name": "acknowledgements",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/acknowledgements",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/acknowledgements",
       "description": "Any people or groups that should be acknowledged as part of the dataset",
       "examples": [
         {
@@ -813,8 +866,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/acknowledgements",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/acknowledgements",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -824,7 +877,7 @@
     },
     {
       "name": "orcid_id",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/orcid_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/orcid_id",
       "description": "A unique identifier for an author",
       "examples": [
         {
@@ -836,7 +889,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "https://www.wikidata.org/prop/P496"
       ],
@@ -850,7 +903,7 @@
     },
     {
       "name": "author_first_name",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/author_first_name",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/author_first_name",
       "description": "First name for an author",
       "examples": [
         {
@@ -862,7 +915,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -877,7 +930,7 @@
     },
     {
       "name": "author_last_name",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/author_last_name",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/author_last_name",
       "description": "Last name for an author",
       "examples": [
         {
@@ -889,7 +942,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -904,7 +957,7 @@
     },
     {
       "name": "email",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/email",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/email",
       "description": "Email address of a person",
       "examples": [
         {
@@ -916,7 +969,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/email"
       ],
@@ -931,7 +984,7 @@
     },
     {
       "name": "organisation_name",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/organisation_name",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/organisation_name",
       "description": "Organisation name",
       "examples": [
         {
@@ -943,7 +996,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -958,7 +1011,7 @@
     },
     {
       "name": "ror_id",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/ror_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/ror_id",
       "description": "Identifier for the Research Organization Registry",
       "examples": [
         {
@@ -970,7 +1023,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "https://www.wikidata.org/prop/P6782"
       ],
@@ -984,7 +1037,7 @@
     },
     {
       "name": "address",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/address",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/address",
       "description": "Organisation address",
       "examples": [
         {
@@ -996,7 +1049,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -1010,7 +1063,7 @@
     },
     {
       "name": "role",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/role",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/role",
       "description": "Role of the author when creating the dataset",
       "examples": [
         {
@@ -1022,7 +1075,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/roleName"
       ],
@@ -1037,7 +1090,7 @@
     },
     {
       "name": "annotation_overview",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_overview",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_overview",
       "description": "Short descriptive summary indicating the type of annotation and how it was generated",
       "examples": [
         {
@@ -1049,8 +1102,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_overview",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_overview",
       "owner": "Annotations",
       "domain_of": [
         "Annotations"
@@ -1061,7 +1114,7 @@
     },
     {
       "name": "annotation_type",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_type",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_type",
       "description": "Annotation type, for example class labels, segmentation masks, counts...",
       "examples": [
         {
@@ -1073,8 +1126,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_type",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_type",
       "multivalued": true,
       "owner": "FileLevelMetadata",
       "domain_of": [
@@ -1086,7 +1139,7 @@
     },
     {
       "name": "annotation_method",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_method",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_method",
       "description": "Description of how the annotations were created. For example, were the annotations crowdsourced or expertly annotated,  produced by  a human or software, what software was used, when were the annotations created,  protocols used for consensus and quality assurance",
       "examples": [
         {
@@ -1098,8 +1151,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_method",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_method",
       "owner": "Annotations",
       "domain_of": [
         "Annotations"
@@ -1110,7 +1163,7 @@
     },
     {
       "name": "annotation_criteria",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_criteria",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_criteria",
       "description": "Rules used to generate annotations",
       "examples": [
         {
@@ -1122,8 +1175,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_criteria",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_criteria",
       "owner": "Annotations",
       "domain_of": [
         "Annotations"
@@ -1133,7 +1186,7 @@
     },
     {
       "name": "annotation_coverage",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_coverage",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_coverage",
       "description": "Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available",
       "examples": [
         {
@@ -1145,8 +1198,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_coverage",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_coverage",
       "owner": "Annotations",
       "domain_of": [
         "Annotations"
@@ -1156,7 +1209,7 @@
     },
     {
       "name": "source_image_id",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/source_image_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/source_image_id",
       "description": "identifier of the source image from which the annotation originated",
       "examples": [
         {
@@ -1168,8 +1221,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/source_image_id",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/source_image_id",
       "owner": "FileLevelMetadata",
       "domain_of": [
         "FileLevelMetadata"
@@ -1180,7 +1233,7 @@
     },
     {
       "name": "annotation_id",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_id",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_id",
       "description": "The identifier for the annotation",
       "examples": [
         {
@@ -1192,7 +1245,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -1208,7 +1261,7 @@
     },
     {
       "name": "annotation_confidence_level",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_confidence_level",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_confidence_level",
       "description": "Confidence on annotation accuracy",
       "examples": [
         {
@@ -1220,8 +1273,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_confidence_level",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_confidence_level",
       "owner": "Annotations",
       "domain_of": [
         "Annotations"
@@ -1231,7 +1284,7 @@
     },
     {
       "name": "spatial_information",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/spatial_information",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/spatial_information",
       "description": "Spatial information for non-pixel annotations",
       "examples": [
         {
@@ -1243,8 +1296,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/spatial_information",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/spatial_information",
       "owner": "FileLevelMetadata",
       "domain_of": [
         "FileLevelMetadata"
@@ -1254,7 +1307,7 @@
     },
     {
       "name": "transformations",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/transformations",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/transformations",
       "description": "Any transformations required to link the images to the annotations",
       "examples": [
         {
@@ -1266,8 +1319,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/transformations",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/transformations",
       "owner": "FileLevelMetadata",
       "domain_of": [
         "FileLevelMetadata"
@@ -1277,7 +1330,7 @@
     },
     {
       "name": "annotation_creation_time",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/annotation_creation_time",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/annotation_creation_time",
       "description": "Date and time when the annotation was created",
       "examples": [
         {
@@ -1289,7 +1342,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://purl.org/pav/authoredOn"
       ],
@@ -1303,7 +1356,7 @@
     },
     {
       "name": "version",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/version",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/version",
       "description": "Unique version number",
       "examples": [
         {
@@ -1315,7 +1368,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://purl.org/pav/version"
       ],
@@ -1330,7 +1383,7 @@
     },
     {
       "name": "timestamp",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/timestamp",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/timestamp",
       "description": "Date and time when the version was created",
       "examples": [
         {
@@ -1342,7 +1395,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://purl.org/pav/authoredOn"
       ],
@@ -1357,7 +1410,7 @@
     },
     {
       "name": "changes",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/changes",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/changes",
       "description": "Textual description of changes compared to previous version",
       "examples": [
         {
@@ -1369,8 +1422,8 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/changes",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/changes",
       "owner": "Version",
       "domain_of": [
         "Version"
@@ -1380,7 +1433,7 @@
     },
     {
       "name": "previous_version",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/previous_version",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/previous_version",
       "description": "Pointer to previous version",
       "examples": [
         {
@@ -1392,7 +1445,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mappings": [
         "http://purl.org/pav/previousVersion"
       ],
@@ -1407,8 +1460,8 @@
     {
       "name": "publicationsCollection__publications",
       "description": "a collection of publications associated with a study",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/publications",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/publications",
       "multivalued": true,
       "alias": "publications",
       "owner": "PublicationsCollection",
@@ -1422,8 +1475,8 @@
     {
       "name": "authorCollection__authors",
       "description": "a collection of the authors of a study",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/authors",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/authors",
       "multivalued": true,
       "alias": "authors",
       "owner": "AuthorCollection",
@@ -1438,8 +1491,8 @@
     {
       "name": "organisationInfoCollection__organisation",
       "description": "a collection of the name and address of organisations authors are affiliated with",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/organisation",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/organisation",
       "multivalued": true,
       "alias": "organisation",
       "owner": "OrganisationInfoCollection",
@@ -1454,8 +1507,8 @@
     {
       "name": "grantReferenceCollection__grants",
       "description": "a collection of grant ids and funder names associated with the study",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/grants",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/grants",
       "multivalued": true,
       "alias": "grants",
       "owner": "GrantReferenceCollection",
@@ -1470,8 +1523,8 @@
     {
       "name": "fileLevelMetadataCollection__file_metadata",
       "description": "a collection of the file level metadata for each annotation",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
-      "slot_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/file_metadata",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
+      "slot_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/file_metadata",
       "multivalued": true,
       "alias": "file_metadata",
       "owner": "FileLevelMetadataCollection",
@@ -1487,9 +1540,9 @@
   "classes": [
     {
       "name": "Study",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Study",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Study",
       "description": "General information about the study",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixins": [
         "PublicationsCollection",
         "AuthorCollection",
@@ -1511,7 +1564,7 @@
         "grantReferenceCollection__grants"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Study",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Study",
       "@type": "ClassDefinition"
     },
     {
@@ -1519,9 +1572,9 @@
       "id_prefixes": [
         "DOI"
       ],
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Publications",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Publications",
       "description": "Information about any publications associated with the dataset",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "slots": [
         "publication_title",
         "publication_authors",
@@ -1530,14 +1583,14 @@
         "pubmed_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Publications",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Publications",
       "@type": "ClassDefinition"
     },
     {
       "name": "PublicationsCollection",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/PublicationsCollection",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/PublicationsCollection",
       "description": "A holder for Publications objects",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixin": true,
       "slots": [
         "publicationsCollection__publications"
@@ -1553,14 +1606,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/PublicationsCollection",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/PublicationsCollection",
       "@type": "ClassDefinition"
     },
     {
       "name": "Author",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Author",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Author",
       "description": "Information about the authors",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixins": [
         "OrganisationInfoCollection"
       ],
@@ -1573,14 +1626,14 @@
         "organisationInfoCollection__organisation"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Author",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Author",
       "@type": "ClassDefinition"
     },
     {
       "name": "AuthorCollection",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/AuthorCollection",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/AuthorCollection",
       "description": "A holder for Author objects",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixin": true,
       "slots": [
         "authorCollection__authors"
@@ -1596,28 +1649,28 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/AuthorCollection",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/AuthorCollection",
       "@type": "ClassDefinition"
     },
     {
       "name": "OrganisationInfo",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfo",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/OrganisationInfo",
       "description": "Information about the organisation the author is affiliated with",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "slots": [
         "organisation_name",
         "address",
         "ror_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfo",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/OrganisationInfo",
       "@type": "ClassDefinition"
     },
     {
       "name": "OrganisationInfoCollection",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfoCollection",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/OrganisationInfoCollection",
       "description": "A holder for OrganisationInfo objects",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixin": true,
       "slots": [
         "organisationInfoCollection__organisation"
@@ -1633,27 +1686,27 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/OrganisationInfoCollection",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/OrganisationInfoCollection",
       "@type": "ClassDefinition"
     },
     {
       "name": "GrantReference",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/GrantReference",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/GrantReference",
       "description": "Information about grant ID and funding body that funded the study",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "slots": [
         "grant_id",
         "funder"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/GrantReference",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/GrantReference",
       "@type": "ClassDefinition"
     },
     {
       "name": "GrantReferenceCollection",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/GrantReferenceCollection",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/GrantReferenceCollection",
       "description": "A holder for GrantReference objects",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixin": true,
       "slots": [
         "grantReferenceCollection__grants"
@@ -1669,28 +1722,28 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/GrantReferenceCollection",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/GrantReferenceCollection",
       "@type": "ClassDefinition"
     },
     {
       "name": "Links",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Links",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Links",
       "description": "Links related to the study",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixin": true,
       "slots": [
         "link_url",
         "link_description"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Links",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Links",
       "@type": "ClassDefinition"
     },
     {
       "name": "FileLevelMetadata",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadata",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/FileLevelMetadata",
       "description": "metadata atributes that must be detailed at the file level",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "slots": [
         "annotation_id",
         "annotation_type",
@@ -1700,14 +1753,14 @@
         "annotation_creation_time"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadata",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/FileLevelMetadata",
       "@type": "ClassDefinition"
     },
     {
       "name": "FileLevelMetadataCollection",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadataCollection",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/FileLevelMetadataCollection",
       "description": "A holder for FileLevelMetadata objects",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixin": true,
       "slots": [
         "fileLevelMetadataCollection__file_metadata"
@@ -1723,14 +1776,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/FileLevelMetadataCollection",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/FileLevelMetadataCollection",
       "@type": "ClassDefinition"
     },
     {
       "name": "Annotations",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Annotations",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Annotations",
       "description": "A set of annotations for an AI-ready dataset",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "mixins": [
         "AuthorCollection",
         "FileLevelMetadataCollection"
@@ -1745,15 +1798,15 @@
         "fileLevelMetadataCollection__file_metadata"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Annotations",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Annotations",
       "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
       "name": "Version",
-      "definition_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Version",
+      "definition_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Version",
       "description": "Information about the dataset version",
-      "from_schema": "https://w3id.org/BioImage-Archive/bia-faim-models",
+      "from_schema": "https://w3id.org/BioImage-Archive/bia-mifa-models",
       "slots": [
         "version",
         "timestamp",
@@ -1761,21 +1814,21 @@
         "previous_version"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/BioImage-Archive/bia-faim-models/Version",
+      "class_uri": "https://w3id.org/BioImage-Archive/bia-mifa-models/Version",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "bia_faim_models.yaml",
-  "source_file_date": "2023-08-03T15:13:21",
+  "source_file": "bia_mifa_models.yaml",
+  "source_file_date": "2023-12-13T15:05:14",
   "source_file_size": 20678,
-  "generation_date": "2023-08-03T15:23:04",
+  "generation_date": "2023-12-13T15:06:03",
   "@type": "SchemaDefinition",
   "@context": [
-    "project//jsonld/bia_faim_models.context.jsonld",
+    "project//jsonld/bia_mifa_models.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
-      "@base": "https://w3id.org/BioImage-Archive/bia-faim-models/"
+      "@base": "https://w3id.org/BioImage-Archive/bia-mifa-models/"
     }
   ]
 }

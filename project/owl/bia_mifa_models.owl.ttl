@@ -1,628 +1,838 @@
-@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
-@prefix WIKIDATA_PROPERTY: <https://www.wikidata.org/prop/> .
-@prefix bia_faim_models: <https://w3id.org/BioImage-Archive/bia-faim-models/> .
+@prefix bia_mifa_models: <https://w3id.org/BioImage-Archive/bia-mifa-models/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pav: <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema1: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/BioImage-Archive/bia-faim-models> a owl:Ontology ;
-    rdfs:label "bia-faim-models" ;
-    IAO:0000700 bia_faim_models:AuthorCollection,
-        bia_faim_models:FileLevelMetadata,
-        bia_faim_models:FileLevelMetadataCollection,
-        bia_faim_models:GrantReference,
-        bia_faim_models:GrantReferenceCollection,
-        bia_faim_models:Links,
-        bia_faim_models:OrganisationInfo,
-        bia_faim_models:OrganisationInfoCollection,
-        bia_faim_models:Publications,
-        bia_faim_models:PublicationsCollection,
-        bia_faim_models:Version ;
-    linkml:id "https://w3id.org/BioImage-Archive/bia-faim-models" ;
-    linkml:imports "linkml:types" .
-
-bia_faim_models:Annotations a owl:Class,
+bia_mifa_models:Annotations a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Annotations" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_overview ;
-            owl:qualifiedCardinality 1 ],
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_method ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_confidence_level ],
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_overview ],
         [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:FileLevelMetadata ;
-            owl:onProperty bia_faim_models:file_metadata ],
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_overview ],
         [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Author ;
-            owl:onProperty bia_faim_models:authors ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_coverage ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_criteria ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_criteria ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_method ;
-            owl:qualifiedCardinality 1 ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_overview ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:annotation_coverage ],
-        bia_faim_models:AuthorCollection,
-        bia_faim_models:FileLevelMetadataCollection ;
-    skos:definition "A set of annotations for an AI-ready dataset" .
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_confidence_level ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:annotation_criteria ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:annotation_confidence_level ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_criteria ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_confidence_level ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:annotation_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_method ],
+        bia_mifa_models:AuthorCollection,
+        bia_mifa_models:FileLevelMetadataCollection ;
+    skos:definition "A set of annotations for an AI-ready dataset" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
-bia_faim_models:Study a owl:Class,
+bia_mifa_models:Study a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Study" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Publications ;
-            owl:onProperty bia_faim_models:publications ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:description ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:GrantReference ;
-            owl:onProperty bia_faim_models:grants ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Author ;
-            owl:onProperty bia_faim_models:authors ],
-        [ a owl:Restriction ;
-            owl:onClass bia_faim_models:LicenseType ;
-            owl:onProperty schema1:license ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:funding_statement ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:acknowledgements ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty bia_faim_models:ai_models_trained ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom linkml:String ;
-                        owl:onProperty schema1:keywords ] [ a owl:Restriction ;
-                        owl:onProperty schema1:keywords ;
-                        owl:someValuesFrom linkml:String ] ) ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom linkml:Uriorcurie ;
-                        owl:onProperty bia_faim_models:link_url ] [ a owl:Restriction ;
-                        owl:onProperty bia_faim_models:link_url ;
-                        owl:someValuesFrom linkml:Uriorcurie ] ) ],
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:funding_statement ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_faim_models:link_description ],
+            owl:onProperty bia_mifa_models:acknowledgements ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:title ;
-            owl:qualifiedCardinality 1 ],
-        bia_faim_models:AuthorCollection,
-        bia_faim_models:GrantReferenceCollection,
-        bia_faim_models:Links,
-        bia_faim_models:PublicationsCollection ;
-    skos:definition "General information about the study" .
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:funding_statement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:keywords ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:funding_statement ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:acknowledgements ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:acknowledgements ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:ai_models_trained ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_mifa_models:LicenseType ;
+            owl:onProperty bia_mifa_models:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:ai_models_trained ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:keywords ],
+        bia_mifa_models:AuthorCollection,
+        bia_mifa_models:GrantReferenceCollection,
+        bia_mifa_models:Links,
+        bia_mifa_models:PublicationsCollection ;
+    skos:definition "General information about the study" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
-linkml:SubsetDefinition a owl:Class .
-
-linkml:TypeDefinition a owl:Class .
-
-linkml:topValue a owl:DatatypeProperty ;
-    rdfs:label "value" .
-
-bia_faim_models:Version a owl:Class,
+bia_mifa_models:Version a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Version" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Float ;
-            owl:onProperty pav:version ;
-            owl:qualifiedCardinality 1 ],
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:changes ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:changes ],
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:previous_version ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty pav:previousVersion ],
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty bia_mifa_models:timestamp ],
         [ a owl:Restriction ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty pav:authoredOn ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:definition "Information about the dataset version" .
-
-bia_faim_models:acknowledgements a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "acknowledgements" ;
-    rdfs:range linkml:String ;
-    skos:definition "Any people or groups that should be acknowledged as part of the dataset" .
-
-bia_faim_models:ai_models_trained a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "ai_models_trained" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo." .
-
-bia_faim_models:annotation_confidence_level a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "annotation_confidence_level" ;
-    rdfs:range linkml:String ;
-    skos:definition "Confidence on annotation accuracy" .
-
-bia_faim_models:annotation_coverage a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "annotation_coverage" ;
-    rdfs:range linkml:String ;
-    skos:definition "Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available" .
-
-bia_faim_models:annotation_criteria a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "annotation_criteria" ;
-    rdfs:range linkml:String ;
-    skos:definition "Rules used to generate annotations" .
-
-bia_faim_models:annotation_method a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "annotation_method" ;
-    rdfs:range linkml:String ;
-    skos:definition "Description of how the annotations were created. For example, were the annotations crowdsourced or expertly annotated,  produced by  a human or software, what software was used, when were the annotations created,  protocols used for consensus and quality assurance" .
-
-bia_faim_models:annotation_overview a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "annotation_overview" ;
-    rdfs:range linkml:String ;
-    skos:definition "Short descriptive summary indicating the type of annotation and how it was generated" .
-
-bia_faim_models:changes a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "changes" ;
-    rdfs:range linkml:String ;
-    skos:definition "Textual description of changes compared to previous version" .
-
-bia_faim_models:funding_statement a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "funding_statement" ;
-    rdfs:range linkml:String ;
-    skos:definition "Description of how the study was funded" .
-
-bia_faim_models:publication_year a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "publication_year" ;
-    rdfs:range linkml:String ;
-    skos:definition "Year of publication" .
-
-bia_faim_models:source_image_id a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "source_image_id" ;
-    rdfs:range linkml:String ;
-    skos:definition "identifier of the source image from which the annotation originated" .
-
-bia_faim_models:spatial_information a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "spatial_information" ;
-    rdfs:range linkml:String ;
-    skos:definition "Spatial information for non-pixel annotations" .
-
-bia_faim_models:transformations a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "transformations" ;
-    rdfs:range linkml:String ;
-    skos:definition "Any transformations required to link the images to the annotations" .
-
-pav:authoredOn a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-pav:previousVersion a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "previous_version" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "Pointer to previous version" ;
-    skos:exactMatch pav:previousVersion .
-
-pav:version a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "version" ;
-    rdfs:range linkml:Float ;
-    skos:definition "Unique version number" ;
-    skos:exactMatch pav:version .
-
-schema1:author a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "publication_authors" ;
-    rdfs:range linkml:String ;
-    skos:definition "Authors of associated publication" ;
-    skos:exactMatch schema1:author .
-
-schema1:description a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "description" ;
-    rdfs:range linkml:String ;
-    skos:definition "Brief description of the detaset. Must contain the biological application of the dataset" ;
-    skos:exactMatch schema1:description .
-
-schema1:email a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "email" ;
-    rdfs:range linkml:String ;
-    skos:definition "Email address of a person" ;
-    skos:exactMatch schema1:email .
-
-schema1:funder a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "funder" ;
-    rdfs:range linkml:String ;
-    skos:definition "The funding body provididing support" ;
-    skos:exactMatch schema1:funder .
-
-schema1:identifier a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-schema1:license a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "license" ;
-    rdfs:range bia_faim_models:LicenseType ;
-    skos:definition "The license under which the data are available" ;
-    skos:exactMatch schema1:license .
-
-schema1:roleName a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "role" ;
-    rdfs:range linkml:String ;
-    skos:definition "Role of the author when creating the dataset" ;
-    skos:exactMatch schema1:roleName .
-
-schema1:title a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-<https://creativecommons.org/licenses/by/4.0/> a owl:Class,
-        bia_faim_models:LicenseType ;
-    rdfs:label "CC_BY" .
-
-<https://creativecommons.org/publicdomain/zero/1.0/> a owl:Class,
-        bia_faim_models:LicenseType ;
-    rdfs:label "CC0" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#bounding_boxes> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "bounding_boxes" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#class_labels> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "class_labels" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#counts> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "counts" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#derived_annotations> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "derived_annotations" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#geometrical_annotations> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "geometrical_annotations" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#graphs> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "graphs" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#other> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "other" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#point_annotations> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "point_annotations" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "segmentation_mask" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#tracks> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "tracks" .
-
-<https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#weak_annotations> a owl:Class,
-        bia_faim_models:AnnotationType ;
-    rdfs:label "weak_annotations" .
-
-bia_faim_models:FileLevelMetadataCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "FileLevelMetadataCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:FileLevelMetadata ;
-            owl:onProperty bia_faim_models:file_metadata ],
-        linkml:mixin ;
-    skos:definition "A holder for FileLevelMetadata objects" .
-
-bia_faim_models:GrantReferenceCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "GrantReferenceCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:GrantReference ;
-            owl:onProperty bia_faim_models:grants ],
-        linkml:mixin ;
-    skos:definition "A holder for GrantReference objects" .
-
-bia_faim_models:Links a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Links" ;
-    rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_faim_models:link_description ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom linkml:Uriorcurie ;
-                        owl:onProperty bia_faim_models:link_url ] [ a owl:Restriction ;
-                        owl:onProperty bia_faim_models:link_url ;
-                        owl:someValuesFrom linkml:Uriorcurie ] ) ],
-        linkml:mixin ;
-    skos:definition "Links related to the study" .
+            owl:onProperty bia_mifa_models:changes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:timestamp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:previous_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:timestamp ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:previous_version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:changes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty bia_mifa_models:version ] ;
+    skos:definition "Information about the dataset version" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
-bia_faim_models:OrganisationInfoCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "OrganisationInfoCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:OrganisationInfo ;
-            owl:onProperty bia_faim_models:organisation ],
-        linkml:mixin ;
-    skos:definition "A holder for OrganisationInfo objects" .
-
-bia_faim_models:PublicationsCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "PublicationsCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Publications ;
-            owl:onProperty bia_faim_models:publications ],
-        linkml:mixin ;
-    skos:definition "A holder for Publications objects" .
-
-bia_faim_models:annotation_type a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "annotation_type" ;
-    rdfs:range bia_faim_models:AnnotationType ;
-    skos:definition "Annotation type, for example class labels, segmentation masks, counts..." .
-
-bia_faim_models:file_metadata a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "file_metadata" ;
-    rdfs:range bia_faim_models:FileLevelMetadata ;
-    skos:definition "a collection of the file level metadata for each annotation" .
-
-bia_faim_models:grants a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "grants" ;
-    rdfs:range bia_faim_models:GrantReference ;
-    skos:definition "a collection of grant ids and funder names associated with the study" .
-
-bia_faim_models:link_description a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "link_description" ;
-    rdfs:range linkml:String ;
-    skos:definition "The description of the linked content" .
-
-bia_faim_models:organisation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "organisation" ;
-    rdfs:range bia_faim_models:OrganisationInfo ;
-    skos:definition "a collection of the name and address of organisations authors are affiliated with" .
-
-bia_faim_models:publications a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "publications" ;
-    rdfs:range bia_faim_models:Publications ;
-    skos:definition "a collection of publications associated with a study" .
-
-WIKIDATA_PROPERTY:P356 a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "publication_doi" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "Digital Object Identifier (DOI)" ;
-    skos:exactMatch WIKIDATA_PROPERTY:P356 .
-
-WIKIDATA_PROPERTY:P496 a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "orcid_id" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "A unique identifier for an author" ;
-    skos:exactMatch WIKIDATA_PROPERTY:P496 .
-
-WIKIDATA_PROPERTY:P6782 a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "ror_id" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "Identifier for the Research Organization Registry" ;
-    skos:exactMatch WIKIDATA_PROPERTY:P6782 .
-
-WIKIDATA_PROPERTY:P698 a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "pubmed_id" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "Identifier for journal articles/abstracts in PubMed" ;
-    skos:exactMatch WIKIDATA_PROPERTY:P698 .
-
-schema1:keywords a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "keywords" ;
-    rdfs:range linkml:String ;
-    skos:definition "Keywords or tags used to describe the dataset" ;
-    skos:exactMatch schema1:keywords .
-
-bia_faim_models:AuthorCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "AuthorCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:Author ;
-            owl:onProperty bia_faim_models:authors ],
-        linkml:mixin ;
-    skos:definition "A holder for Author objects" .
-
-bia_faim_models:authors a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "authors" ;
-    rdfs:range bia_faim_models:Author ;
-    skos:definition "a collection of the authors of a study" .
-
-schema1:name a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-bia_faim_models:Author a owl:Class,
+bia_mifa_models:Author a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Author" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty schema1:roleName ],
+            owl:onProperty bia_mifa_models:role ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ;
-            owl:qualifiedCardinality 1 ],
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:email ],
         [ a owl:Restriction ;
-            owl:allValuesFrom bia_faim_models:OrganisationInfo ;
-            owl:onProperty bia_faim_models:organisation ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:author_first_name ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P496 ],
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:role ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:email ],
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:author_last_name ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ;
-            owl:qualifiedCardinality 1 ],
-        bia_faim_models:OrganisationInfoCollection ;
-    skos:definition "Information about the authors" .
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:author_last_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:author_first_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:orcid_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:orcid_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:orcid_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:author_first_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^\\S+@[\\S+\\.]+\\S+" ] ) ] ;
+            owl:onProperty bia_mifa_models:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:author_last_name ],
+        bia_mifa_models:OrganisationInfoCollection ;
+    skos:definition "Information about the authors" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
-bia_faim_models:FileLevelMetadata a owl:Class,
+bia_mifa_models:FileLevelMetadata a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "FileLevelMetadata" ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom bia_faim_models:AnnotationType ;
-                        owl:onProperty bia_faim_models:annotation_type ] [ a owl:Restriction ;
-                        owl:onProperty bia_faim_models:annotation_type ;
-                        owl:someValuesFrom bia_faim_models:AnnotationType ] ) ],
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:source_image_id ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:spatial_information ],
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:transformations ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:transformations ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:source_image_id ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:source_image_id ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_creation_time ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:identifier ;
-            owl:qualifiedCardinality 1 ],
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:transformations ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty pav:authoredOn ] ;
-    skos:definition "metadata atributes that must be detailed at the file level" .
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:spatial_information ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:annotation_creation_time ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:spatial_information ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:spatial_information ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:source_image_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_mifa_models:AnnotationType ;
+            owl:onProperty bia_mifa_models:annotation_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:transformations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty bia_mifa_models:annotation_creation_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_type ] ;
+    skos:definition "metadata atributes that must be detailed at the file level" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
-bia_faim_models:GrantReference a owl:Class,
+bia_mifa_models:FileLevelMetadataCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "FileLevelMetadataCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:file_metadata ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_mifa_models:FileLevelMetadata ;
+            owl:onProperty bia_mifa_models:file_metadata ] ;
+    skos:definition "A holder for FileLevelMetadata objects" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:GrantReference a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "GrantReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:funder ;
-            owl:qualifiedCardinality 1 ],
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:grant_id ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:identifier ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:definition "Information about grant ID and funding body that funded the study" .
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:funder ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:funder ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:grant_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:funder ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:grant_id ] ;
+    skos:definition "Information about grant ID and funding body that funded the study" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
-bia_faim_models:LicenseType a owl:Class,
+bia_mifa_models:GrantReferenceCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "GrantReferenceCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:grants ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_mifa_models:GrantReference ;
+            owl:onProperty bia_mifa_models:grants ] ;
+    skos:definition "A holder for GrantReference objects" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:Links a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:link_description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:link_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:link_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:link_description ] ;
+    skos:definition "Links related to the study" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:OrganisationInfo a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "OrganisationInfo" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:ror_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:ror_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:ror_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:organisation_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:organisation_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:organisation_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:address ] ;
+    skos:definition "Information about the organisation the author is affiliated with" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:OrganisationInfoCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "OrganisationInfoCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:organisation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_mifa_models:OrganisationInfo ;
+            owl:onProperty bia_mifa_models:organisation ] ;
+    skos:definition "A holder for OrganisationInfo objects" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:Publications a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Publications" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:pubmed_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_year ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_authors ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:publication_authors ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:publication_title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:publication_doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_authors ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:publication_year ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:pubmed_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:publication_year ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:pubmed_id ] ;
+    skos:definition "Information about any publications associated with the dataset" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:PublicationsCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PublicationsCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom bia_mifa_models:Publications ;
+            owl:onProperty bia_mifa_models:publications ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:publications ] ;
+    skos:definition "A holder for Publications objects" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+<https://creativecommons.org/licenses/by/4.0/> a owl:Class,
+        bia_mifa_models:LicenseType ;
+    rdfs:label "CC_BY" ;
+    rdfs:subClassOf bia_mifa_models:LicenseType .
+
+<https://creativecommons.org/publicdomain/zero/1.0/> a owl:Class,
+        bia_mifa_models:LicenseType ;
+    rdfs:label "CC0" ;
+    rdfs:subClassOf bia_mifa_models:LicenseType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#bounding_boxes> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "bounding_boxes" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#class_labels> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "class_labels" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#counts> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "counts" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#derived_annotations> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "derived_annotations" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#geometrical_annotations> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "geometrical_annotations" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#graphs> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "graphs" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#other> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "other" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#point_annotations> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "point_annotations" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#segmentation_mask> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "segmentation_mask" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#tracks> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "tracks" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+<https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#weak_annotations> a owl:Class,
+        bia_mifa_models:AnnotationType ;
+    rdfs:label "weak_annotations" ;
+    rdfs:subClassOf bia_mifa_models:AnnotationType .
+
+bia_mifa_models:AuthorCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "AuthorCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:authors ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom bia_mifa_models:Author ;
+            owl:onProperty bia_mifa_models:authors ] ;
+    skos:definition "A holder for Author objects" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:ai_models_trained a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ai_models_trained" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "Link to the models that have been trained with this dataset (if any). This could be links to GitHub or repositories like the BioImage Zoo." ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_type" ;
+    rdfs:range bia_mifa_models:AnnotationType ;
+    skos:definition "Annotation type, for example class labels, segmentation masks, counts..." ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:authors a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "authors" ;
+    skos:definition "a collection of the authors of a study" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:file_metadata a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "file_metadata" ;
+    skos:definition "a collection of the file level metadata for each annotation" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:grants a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "grants" ;
+    skos:definition "a collection of grant ids and funder names associated with the study" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:keywords a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "keywords" ;
+    skos:definition "Keywords or tags used to describe the dataset" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:link_description a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "link_description" ;
+    skos:definition "The description of the linked content" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:link_url a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "link_url" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "URL of relevant link" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:organisation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organisation" ;
+    skos:definition "a collection of the name and address of organisations authors are affiliated with" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:publications a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "publications" ;
+    skos:definition "a collection of publications associated with a study" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:role a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "role" ;
+    skos:definition "Role of the author when creating the dataset" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:acknowledgements a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "acknowledgements" ;
+    skos:definition "Any people or groups that should be acknowledged as part of the dataset" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:address a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "address" ;
+    skos:definition "Organisation address" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_confidence_level a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_confidence_level" ;
+    skos:definition "Confidence on annotation accuracy" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_coverage a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_coverage" ;
+    skos:definition "Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_creation_time a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_creation_time" ;
+    rdfs:range linkml:Datetime ;
+    skos:definition "Date and time when the annotation was created" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_criteria a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_criteria" ;
+    skos:definition "Rules used to generate annotations" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_id" ;
+    skos:definition "The identifier for the annotation" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_method a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_method" ;
+    skos:definition "Description of how the annotations were created. For example, were the annotations crowdsourced or expertly annotated,  produced by  a human or software, what software was used, when were the annotations created,  protocols used for consensus and quality assurance" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:annotation_overview a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annotation_overview" ;
+    skos:definition "Short descriptive summary indicating the type of annotation and how it was generated" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:author_first_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "author_first_name" ;
+    skos:definition "First name for an author" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:author_last_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "author_last_name" ;
+    skos:definition "Last name for an author" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:changes a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "changes" ;
+    rdfs:range linkml:String ;
+    skos:definition "Textual description of changes compared to previous version" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:description a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "description" ;
+    skos:definition "Brief description of the detaset. Must contain the biological application of the dataset" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:email a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "email" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^\\S+@[\\S+\\.]+\\S+" ] ) ] ;
+    skos:definition "Email address of a person" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:funder a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "funder" ;
+    skos:definition "The funding body provididing support" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:funding_statement a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "funding_statement" ;
+    skos:definition "Description of how the study was funded" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:grant_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "grant_id" ;
+    skos:definition "The identifier for the grant" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:license a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "license" ;
+    rdfs:range bia_mifa_models:LicenseType ;
+    skos:definition "The license under which the data are available" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:orcid_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "orcid_id" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "A unique identifier for an author" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:organisation_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organisation_name" ;
+    skos:definition "Organisation name" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:previous_version a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "previous_version" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "Pointer to previous version" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:publication_authors a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "publication_authors" ;
+    skos:definition "Authors of associated publication" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:publication_doi a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "publication_doi" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "Digital Object Identifier (DOI)" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:publication_title a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "publication_title" ;
+    skos:definition "The title for a publication associated to the dataset" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:publication_year a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "publication_year" ;
+    skos:definition "Year of publication" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:pubmed_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pubmed_id" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "Identifier for journal articles/abstracts in PubMed" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:ror_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ror_id" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "Identifier for the Research Organization Registry" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:source_image_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source_image_id" ;
+    skos:definition "identifier of the source image from which the annotation originated" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:spatial_information a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "spatial_information" ;
+    skos:definition "Spatial information for non-pixel annotations" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:timestamp a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "timestamp" ;
+    rdfs:range linkml:Datetime ;
+    skos:definition "Date and time when the version was created" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:title a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "title" ;
+    skos:definition "The title for your dataset. This will be displayed when search results including your data are shown. Often this will be the same as an associated publication." ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:transformations a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "transformations" ;
+    skos:definition "Any transformations required to link the images to the annotations" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:version a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "version" ;
+    rdfs:range linkml:Float ;
+    skos:definition "Unique version number" ;
+    skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
+
+bia_mifa_models:LicenseType a owl:Class,
         linkml:EnumDefinition ;
-    rdfs:label "LicenseType" ;
     owl:unionOf ( <https://creativecommons.org/publicdomain/zero/1.0/> <https://creativecommons.org/licenses/by/4.0/> ) ;
     linkml:permissible_values <https://creativecommons.org/licenses/by/4.0/>,
         <https://creativecommons.org/publicdomain/zero/1.0/> .
 
-bia_faim_models:OrganisationInfo a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "OrganisationInfo" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P6782 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:name ] ;
-    skos:definition "Information about the organisation the author is affiliated with" .
-
-bia_faim_models:Publications a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Publications" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P698 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:title ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty bia_faim_models:publication_year ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty WIKIDATA_PROPERTY:P356 ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty schema1:author ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:definition "Information about any publications associated with the dataset" .
-
-bia_faim_models:link_url a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "link_url" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "URL of relevant link" .
-
-bia_faim_models:AnnotationType a owl:Class,
+bia_mifa_models:AnnotationType a owl:Class,
         linkml:EnumDefinition ;
-    rdfs:label "AnnotationType" ;
-    owl:unionOf ( <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#class_labels> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#bounding_boxes> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#counts> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#derived_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#geometrical_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#graphs> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#point_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#tracks> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#weak_annotations> <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#other> ) ;
-    linkml:permissible_values <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#bounding_boxes>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#class_labels>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#counts>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#derived_annotations>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#geometrical_annotations>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#graphs>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#other>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#point_annotations>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#segmentation_mask>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#tracks>,
-        <https://w3id.org/BioImage-Archive/bia-faim-models/AnnotationType#weak_annotations> .
+    owl:unionOf ( <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#class_labels> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#bounding_boxes> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#counts> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#derived_annotations> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#geometrical_annotations> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#graphs> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#point_annotations> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#segmentation_mask> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#tracks> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#weak_annotations> <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#other> ) ;
+    linkml:permissible_values <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#bounding_boxes>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#class_labels>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#counts>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#derived_annotations>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#geometrical_annotations>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#graphs>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#other>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#point_annotations>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#segmentation_mask>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#tracks>,
+        <https://w3id.org/BioImage-Archive/bia-mifa-models/AnnotationType#weak_annotations> .
 
-linkml:ClassDefinition a owl:Class .
-
-linkml:SlotDefinition a owl:Class .
-
+<https://w3id.org/BioImage-Archive/bia-mifa-models> a owl:Ontology ;
+    rdfs:label "bia-mifa-models" ;
+    dcterms:license "CC0" ;
+    dcterms:title "bia-mifa-models" ;
+    rdfs:seeAlso <https://BioImage-Archive.github.io/bia-mifa-models> ;
+    skos:definition "Schemas and models for working with the BioImage Archive's MIFA (Metadata, Incentives, Formats and Accessibility) metadata implementation" .
 

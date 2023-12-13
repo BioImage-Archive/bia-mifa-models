@@ -380,7 +380,7 @@
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/BioImage-Archive/bia-faim-models",
+    "$id": "https://w3id.org/BioImage-Archive/bia-mifa-models",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "description": "A set of annotations for an AI-ready dataset",
@@ -425,7 +425,7 @@
         "annotation_overview",
         "annotation_method"
     ],
-    "title": "bia-faim-models",
+    "title": "bia-mifa-models",
     "type": "object",
     "version": null
 }

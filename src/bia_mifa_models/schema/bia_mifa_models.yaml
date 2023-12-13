@@ -1,15 +1,15 @@
 ---
-id: https://w3id.org/BioImage-Archive/bia-faim-models
-name: bia-faim-models
-title: bia-faim-models
+id: https://w3id.org/BioImage-Archive/bia-mifa-models
+name: bia-mifa-models
+title: bia-mifa-models
 description: |-
-  Schemas and models for working with the BioImage Archive's FAIM (Formats, Accessibility, Incentives and Metadata) metadata implementation
+  Schemas and models for working with the BioImage Archive's MIFA (Metadata, Incentives, Formats and Accessibility) metadata implementation
 license: CC0
 see_also:
-  - https://BioImage-Archive.github.io/bia-faim-models
+  - https://BioImage-Archive.github.io/bia-mifa-models
 
 prefixes:
-  bia_faim_models: https://w3id.org/BioImage-Archive/bia-faim-models/
+  bia_mifa_models: https://w3id.org/BioImage-Archive/bia-mifa-models/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   ORCID: https://orcid.org/
@@ -19,7 +19,7 @@ prefixes:
   WIKIDATA_PROPERTY: https://www.wikidata.org/prop/
   pav: http://purl.org/pav/
   example: https://example.org/
-default_prefix: bia_faim_models
+default_prefix: bia_mifa_models
 default_range: string
 
 imports:
