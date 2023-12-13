@@ -1,7 +1,7 @@
 ---
-name: bia_faim_models
+name: bia_mifa_models
 author: Teresa Zulueta-Coarasa <teresaz@ebi.ac.uk>
-description: Schemas and models for working with the BioImage Archive's FAIM (Formats, Accessibility, Incentives and Metadata) metadata implementation
-source_schema_path: src/bia_faim_models/schema/bia_faim_models.yaml
+description: Schemas and models for working with the BioImage Archive's MIFA (Metadata, Incentives, Formats and Accessibility) metadata implementation
+source_schema_path: src/bia_mifa_models/schema/bia_mifa_models.yaml
 google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
 google_sheet_tabs: personinfo enums

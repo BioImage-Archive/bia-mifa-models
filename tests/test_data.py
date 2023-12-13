@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from bia_faim_models.datamodel.bia_faim_models import Person
+from bia_mifa_models.datamodel.bia_mifa_models import Person
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")
