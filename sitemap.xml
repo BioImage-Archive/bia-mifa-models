@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/FundingStatement/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/GrantReference/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
@@ -87,6 +92,16 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/Integer/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/Jsonpath/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/Jsonpointer/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -126,12 +141,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/OrganisationURL/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/Publications/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/PublicationsCollection/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/Sparqlpath/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -177,6 +202,11 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/address/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/affiliation/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -241,7 +271,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://BioImage-Archive.github.io/bia-faim-models/bia-mifa-models/</loc>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/bia-faim-models/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -267,6 +297,11 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/funder/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/funding/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -346,11 +381,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://BioImage-Archive.github.io/bia-faim-models/publications/</loc>
-         <lastmod>2023-12-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/pubmed_id/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
@@ -362,6 +392,11 @@
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/ror_id/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/source_image/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -391,7 +426,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://BioImage-Archive.github.io/bia-faim-models/version/</loc>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/transformatons/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>
     </url>

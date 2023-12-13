@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://BioImage-Archive.github.io/bia-faim-models/PublicationsCollection/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: PublicationsCollection - bia-faim-models</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -201,7 +201,7 @@
 </a>
 <h1 id="class-publicationscollection">Class: PublicationsCollection</h1>
 <p><em>A holder for Publications objects</em></p>
-<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-mifa-models/PublicationsCollection">bia_mifa_models:PublicationsCollection</a></p>
+<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/PublicationsCollection">bia_faim_models:PublicationsCollection</a></p>
 <div class="mermaid"> classDiagram
     class PublicationsCollection
       PublicationsCollection &lt;|-- Study
@@ -225,7 +225,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../publications/">publications</a></td>
+<td><a href="publications.md">publications</a></td>
 <td>0..* <br/> <a href="../Publications/">Publications</a></td>
 <td>a collection of publications associated with a study</td>
 <td>direct</td>
@@ -250,7 +250,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/BioImage-Archive/bia-mifa-models</li>
+<li>from schema: https://w3id.org/BioImage-Archive/bia-faim-models</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -263,11 +263,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>bia_mifa_models:PublicationsCollection</td>
+<td>bia_faim_models:PublicationsCollection</td>
 </tr>
 <tr>
 <td>native</td>
-<td>bia_mifa_models:PublicationsCollection</td>
+<td>bia_faim_models:PublicationsCollection</td>
 </tr>
 </tbody>
 </table>
@@ -277,13 +277,13 @@
 <details>
 <pre><code class="language-yaml">name: PublicationsCollection
 description: A holder for Publications objects
-from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 mixin: true
 attributes:
   publications:
     name: publications
     description: a collection of publications associated with a study
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     range: Publications
@@ -295,13 +295,13 @@ attributes:
 <details>
 <pre><code class="language-yaml">name: PublicationsCollection
 description: A holder for Publications objects
-from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 mixin: true
 attributes:
   publications:
     name: publications
     description: a collection of publications associated with a study
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     alias: publications

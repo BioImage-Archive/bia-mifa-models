@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://BioImage-Archive.github.io/bia-faim-models/Study/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Study - bia-faim-models</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -201,7 +201,7 @@
 </a>
 <h1 id="class-study">Class: Study</h1>
 <p><em>General information about the study</em></p>
-<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-mifa-models/Study">bia_mifa_models:Study</a></p>
+<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/Study">bia_faim_models:Study</a></p>
 <div class="mermaid"> classDiagram
     class Study
       PublicationsCollection &lt;|-- Study
@@ -301,7 +301,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../publications/">publications</a></td>
+<td><a href="publications.md">publications</a></td>
 <td>0..* <br/> <a href="../Publications/">Publications</a></td>
 <td>a collection of publications associated with a study</td>
 <td><a href="../PublicationsCollection/">PublicationsCollection</a></td>
@@ -335,7 +335,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/BioImage-Archive/bia-mifa-models</li>
+<li>from schema: https://w3id.org/BioImage-Archive/bia-faim-models</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -348,11 +348,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>bia_mifa_models:Study</td>
+<td>bia_faim_models:Study</td>
 </tr>
 <tr>
 <td>native</td>
-<td>bia_mifa_models:Study</td>
+<td>bia_faim_models:Study</td>
 </tr>
 </tbody>
 </table>
@@ -362,7 +362,7 @@
 <details>
 <pre><code class="language-yaml">name: Study
 description: General information about the study
-from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 mixins:
 - PublicationsCollection
 - AuthorCollection
@@ -383,7 +383,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Study
 description: General information about the study
-from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
 mixins:
 - PublicationsCollection
 - AuthorCollection
@@ -400,7 +400,7 @@ attributes:
         methods
     - value: Embryonic mice ultrasound volumes with body and brain volume segmentation
         masks
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:title
     alias: title
@@ -423,7 +423,7 @@ attributes:
         used to understand its viability, however counting cells on DIC images is
         a challenging task.  This dataset contains annotated DIC images of mouse embryos
         to train machine learning models.
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -439,7 +439,7 @@ attributes:
     - value: '[''segmentation'', ''nuclei'', ''cancer'']'
     - value: '[''image segmentation'', ''high-frequency ultrasound'', ''mouse embryo'',
         ''volumetric deep learning'']'
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:keywords
     multivalued: true
@@ -455,7 +455,7 @@ attributes:
     examples:
     - value: CC0
     - value: CC_BY
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     slot_uri: schema:license
     alias: license
@@ -471,7 +471,7 @@ attributes:
     examples:
     - value: https://github.com/BIIFSweden/MariaUlvmar2020-1
     - value: '[''https://github.com/perlfloccri/NuclearSegmentationPipeline'', ''https://bioimage.io/#/?id=10.5281%2Fzenodo.6028097'']'
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     alias: ai_models_trained
@@ -488,7 +488,7 @@ attributes:
     - value: 'We are grateful to Y. Papadopoulos for providing reagents and access
         to her confocal microscope.  We thank J. Dupont and E. Mustermann for comments
         on the manuscript, and G. Hong for useful discussions. '
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: acknowledgements
     owner: Study
@@ -509,7 +509,7 @@ attributes:
         Agency (FFG), and the St. Anna Kinderkrebsforschung.  Partial funding was
         further provided by BMK, BMDW, and the Province of Upper Austria in the frame
         of the COMET Programme managed by FFG.
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     alias: funding_statement
     owner: Study
@@ -520,7 +520,7 @@ attributes:
   publications:
     name: publications
     description: a collection of publications associated with a study
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     alias: publications
@@ -532,7 +532,7 @@ attributes:
   authors:
     name: authors
     description: a collection of the authors of a study
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     alias: authors
@@ -546,7 +546,7 @@ attributes:
     description: URL of relevant link
     examples:
     - value: '[''https://github.com/BioImage-Archive'', ''https://www.ebi.ac.uk/empiar/EMPIAR-10459/'']'
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     alias: link_url
@@ -561,7 +561,7 @@ attributes:
     examples:
     - value: '[''Image analysis code'', ''FIB SEM dataset matching the light microscopy
         data'']'
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     alias: link_description
@@ -572,7 +572,7 @@ attributes:
   grants:
     name: grants
     description: a collection of grant ids and funder names associated with the study
-    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
     rank: 1000
     multivalued: true
     alias: grants
