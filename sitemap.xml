@@ -276,6 +276,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://BioImage-Archive.github.io/bia-faim-models/bia-mifa-models/</loc>
+         <lastmod>2023-12-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://BioImage-Archive.github.io/bia-faim-models/changes/</loc>
          <lastmod>2023-12-13</lastmod>
          <changefreq>daily</changefreq>

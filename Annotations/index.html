@@ -201,7 +201,7 @@
 </a>
 <h1 id="class-annotations">Class: Annotations</h1>
 <p><em>A set of annotations for an AI-ready dataset</em></p>
-<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-faim-models/Annotations">bia_faim_models:Annotations</a></p>
+<p>URI: <a href="https://w3id.org/BioImage-Archive/bia-mifa-models/Annotations">bia_mifa_models:Annotations</a></p>
 <div class="mermaid"> classDiagram
     class Annotations
       AuthorCollection &lt;|-- Annotations
@@ -289,7 +289,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/BioImage-Archive/bia-faim-models</li>
+<li>from schema: https://w3id.org/BioImage-Archive/bia-mifa-models</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -302,11 +302,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>bia_faim_models:Annotations</td>
+<td>bia_mifa_models:Annotations</td>
 </tr>
 <tr>
 <td>native</td>
-<td>bia_faim_models:Annotations</td>
+<td>bia_mifa_models:Annotations</td>
 </tr>
 </tbody>
 </table>
@@ -316,7 +316,7 @@
 <details>
 <pre><code class="language-yaml">name: Annotations
 description: A set of annotations for an AI-ready dataset
-from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
 mixins:
 - AuthorCollection
 - FileLevelMetadataCollection
@@ -334,7 +334,7 @@ tree_root: true
 <details>
 <pre><code class="language-yaml">name: Annotations
 description: A set of annotations for an AI-ready dataset
-from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
 mixins:
 - AuthorCollection
 - FileLevelMetadataCollection
@@ -348,7 +348,7 @@ attributes:
         prediction
     - value: Manual quantification of the number of cells in mouse embryos performed
         by experts
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: annotation_overview
     owner: Annotations
@@ -370,7 +370,7 @@ attributes:
     - value: Cell counts were performed manually by expert biologists. For cases difficult
         to quantify,  a vote including all experts was taken and annotations were
         corrected according to the majority view.
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: annotation_method
     owner: Annotations
@@ -388,7 +388,7 @@ attributes:
         Mitosis was considered completed when anillin stop localising  at the contractile
         ring and re-entered the cell nucleus, at which point the dividing cell was
         considered two different cells.
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: annotation_criteria
     owner: Annotations
@@ -403,7 +403,7 @@ attributes:
     - value: All images were annotated
     - value: 'Images: image_1, image_2 and image_3 were not annotated due to the abnormal
         cell death rates compared to other samples.'
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: annotation_coverage
     owner: Annotations
@@ -419,7 +419,7 @@ attributes:
         calculated the average and standard deviation performance of the three independent
         annotators  relative to the gold truth that was established by merging the
         triplets of manual annotations.  For the whole dataset this metric was 0.904±0.081
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     alias: annotation_confidence_level
     owner: Annotations
@@ -429,7 +429,7 @@ attributes:
   authors:
     name: authors
     description: a collection of the authors of a study
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     multivalued: true
     alias: authors
@@ -442,7 +442,7 @@ attributes:
   file_metadata:
     name: file_metadata
     description: a collection of the file level metadata for each annotation
-    from_schema: https://w3id.org/BioImage-Archive/bia-faim-models
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     multivalued: true
     alias: file_metadata
