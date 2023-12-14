@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "bia_faim_models"
+name = "bia-mifa-models"
 version = "0.1.0"
 description = "Schemas and models for working with the BioImage Archive's FAIM (Formats, Accessibility, Incentives and Metadata) metadata implementation"
 authors = ["Teresa Zulueta-Coarasa <teresaz@ebi.ac.uk>"]
 license = "Apache Software License 2.0"
 readme = "README.md"
-include = ["README.md", "src/bia_faim_models/schema", "project"]
+include = ["README.md", "src/bia_mifa_models/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
