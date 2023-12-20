@@ -1,1 +1,1 @@
-from .bia_faim_models import *
+from .bia_mifa_models import *

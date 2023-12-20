@@ -1,1 +1,1 @@
-from .bia_faim_models_pydantic import *
+from .bia_mifa_models_pydantic import *
