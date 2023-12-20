@@ -1,5 +1,5 @@
 ---
-site_name: "bia-faim-models"
+site_name: "bia-mifa-models"
 theme:
   name: material
   # palette:
@@ -14,8 +14,8 @@ nav:
   # - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://BioImage-Archive.github.io/bia-faim-models
-repo_url: https://github.com/BioImage-Archive/bia-faim-models
+site_url: https://BioImage-Archive.github.io/bia-mifa-models
+repo_url: https://github.com/BioImage-Archive/bia-mifa-models
 
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.

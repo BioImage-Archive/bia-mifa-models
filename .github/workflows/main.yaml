@@ -2,7 +2,7 @@
 # https://docs.github.com/en/actions/guides/building-and-testing-python
 # https://github.com/snok/install-poetry#workflows-and-tips
 ---
-name: Build and test bia_faim_models
+name: Build and test bia_mifa_models
 
 on: [pull_request]
 

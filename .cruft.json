@@ -4,11 +4,11 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "bia-faim-models",
-      "__project_slug": "bia_faim_models",
+      "project_name": "bia-mifa-models",
+      "__project_slug": "bia_mifa_models",
       "github_org": "BioImage-Archive",
-      "__source_path": "src/bia_faim_models/schema/bia_faim_models.yaml",
-      "project_description": "Schemas and models for working with the BioImage Archive's FAIM (Formats, Accessibility, Incentives and Metadata) metadata implementation",
+      "__source_path": "src/bia_mifa_models/schema/bia_mifa_models.yaml",
+      "project_description": "Schemas and models for working with the BioImage Archive's MIFA (Metadata, Incentives, Formats and Accessibility) metadata implementation",
       "full_name": "Teresa Zulueta-Coarasa",
       "email": "teresaz@ebi.ac.uk",
       "__author": "Teresa Zulueta-Coarasa <teresaz@ebi.ac.uk>",

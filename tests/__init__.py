@@ -1,1 +1,1 @@
-"""Tests for bia-faim-models."""
+"""Tests for bia-mifa-models."""

@@ -1,5 +1,5 @@
 ---
-name: Auto-deployment of bia_faim_models Documentation
+name: Auto-deployment of bia_mifa_models Documentation
 on:
   push:
     branches: [main]
