@@ -223,7 +223,7 @@
 <tbody>
 <tr>
 <td><a href="../version/">version</a></td>
-<td>1..1 <br/> <a href="../Float/">Float</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Unique version number</td>
 <td>direct</td>
 </tr>
@@ -296,7 +296,7 @@ attributes:
     name: version
     description: Unique version number
     examples:
-    - value: '1.1'
+    - value: v1.1
     - value: '3.0'
     from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
@@ -305,14 +305,14 @@ attributes:
     owner: Version
     domain_of:
     - Version
-    range: float
+    range: string
     required: true
   timestamp:
     name: timestamp
     description: Date and time when the version was created
     examples:
-    - value: '2023-12-10 12:20:00-05:00'
-    - value: '2021-07-03 13:26:00+00:00'
+    - value: '2023-12-10T12:20:00-05:00'
+    - value: '2021-07-03T13:26:00-00:00'
     from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
     rank: 1000
     slot_uri: pav:authoredOn
