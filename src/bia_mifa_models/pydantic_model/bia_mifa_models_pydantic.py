@@ -2,8 +2,7 @@ from __future__ import annotations
 from datetime import datetime, date
 from enum import Enum
 from typing import List, Dict, Optional, Any, Union
-from pydantic import BaseModel as BaseModel, Field
-from linkml_runtime.linkml_model import Decimal
+from pydantic import BaseModel as BaseModel, ConfigDict, Field
 import sys
 if sys.version_info >= (3, 8):
     from typing import Literal
@@ -69,11 +68,10 @@ class Publications(ConfiguredBaseModel):
     """
     publication_title: str = Field(..., description="""The title for a publication associated to the dataset""")
     publication_authors: str = Field(..., description="""Authors of associated publication""")
-    publication_doi: Optional[str] = Field(None, description="""Digital Object Identifier (DOI)""")
+    publication_doi: str = Field(..., description="""Digital Object Identifier (DOI)""")
     publication_year: Optional[str] = Field(None, description="""Year of publication""")
     pubmed_id: Optional[str] = Field(None, description="""Identifier for journal articles/abstracts in PubMed""")
     
-
 
 class PublicationsCollection(ConfiguredBaseModel):
     """
@@ -82,14 +80,12 @@ class PublicationsCollection(ConfiguredBaseModel):
     publications: Optional[Dict[str, Publications]] = Field(default_factory=dict, description="""a collection of publications associated with a study""")
     
 
-
 class AuthorCollection(ConfiguredBaseModel):
     """
     A holder for Author objects
     """
     authors: Optional[List[Author]] = Field(default_factory=list, description="""a collection of the authors of a study""")
     
-
 
 class OrganisationInfo(ConfiguredBaseModel):
     """
@@ -100,7 +96,6 @@ class OrganisationInfo(ConfiguredBaseModel):
     ror_id: Optional[str] = Field(None, description="""Identifier for the Research Organization Registry""")
     
 
-
 class OrganisationInfoCollection(ConfiguredBaseModel):
     """
     A holder for OrganisationInfo objects
@@ -108,19 +103,17 @@ class OrganisationInfoCollection(ConfiguredBaseModel):
     organisation: Optional[List[OrganisationInfo]] = Field(default_factory=list, description="""a collection of the name and address of organisations authors are affiliated with""")
     
 
-
 class Author(OrganisationInfoCollection):
     """
     Information about the authors
     """
     author_first_name: str = Field(..., description="""First name for an author""")
     author_last_name: str = Field(..., description="""Last name for an author""")
-    email: Optional[str] = Field(None, description="""Email address of a person""")
+    email: Optional[str] = Field(None, description="""Email address of a person""", regex="^\S+@[\S+\.]+\S+")
     orcid_id: Optional[str] = Field(None, description="""A unique identifier for an author""")
     role: Optional[List[str]] = Field(default_factory=list, description="""Role of the author when creating the dataset""")
     organisation: Optional[List[OrganisationInfo]] = Field(default_factory=list, description="""a collection of the name and address of organisations authors are affiliated with""")
     
-
 
 class GrantReference(ConfiguredBaseModel):
     """
@@ -130,14 +123,12 @@ class GrantReference(ConfiguredBaseModel):
     funder: str = Field(..., description="""The funding body provididing support""")
     
 
-
 class GrantReferenceCollection(ConfiguredBaseModel):
     """
     A holder for GrantReference objects
     """
     grants: Optional[List[GrantReference]] = Field(default_factory=list, description="""a collection of grant ids and funder names associated with the study""")
     
-
 
 class Links(ConfiguredBaseModel):
     """
@@ -146,7 +137,6 @@ class Links(ConfiguredBaseModel):
     link_url: List[str] = Field(default_factory=list, description="""URL of relevant link""")
     link_description: Optional[List[str]] = Field(default_factory=list, description="""The description of the linked content""")
     
-
 
 class Study(Links, GrantReferenceCollection, AuthorCollection, PublicationsCollection):
     """
@@ -166,7 +156,6 @@ class Study(Links, GrantReferenceCollection, AuthorCollection, PublicationsColle
     grants: Optional[List[GrantReference]] = Field(default_factory=list, description="""a collection of grant ids and funder names associated with the study""")
     
 
-
 class FileLevelMetadata(ConfiguredBaseModel):
     """
     metadata atributes that must be detailed at the file level
@@ -179,14 +168,12 @@ class FileLevelMetadata(ConfiguredBaseModel):
     annotation_creation_time: Optional[datetime ] = Field(None, description="""Date and time when the annotation was created""")
     
 
-
 class FileLevelMetadataCollection(ConfiguredBaseModel):
     """
     A holder for FileLevelMetadata objects
     """
     file_metadata: Optional[List[FileLevelMetadata]] = Field(default_factory=list, description="""a collection of the file level metadata for each annotation""")
     
-
 
 class Annotations(FileLevelMetadataCollection, AuthorCollection):
     """
@@ -201,17 +188,15 @@ class Annotations(FileLevelMetadataCollection, AuthorCollection):
     file_metadata: Optional[List[FileLevelMetadata]] = Field(default_factory=list, description="""a collection of the file level metadata for each annotation""")
     
 
-
 class Version(ConfiguredBaseModel):
     """
     Information about the dataset version
     """
-    version: float = Field(..., description="""Unique version number""")
+    version: str = Field(..., description="""Unique version number""")
     timestamp: datetime  = Field(..., description="""Date and time when the version was created""")
     changes: Optional[str] = Field(None, description="""Textual description of changes compared to previous version""")
     previous_version: Optional[str] = Field(None, description="""Pointer to previous version""")
     
-
 
 
 # Update forward refs

@@ -369,7 +369,7 @@
                 },
                 "version": {
                     "description": "Unique version number",
-                    "type": "number"
+                    "type": "string"
                 }
             },
             "required": [

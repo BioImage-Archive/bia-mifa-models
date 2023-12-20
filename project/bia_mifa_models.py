@@ -1,5 +1,5 @@
 # Auto generated from bia_mifa_models.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-13T15:06:06
+# Generation date: 2023-12-20T10:14:49
 # Schema: bia-mifa-models
 #
 # id: https://w3id.org/BioImage-Archive/bia-mifa-models
@@ -21,7 +21,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Datetime, Float, String, Uriorcurie
+from linkml_runtime.linkml_model.types import Datetime, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
@@ -531,7 +531,7 @@ class Version(YAMLRoot):
     class_name: ClassVar[str] = "Version"
     class_model_uri: ClassVar[URIRef] = BIA_MIFA_MODELS.Version
 
-    version: float = None
+    version: str = None
     timestamp: Union[str, XSDDateTime] = None
     changes: Optional[str] = None
     previous_version: Optional[Union[str, URIorCURIE]] = None
@@ -539,8 +539,8 @@ class Version(YAMLRoot):
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.version):
             self.MissingRequiredField("version")
-        if not isinstance(self.version, float):
-            self.version = float(self.version)
+        if not isinstance(self.version, str):
+            self.version = str(self.version)
 
         if self._is_empty(self.timestamp):
             self.MissingRequiredField("timestamp")
@@ -723,7 +723,7 @@ slots.annotation_creation_time = Slot(uri=PAV.authoredOn, name="annotation_creat
                    model_uri=BIA_MIFA_MODELS.annotation_creation_time, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.version = Slot(uri=PAV.version, name="version", curie=PAV.curie('version'),
-                   model_uri=BIA_MIFA_MODELS.version, domain=None, range=float)
+                   model_uri=BIA_MIFA_MODELS.version, domain=None, range=str)
 
 slots.timestamp = Slot(uri=PAV.authoredOn, name="timestamp", curie=PAV.curie('authoredOn'),
                    model_uri=BIA_MIFA_MODELS.timestamp, domain=None, range=Union[str, XSDDateTime])

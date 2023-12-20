@@ -69,7 +69,7 @@ CREATE TABLE "Study" (
 );
 
 CREATE TABLE "Version" (
-	version FLOAT NOT NULL, 
+	version TEXT NOT NULL, 
 	timestamp DATETIME NOT NULL, 
 	changes TEXT, 
 	previous_version TEXT, 

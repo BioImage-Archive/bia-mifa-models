@@ -486,17 +486,17 @@ slots:
     range: datetime
     slot_uri: pav:authoredOn
     examples:
-      - value: 2021-04-11T11:00:15-05:00
-      - value: 2017-01-23T18:22:04-00:00
+      - value: "2021-04-11T11:00:15-05:00"
+      - value: "2017-01-23T18:22:04-00:00"
   
   version:
     required: true
-    range: float
+    range: string
     slot_uri: pav:version
     description: Unique version number
     examples:
-      - value: 1.1
-      - value: 3.0
+      - value: v1.1
+      - value: "3.0"
   
   timestamp:
     required: true
@@ -504,8 +504,8 @@ slots:
     slot_uri: pav:authoredOn
     description: Date and time when the version was created
     examples:
-      - value: 2023-12-10T12:20:00-05:00
-      - value: 2021-07-03T13:26:00-00:00
+      - value: "2023-12-10T12:20:00-05:00"
+      - value: "2021-07-03T13:26:00-00:00"
   
   changes:
     range: string

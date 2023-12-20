@@ -11,50 +11,50 @@ bia_mifa_models:Annotations a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Annotations" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:annotation_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_criteria ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_overview ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_confidence_level ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_overview ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:annotation_criteria ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_overview ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:annotation_method ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:annotation_overview ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:annotation_overview ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty bia_mifa_models:annotation_coverage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:annotation_criteria ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:annotation_overview ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:annotation_confidence_level ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:annotation_criteria ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:annotation_method ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:annotation_confidence_level ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:annotation_criteria ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:annotation_confidence_level ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:annotation_coverage ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:annotation_coverage ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty bia_mifa_models:annotation_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_criteria ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_coverage ],
         bia_mifa_models:AuthorCollection,
         bia_mifa_models:FileLevelMetadataCollection ;
     skos:definition "A set of annotations for an AI-ready dataset" ;
@@ -65,61 +65,61 @@ bia_mifa_models:Study a owl:Class,
     rdfs:label "Study" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:funding_statement ],
+            owl:onProperty bia_mifa_models:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:ai_models_trained ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:acknowledgements ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:acknowledgements ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty bia_mifa_models:acknowledgements ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:title ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:funding_statement ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:license ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:license ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty bia_mifa_models:keywords ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:keywords ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:funding_statement ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:funding_statement ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:acknowledgements ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:acknowledgements ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty bia_mifa_models:ai_models_trained ],
         [ a owl:Restriction ;
             owl:allValuesFrom bia_mifa_models:LicenseType ;
             owl:onProperty bia_mifa_models:license ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:ai_models_trained ],
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:description ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:keywords ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:funding_statement ],
         bia_mifa_models:AuthorCollection,
         bia_mifa_models:GrantReferenceCollection,
         bia_mifa_models:Links,
@@ -134,38 +134,38 @@ bia_mifa_models:Version a owl:Class,
             owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:changes ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:timestamp ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty bia_mifa_models:previous_version ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Datetime ;
-            owl:onProperty bia_mifa_models:timestamp ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty bia_mifa_models:changes ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:timestamp ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:previous_version ],
+            owl:onProperty bia_mifa_models:version ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:version ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:timestamp ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:version ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:previous_version ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:changes ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Float ;
-            owl:onProperty bia_mifa_models:version ] ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:previous_version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:previous_version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty bia_mifa_models:timestamp ] ;
     skos:definition "Information about the dataset version" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
@@ -173,49 +173,49 @@ bia_mifa_models:Author a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Author" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:role ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:email ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:author_first_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:role ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:author_last_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:author_last_name ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:author_last_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:email ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:author_first_name ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty bia_mifa_models:orcid_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:orcid_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:orcid_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:author_first_name ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:author_last_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "^\\S+@[\\S+\\.]+\\S+" ] ) ] ;
             owl:onProperty bia_mifa_models:email ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:orcid_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:author_first_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:role ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:email ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:orcid_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:author_first_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:author_last_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:orcid_id ],
         bia_mifa_models:OrganisationInfoCollection ;
     skos:definition "Information about the authors" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
@@ -224,41 +224,11 @@ bia_mifa_models:FileLevelMetadata a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "FileLevelMetadata" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:source_image_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:transformations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:source_image_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:Datetime ;
             owl:onProperty bia_mifa_models:annotation_creation_time ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:transformations ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:spatial_information ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:annotation_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:annotation_creation_time ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:annotation_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:annotation_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:spatial_information ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:spatial_information ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:source_image_id ],
@@ -266,11 +236,41 @@ bia_mifa_models:FileLevelMetadata a owl:Class,
             owl:allValuesFrom bia_mifa_models:AnnotationType ;
             owl:onProperty bia_mifa_models:annotation_type ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:spatial_information ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:annotation_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:transformations ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Datetime ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:spatial_information ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:spatial_information ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:annotation_creation_time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:transformations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:source_image_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:source_image_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:annotation_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:transformations ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:annotation_type ] ;
@@ -281,10 +281,10 @@ bia_mifa_models:FileLevelMetadataCollection a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "FileLevelMetadataCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom bia_mifa_models:FileLevelMetadata ;
             owl:onProperty bia_mifa_models:file_metadata ],
         [ a owl:Restriction ;
-            owl:allValuesFrom bia_mifa_models:FileLevelMetadata ;
+            owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:file_metadata ] ;
     skos:definition "A holder for FileLevelMetadata objects" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
@@ -293,22 +293,22 @@ bia_mifa_models:GrantReference a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "GrantReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:grant_id ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:funder ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:funder ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:grant_id ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:funder ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:funder ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:grant_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:grant_id ] ;
     skos:definition "Information about grant ID and funding body that funded the study" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
@@ -329,14 +329,14 @@ bia_mifa_models:Links a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Links" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:link_description ],
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:link_url ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty bia_mifa_models:link_url ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:link_url ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:link_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:link_description ] ;
@@ -347,32 +347,32 @@ bia_mifa_models:OrganisationInfo a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "OrganisationInfo" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty bia_mifa_models:ror_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:ror_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:address ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:address ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bia_mifa_models:ror_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:organisation_name ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:organisation_name ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:ror_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:ror_id ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:organisation_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:address ] ;
+            owl:onProperty bia_mifa_models:address ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty bia_mifa_models:organisation_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty bia_mifa_models:ror_id ] ;
     skos:definition "Information about the organisation the author is affiliated with" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
@@ -393,49 +393,49 @@ bia_mifa_models:Publications a owl:Class,
     rdfs:label "Publications" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty bia_mifa_models:pubmed_id ],
+            owl:onProperty bia_mifa_models:publication_doi ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:publication_year ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:publication_authors ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:publication_doi ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:publication_authors ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:minCardinality 1 ;
             owl:onProperty bia_mifa_models:publication_title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_authors ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty bia_mifa_models:publication_doi ],
+            owl:onProperty bia_mifa_models:pubmed_id ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:publication_doi ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty bia_mifa_models:publication_authors ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty bia_mifa_models:publication_year ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:pubmed_id ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty bia_mifa_models:publication_title ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty bia_mifa_models:publication_year ],
+            owl:onProperty bia_mifa_models:publication_title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:pubmed_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_authors ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty bia_mifa_models:publication_doi ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bia_mifa_models:publication_title ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bia_mifa_models:pubmed_id ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty bia_mifa_models:publication_year ] ;
     skos:definition "Information about any publications associated with the dataset" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 
@@ -520,10 +520,10 @@ bia_mifa_models:AuthorCollection a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AuthorCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom bia_mifa_models:Author ;
             owl:onProperty bia_mifa_models:authors ],
         [ a owl:Restriction ;
-            owl:allValuesFrom bia_mifa_models:Author ;
+            owl:minCardinality 0 ;
             owl:onProperty bia_mifa_models:authors ] ;
     skos:definition "A holder for Author objects" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
@@ -804,7 +804,7 @@ bia_mifa_models:transformations a owl:ObjectProperty,
 bia_mifa_models:version a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "version" ;
-    rdfs:range linkml:Float ;
+    rdfs:range linkml:String ;
     skos:definition "Unique version number" ;
     skos:inScheme <https://w3id.org/BioImage-Archive/bia-mifa-models> .
 

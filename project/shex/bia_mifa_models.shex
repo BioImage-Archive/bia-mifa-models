@@ -177,7 +177,7 @@ linkml:Sparqlpath xsd:string
 }
 
 <Version> CLOSED {
-    (  $<Version_tes> (  pav:version @linkml:Float ;
+    (  $<Version_tes> (  pav:version @linkml:String ;
           pav:authoredOn @linkml:Datetime ;
           <changes> @linkml:String ? ;
           pav:previousVersion @linkml:Uriorcurie ?

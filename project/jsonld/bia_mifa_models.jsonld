@@ -1334,11 +1334,11 @@
       "description": "Date and time when the annotation was created",
       "examples": [
         {
-          "value": "2021-04-11 11:00:15-05:00",
+          "value": "2021-04-11T11:00:15-05:00",
           "@type": "Example"
         },
         {
-          "value": "2017-01-23 18:22:04+00:00",
+          "value": "2017-01-23T18:22:04-00:00",
           "@type": "Example"
         }
       ],
@@ -1360,7 +1360,7 @@
       "description": "Unique version number",
       "examples": [
         {
-          "value": "1.1",
+          "value": "v1.1",
           "@type": "Example"
         },
         {
@@ -1377,7 +1377,7 @@
       "domain_of": [
         "Version"
       ],
-      "range": "float",
+      "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -1387,11 +1387,11 @@
       "description": "Date and time when the version was created",
       "examples": [
         {
-          "value": "2023-12-10 12:20:00-05:00",
+          "value": "2023-12-10T12:20:00-05:00",
           "@type": "Example"
         },
         {
-          "value": "2021-07-03 13:26:00+00:00",
+          "value": "2021-07-03T13:26:00-00:00",
           "@type": "Example"
         }
       ],
@@ -1820,9 +1820,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "bia_mifa_models.yaml",
-  "source_file_date": "2023-12-13T15:05:14",
-  "source_file_size": 20678,
-  "generation_date": "2023-12-13T15:06:03",
+  "source_file_date": "2023-12-20T09:58:39",
+  "source_file_size": 20690,
+  "generation_date": "2023-12-20T10:14:44",
   "@type": "SchemaDefinition",
   "@context": [
     "project//jsonld/bia_mifa_models.context.jsonld",

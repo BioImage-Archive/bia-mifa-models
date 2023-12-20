@@ -100,7 +100,7 @@ type Study implements PublicationsCollection, AuthorCollection, Links, GrantRefe
 
 type Version
   {
-    version: Float!
+    version: String!
     timestamp: Datetime!
     changes: String
     previousVersion: Uriorcurie
