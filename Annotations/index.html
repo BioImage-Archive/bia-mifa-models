@@ -217,6 +217,10 @@
 
       Annotations : annotation_overview
 
+      Annotations : annotation_type
+
+          Annotations --|&gt; AnnotationType : annotation_type
+
       Annotations : authors
 
           Annotations --|&gt; Author : authors
@@ -246,6 +250,12 @@
 <td><a href="../annotation_overview/">annotation_overview</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Short descriptive summary indicating the type of annotation and how it was ge...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../annotation_type/">annotation_type</a></td>
+<td>1..* <br/> <a href="../AnnotationType/">AnnotationType</a></td>
+<td>Annotation type, for example class labels, segmentation masks, counts</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -322,6 +332,7 @@ mixins:
 - FileLevelMetadataCollection
 slots:
 - annotation_overview
+- annotation_type
 - annotation_method
 - annotation_criteria
 - annotation_coverage
@@ -355,6 +366,22 @@ attributes:
     domain_of:
     - Annotations
     range: string
+    required: true
+  annotation_type:
+    name: annotation_type
+    description: Annotation type, for example class labels, segmentation masks, counts...
+    examples:
+    - value: '[''segmentation_mask'', ''class_labels'']'
+    - value: counts
+    from_schema: https://w3id.org/BioImage-Archive/bia-mifa-models
+    rank: 1000
+    multivalued: true
+    alias: annotation_type
+    owner: Annotations
+    domain_of:
+    - FileLevelMetadata
+    - Annotations
+    range: AnnotationType
     required: true
   annotation_method:
     name: annotation_method
