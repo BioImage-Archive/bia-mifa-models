@@ -180,6 +180,7 @@ class Annotations(FileLevelMetadataCollection, AuthorCollection):
     A set of annotations for an AI-ready dataset
     """
     annotation_overview: str = Field(..., description="""Short descriptive summary indicating the type of annotation and how it was generated""")
+    annotation_type: List[AnnotationType] = Field(default_factory=list, description="""Annotation type, for example class labels, segmentation masks, counts...""")
     annotation_method: str = Field(..., description="""Description of how the annotations were created. For example, were the annotations crowdsourced or expertly annotated,  produced by  a human or software, what software was used, when were the annotations created,  protocols used for consensus and quality assurance""")
     annotation_criteria: Optional[str] = Field(None, description="""Rules used to generate annotations""")
     annotation_coverage: Optional[str] = Field(None, description="""Which images from the dataset were annotated, and what percentage of the data has been annotated from what is available""")

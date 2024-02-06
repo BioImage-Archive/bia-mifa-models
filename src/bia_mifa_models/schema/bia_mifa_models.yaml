@@ -162,6 +162,7 @@ classes:
       - FileLevelMetadataCollection
     slots:
       - annotation_overview
+      - annotation_type
       - annotation_method
       - annotation_criteria
       - annotation_coverage
