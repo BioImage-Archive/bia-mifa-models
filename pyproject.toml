@@ -9,7 +9,7 @@ include = ["README.md", "src/bia_mifa_models/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.1.24"
+linkml-runtime = "^1"
 
 [tool.poetry-dynamic-versioning]
 enable = true
