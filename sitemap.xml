@@ -2,412 +2,412 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/AnnotationType/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Annotations/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Author/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/AuthorCollection/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Boolean/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Curie/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Date/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/DateOrDatetime/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Datetime/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Decimal/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Double/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/FileLevelMetadata/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/FileLevelMetadataCollection/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Float/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/GrantReference/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/GrantReferenceCollection/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Integer/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Jsonpath/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Jsonpointer/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/LicenseType/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Links/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Ncname/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Nodeidentifier/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Objectidentifier/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/OrganisationInfo/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/OrganisationInfoCollection/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Publications/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/PublicationsCollection/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Sparqlpath/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/String/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Study/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Time/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Uri/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Uriorcurie/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/Version/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/about/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/acknowledgements/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/address/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/ai_models_trained/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_confidence_level/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_coverage/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_creation_time/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_criteria/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_id/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_method/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_overview/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/annotation_type/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/author_first_name/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/author_last_name/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/authors/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/bia-mifa-models/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/changes/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/description/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/email/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/file_metadata/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/funder/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/funding_statement/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/grant_id/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/grants/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/keywords/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/license/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/link_description/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/link_url/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/orcid_id/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/organisation/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/organisation_name/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/previous_version/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/publication_authors/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/publication_doi/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/publication_title/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/publication_year/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/publications/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/pubmed_id/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/role/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/ror_id/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/source_image_id/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/spatial_information/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/timestamp/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/title/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/transformations/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://BioImage-Archive.github.io/bia-mifa-models/version/</loc>
-         <lastmod>2024-02-06</lastmod>
+         <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
